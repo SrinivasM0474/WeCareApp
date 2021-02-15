@@ -380,7 +380,7 @@ table tbody tr:hover {
 .adults {
   display: flex;
   justify-content: space-between;
-  background: rgb(0 0 0 / 10%);
+  background: rgb(0 0 0 / 15%);
   padding: 2px;
 }
 .adults div {
