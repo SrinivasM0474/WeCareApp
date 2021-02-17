@@ -260,6 +260,7 @@ const AboutYourselfPage = () => {
             ))}
           </Stepper>
         </div>
+        <span>vijaya</span>
         <div>
           {activeStep === steps.length ? (
             <div>
