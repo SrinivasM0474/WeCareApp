@@ -11,44 +11,58 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     marginTop: "4.5%",
-    width: "100%",
+    width: "80%",
   },
   adminHeader: {
     width: "50%",
   },
   backButton: {
-    marginRight: theme.spacing(6),
-    borderRadius: 10,
+    marginRight: theme.spacing(3),
+    borderRadius: 4,
     color: "white",
     fontWeight: "bold",
     backgroundColor: "#EE5050",
     outline: "none !important",
+    textTransform: "capitalize",
+    fontFamily: "Roboto-Light",
+    letterSpacing: "1px",
   },
   nextButton: {
-    marginRight: theme.spacing(6),
-    borderRadius: 10,
+    // marginRight: theme.spacing(6),
+    borderRadius: 4,
     color: "white",
     fontWeight: "bold",
     backgroundColor: "#EE5050",
     outline: "none !important",
+    textTransform: "capitalize",
+    fontFamily: "Roboto-Light",
+    letterSpacing: "1px",
   },
   buttons: {
     display: "flex",
     justifyContent: "center",
-    marginTop: theme.spacing(2),
+    marginTop: "30px",
     marginBottom: theme.spacing(2),
+    paddingBottom: "20px",
   },
   instructions: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
   },
   stepper: {
-    marginLeft: "11%",
-    width: "80%",
+    // marginLeft: "11%",
+    // width: "80%",
+    // backgroundColor: "#F8F8F8",
+    width: "70%",
     backgroundColor: "#F8F8F8",
+    margin: "auto",
+    padding: "24px 0",
   },
   stepLabel: {
-    fontSize: "7px !important",
+    fontSize: "10px !important",
+    fontFamily: "Roboto-Regular",
+    margin: "0px",
+    color: "#bdbdbd",
   },
   greyBar: {
     height: "5px",
@@ -56,6 +70,12 @@ const useStyles = makeStyles((theme) => ({
   },
   stepperBox: {
     backgroundColor: "#F8F8F8",
+    '& .MuiStepConnector-alternativeLabel': {
+      right: "calc(50 % + 20px)",
+      position: "absolute",
+      width: "100%",
+      left: "-16px"
+    }
   },
 }));
 

@@ -15,9 +15,14 @@ import NewAppliaction from "../images/newappliaction.png";
 
 import AdminHeader from "../AddminComponent/AdminHeader/AdminHeader";
 import TableComponent from "../DashboardComponent/TableComponent";
-
+import NavigationFlow from "../../components/NavigationFlow";
+import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
+import InfoIcon from '@material-ui/icons/Info';
 import "../style.css";
-
+import EditIcon from "@material-ui/icons/Edit";
+import CloseIcon from "@material-ui/icons/Close";
+import BookmarkIcon from '@material-ui/icons/Bookmark';
+import CheckIcon from '@material-ui/icons/Check';
 const styles = (theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -92,9 +97,10 @@ class LoginComponent extends React.Component {
   };
   render() {
     return (
-      <div className="dashboard-bg user-dashboard">
+      <div className="user-dashboard">
         <AdminHeader isDashboard={this.state.isDashboard} />
-        <Container>
+        <NavigationFlow />
+        {/* <Container>
           <div className="specerdashboard"></div>
           <div className="content-body content-body-d">
             <div className="dashboard-content">
@@ -208,7 +214,176 @@ class LoginComponent extends React.Component {
               </Container>
             </div>
           </div>
+        </Container> */}
+
+        <Container>
+          <div className='welcome-txt'>
+            <Typography className='name'>Welcome Mike John</Typography>
+            <Typography className='txt'>Welcome to your personal Community Connect Account Page. You can manage your account, apply for DHHS services,<br /> monitor your case status(es),
+            manage your case activity and more!</Typography>
+          </div>
+
+          <div className='notifications'>
+            <div className="about-header d-flex justify-content-between">
+              <div className='d-flex'>
+                <span>
+                  <NotificationsOutlinedIcon />
+                </span>
+                <h3>Notifications</h3>
+              </div>
+              <div>
+                <InfoIcon className='info-icon'/>
+              </div>
+            </div>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Received Date</th>
+                    <th>Message</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2/11/2021</td>
+                    <td>Reduce holiday gathering risks. Maryland Department of Health lauanches mD... <Link>See more</Link></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className='notifications saved-app'>
+            <div className="about-header d-flex justify-content-between">
+              <div className='d-flex'>
+                <span className='saved-icon'>
+                  <BookmarkIcon />
+                </span>
+                <h3>My Saved Applications</h3>
+              </div>
+              <div>
+                <InfoIcon className='info-icon'/>
+              </div>
+            </div>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Created Date</th>
+                    <th>Last Updated</th>
+                    <th>Application Number</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Working Parent Assistance</td>
+                    <td>12/10/2020</td>
+                    <td>1/22/2021</td>
+                    <td>DHS02</td>
+                    <td>Saved</td>
+                    <td>
+                      <span>
+                        <EditIcon className="edit-icon" />
+                      </span>
+                      <span>
+                        <CloseIcon className="close-icon" />
+                      </span>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+          <div className='notifications submit-app'>
+            <div className="about-header d-flex justify-content-between">
+              <div className='d-flex'>
+                <span className='submit-icon'>
+                  <CheckIcon />
+                </span>
+                <h3>My submitted Applications</h3>
+              </div>
+              <div>
+                <InfoIcon className='info-icon'/>
+              </div>
+            </div>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Created Date</th>
+                    <th>Last Updated</th>
+                    <th>Application Number</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Working Parent Assistance</td>
+                    <td>12/10/2020</td>
+                    <td>1/22/2021</td>
+                    <td>DHS02</td>
+                    <td>Saved</td>
+                    <td>
+                      <span>
+                        <EditIcon className="edit-icon" />
+                      </span>
+                      <span>
+                        <CloseIcon className="close-icon" />
+                      </span>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className='dashboard'>
+            <div className="content-blocks">
+              <div className="blocks-content documents">
+                <Grid container>
+                  <Grid
+                    className="dash-box blockhover"
+                    item
+                    xs={12}
+                    md={6}
+                    onClick={() => this.props.history.push("/aboutyou")}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <>
+                      <img
+                        src={NewAppliaction}
+                        alt="New Appliaction"
+                        width="82"
+                        height="68"
+                      />
+                      <p>New Application</p>
+                    </>
+                  </Grid>
+                  <Grid className="dash-box" item xs={12} md={6}>
+                    <img
+                      src={UploadDocuments}
+                      alt="Upload Documents"
+                      width="82"
+                      height="68"
+                    />
+                    <p>Upload Documents</p>
+                  </Grid>
+                </Grid>
+              </div>
+            </div>
+          </div>
         </Container>
+          <div className='login-footer'>
+
+          </div>
       </div>
     );
   }

@@ -1,6 +1,8 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import PinDropSharpIcon from "@material-ui/icons/PinDropSharp";
+import HomeSharpIcon from "@material-ui/icons/HomeSharp";
 
 
 import '../../../style.css';
@@ -15,9 +17,9 @@ const useStyles = makeStyles((theme) => ({
 
 const ProfileComponent = (props) => {
     const classes = useStyles();
-    return(
+    return (
         <div className="profile-content address-content">
-            <form className="" noValidate autoComplete="off">
+            {/* <form className="" noValidate autoComplete="off">
                 <TextField
                     id="address"
                     label="Address Line 1"
@@ -59,7 +61,50 @@ const ProfileComponent = (props) => {
                     className={classes.margin}
                     required
                 />
-            </form>
+            </form> */}
+            <div className="input-form-fields">
+                <div className="input-block">
+                    <TextField
+                        id="standard-basic"
+                        label="Address Line 1 (Required)"
+                        className="input-field"
+                    />
+                    <PinDropSharpIcon className="icon" />
+                </div>
+
+                <div className="input-block">
+                    <TextField
+                        id="standard-basic"
+                        label="Address Line 2"
+                        className="input-field"
+                    />
+                </div>
+
+                <div className="input-block">
+                    <TextField
+                        id="standard-basic"
+                        label="City (Required)"
+                        className="input-field"
+                    />
+                </div>
+
+                <div className="input-block">
+                    <TextField
+                        id="standard-basic"
+                        label="State (Required)"
+                        className="input-field"
+                    />
+                </div>
+
+                <div className="input-block">
+                    <TextField
+                        id="standard-basic"
+                        label="Zip Code (Required)"
+                        className="input-field"
+                    />
+                    <HomeSharpIcon className="icon" />
+                </div>
+            </div>
         </div>
     );
 }

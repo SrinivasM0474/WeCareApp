@@ -6,6 +6,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { makeStyles } from '@material-ui/core/styles';
+import InputLabel from "@material-ui/core/InputLabel";
+import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
+import LanguageIcon from "@material-ui/icons/Language";
 
 
 import '../../../style.css';
@@ -24,9 +27,9 @@ const ProfileComponent = (props) => {
     const handleChange = (event) => {
         setValue(event.target.value);
     };
-    return(
+    return (
         <div className="profile-content contact-content">
-            <form className="" noValidate autoComplete="off">
+            {/* <form className="" noValidate autoComplete="off">
                 <FormControl component="fieldset">
                     <FormLabel component="legend">Choose your primary phone number</FormLabel>
                     <RadioGroup aria-label="primaryPhone" name="primaryPhone" value={value} onChange={handleChange}>
@@ -49,7 +52,37 @@ const ProfileComponent = (props) => {
                     className={classes.margin}
                     required
                 />
-            </form>
+            </form> */}
+            <div className="input-form-fields">
+                <div className="input-block gender-block p-t-16">
+                    <InputLabel className="input-label label-width">
+                        Choose your Primary Phone Number
+              </InputLabel>
+                    <div className="gender">
+                        <ul>
+                            <li className="selected">Mobile</li>
+                            <li>Home</li>
+                            <li>Work</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="input-block">
+                    <TextField
+                        id="standard-basic"
+                        label="Phone (Required)"
+                        className="input-field"
+                    />
+                    <PhoneInTalkSharpIcon className="icon" />
+                </div>
+                <div className="input-block">
+                    <TextField
+                        id="standard-basic"
+                        label="Preferred Launguage (Required)"
+                        className="input-field"
+                    />
+                    <LanguageIcon className="icon" />
+                </div>
+            </div>
         </div>
     );
 }

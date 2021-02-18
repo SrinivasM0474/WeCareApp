@@ -1,20 +1,10 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-} */
-
 /*Font Family*/
+
+/* Roboto font */
 
 @font-face {
   font-family: "Roboto-Black";
-  src: url("./views/Fonts/Roboto-Black.woff2") format("woff2"),
-    url("./views/Fonts/Roboto-Black.woff") format("woff");
+  src: url("./views/Fonts/Roboto-Black.woff2") format("woff2"), url("./views/Fonts/Roboto-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -22,8 +12,7 @@ code {
 
 @font-face {
   font-family: "Roboto-BlackItalic";
-  src: url("./views/Fonts/Roboto-BlackItalic.woff2") format("woff2"),
-    url("./views/Fonts/Roboto-BlackItalic.woff") format("woff");
+  src: url("./views/Fonts/Roboto-BlackItalic.woff2") format("woff2"), url("./views/Fonts/Roboto-BlackItalic.woff") format("woff");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -31,8 +20,7 @@ code {
 
 @font-face {
   font-family: "Roboto-Bold";
-  src: url("./views/Fonts/Roboto-Bold.woff2") format("woff2"),
-    url("./views/Fonts/Roboto-Bold.woff") format("woff");
+  src: url("./views/Fonts/Roboto-Bold.woff2") format("woff2"), url("./views/Fonts/Roboto-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -40,8 +28,7 @@ code {
 
 @font-face {
   font-family: "Roboto-BoldItalic";
-  src: url("./views/Fonts/Roboto-BoldItalic.woff2") format("woff2"),
-    url("./views/Fonts/Roboto-BoldItalic.woff") format("woff");
+  src: url("./views/Fonts/Roboto-BoldItalic.woff2") format("woff2"), url("./views/Fonts/Roboto-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -49,8 +36,7 @@ code {
 
 @font-face {
   font-family: "Roboto-Light";
-  src: url("./views/Fonts/Roboto-Light.woff2") format("woff2"),
-    url("./views/Fonts/Roboto-Light.woff") format("woff");
+  src: url("./views/Fonts/Roboto-Light.woff2") format("woff2"), url("./views/Fonts/Roboto-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -58,8 +44,7 @@ code {
 
 @font-face {
   font-family: "Roboto-Italic";
-  src: url("./views/Fonts/Roboto-Italic.woff2") format("woff2"),
-    url("./views/Fonts/Roboto-Italic.woff") format("woff");
+  src: url("./views/Fonts/Roboto-Italic.woff2") format("woff2"), url("./views/Fonts/Roboto-Italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -67,8 +52,7 @@ code {
 
 @font-face {
   font-family: "Roboto-LightItalic";
-  src: url("./views/Fonts/Roboto-LightItalic.woff2") format("woff2"),
-    url("./views/Fonts/Roboto-LightItalic.woff") format("woff");
+  src: url("./views/Fonts/Roboto-LightItalic.woff2") format("woff2"), url("./views/Fonts/Roboto-LightItalic.woff") format("woff");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -76,8 +60,7 @@ code {
 
 @font-face {
   font-family: "Roboto-Medium";
-  src: url("./views/Fonts/Roboto-Medium.woff2") format("woff2"),
-    url("./views/Fonts/Roboto-Medium.woff") format("woff");
+  src: url("./views/Fonts/Roboto-Medium.woff2") format("woff2"), url("./views/Fonts/Roboto-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -85,8 +68,7 @@ code {
 
 @font-face {
   font-family: "Roboto-MediumItalic";
-  src: url("./views/Fonts/Roboto-MediumItalic.woff2") format("woff2"),
-    url("./views/Fonts/Roboto-MediumItalic.woff") format("woff");
+  src: url("./views/Fonts/Roboto-MediumItalic.woff2") format("woff2"), url("./views/Fonts/Roboto-MediumItalic.woff") format("woff");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -94,8 +76,7 @@ code {
 
 @font-face {
   font-family: "Roboto-Regular";
-  src: url("./views/Fonts/Roboto-Regular.woff2") format("woff2"),
-    url("./views/Fonts/Roboto-Regular.woff") format("woff");
+  src: url("./views/Fonts/Roboto-Regular.woff2") format("woff2"), url("./views/Fonts/Roboto-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -103,8 +84,7 @@ code {
 
 @font-face {
   font-family: "Roboto-Thin";
-  src: url("./views/Fonts/Roboto-Thin.woff2") format("woff2"),
-    url("./views/Fonts/Roboto-Thin.woff") format("woff");
+  src: url("./views/Fonts/Roboto-Thin.woff2") format("woff2"), url("./views/Fonts/Roboto-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -112,15 +92,55 @@ code {
 
 @font-face {
   font-family: "Roboto-ThinItalic";
-  src: url("./views/Fonts/Roboto-ThinItalic.woff2") format("woff2"),
-    url("./views/Fonts/Roboto-ThinItalic.woff") format("woff");
+  src: url("./views/Fonts/Roboto-ThinItalic.woff2") format("woff2"), url("./views/Fonts/Roboto-ThinItalic.woff") format("woff");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
 }
 
-html,
-body {
+@font-face {
+  font-family: "Soleil-Bold";
+  src: url("./views/Fonts/SoleilBold.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Soleil font */
+
+@font-face {
+  font-family: 'Soleil-Bold';
+  src: url('./views/Fonts/Soleil-Bold.woff2') format('woff2'), url('./views/Fonts/Soleil-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soleil-Book';
+  src: url('./views/Fonts/Soleil-Book.woff2') format('woff2'), url('./views/Fonts/Soleil-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soleil-Light';
+  src: url('./views/Fonts/Soleil-Light.woff2') format('woff2'), url('./views/Fonts/Soleil-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Soleil-Regular';
+  src: url('./views/Fonts/Soleil-Regular.woff2') format('woff2'), url('./views/Fonts/Soleil-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body {
   width: 100%;
   height: 100%;
   padding: 0px;
@@ -160,18 +180,13 @@ body {
   text-align: right;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
 h3 {
   font-size: 20px;
+  font-family: "Soleil-Bold";
 }
 
 .full-width {
@@ -182,26 +197,26 @@ h3 {
   padding-top: 30px;
   margin-left: "15%";
   margin-right: "15%";
+  width: 80%;
 }
 
 .about-yourself {
-  width: "50%";
   height: 100%;
-  padding: 10px;
-  box-shadow: 0px 0px 3px 0px rgb(0 0 0 / 75%);
+  padding: 16px 16px 24px 16px;
+  box-shadow: 0px 0.5px 5px 0.5px rgb(0 0 0 / 55%);
   border-radius: 10px;
-  font-family: soleil;
+  /* font-family: soleil; */
 }
 
 .about-header {
   margin-bottom: 20px;
-  font-family: "Roboto-bold";
+  font-family: "Soleil-Bold";
   font-size: 15px;
 }
 
 .about-header span {
   background: #ee5050;
-  padding: 10px 9px;
+  padding: 10px 8px;
   border-radius: 6px;
   color: white;
   display: inline-flex;
@@ -215,13 +230,14 @@ h3 {
 .about-header span svg {
   position: relative;
   top: -2px;
+  font-size: 30px;
 }
 
 .about-header h3 {
-  font-family: "Roboto-Bold";
-}
-
-.input-form-fields {
+  font-family: "Soleil-Bold";
+  position: relative;
+  top: 10px;
+  left: 6px;
 }
 
 .input-form-fields .input-block {
@@ -229,7 +245,7 @@ h3 {
   align-items: flex-end;
   width: 100%;
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .input-block .input-field {
@@ -240,8 +256,7 @@ h3 {
   color: red;
 }
 
-.input-field label,
-.input-label {
+.input-field label, .input-label {
   font-size: 14px !important;
   color: black !important;
   font-family: "Roboto-Regular" !important;
@@ -257,6 +272,7 @@ h3 {
 
 .input-block .MuiInputBase-input {
   font-size: 14px !important;
+  font-family: "Roboto-Regular";
 }
 
 .MuiInput-underline:before {
@@ -272,12 +288,22 @@ ul li {
   list-style-type: none;
 }
 
+.p-t-16 {
+  padding-top: 16px;
+}
+
+.p-0 {
+  padding: 0px !important;
+}
+
 .gender-block {
+  /* padding-top: 16px; */
   align-items: center !important;
 }
 
 .gender-block label {
   margin-right: 20px;
+  margin-bottom: 0;
 }
 
 .gender ul {
@@ -287,9 +313,11 @@ ul li {
 
 .gender ul li {
   min-width: 100px;
+  text-align: center;
   border: 1px solid #bbb8b8;
   padding: 8px;
   font-size: 12px;
+  font-family: "Roboto-Regular";
   cursor: pointer;
 }
 
@@ -312,9 +340,17 @@ ul li {
   text-align: left;
   font-size: 12px;
   margin-bottom: 10px;
+  font-family: "Roboto-Regular";
+  font-weight: bold;
 }
+
+.yes-no-block {
+  margin-bottom: 10px;
+}
+
 .yes-no-block ul li {
-  min-width: 60px;
+  min-width: 80px;
+  padding: 4px;
 }
 
 table {
@@ -324,14 +360,16 @@ table {
   height: auto;
   display: inline-table !important;
   border: 0 !important;
+  font-family: "Roboto-Regular";
 }
 
 table thead tr {
-  height: 30px;
+  height: 35px;
   display: table;
   width: 100%;
   /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); */
 }
+
 table thead tr th {
   text-align: left;
   padding: 0px 15px 0px 15px;
@@ -340,17 +378,21 @@ table thead tr th {
   position: relative;
   height: auto;
   border: 0;
+  font-family: "Roboto-Medium";
 }
+
 table tbody {
   display: block;
   width: 100%;
 }
+
 table tbody tr {
   display: table;
   width: 100%;
-  height: 30px;
+  height: 35px;
   cursor: pointer;
 }
+
 table tbody tr td {
   text-align: left;
   padding: 0px 15px 0px 15px;
@@ -360,18 +402,25 @@ table tbody tr td {
   height: auto !important;
   border: 0 !important;
 }
-.edit-icon,
-.close-icon {
-  font-size: 16px !important;
+
+table tbody tr td:last-child {
+  padding: 0 10px 0 10px;
 }
+
+.edit-icon, .close-icon {
+  font-size: 20px !important;
+}
+
 table tbody tr:hover {
-  background-color: rgba(48, 148, 202, 0.09);
+  background-color: rgb(202 202 202 / 9%);
 }
+
 .edit-icon {
   margin-right: 10px;
   color: #0072bc;
   font-weight: bold;
 }
+
 .close-icon {
   color: #ee5050;
   font-weight: bold;
@@ -380,26 +429,566 @@ table tbody tr:hover {
 .adults {
   display: flex;
   justify-content: space-between;
-  background: rgb(0 0 0 / 10%);
-  padding: 2px;
+  background: rgb(0 0 0 / 3%);
+  padding: 4px 6px;
 }
+
 .adults div {
   display: flex;
   align-items: center;
 }
+
 .adults div span {
   font-size: 14px;
+  margin-left: 6px;
+  font-weight: bold;
+  font-family: "Roboto-Regular";
 }
+
 .adults .add-btn {
   background: #0072bc;
   height: 26px;
   text-transform: capitalize !important;
   color: white;
+  outline: 0;
+  padding: 0 10px;
 }
+
+.adults .add-btn .txt-border {
+  border: 2px dotted;
+  padding: 0 3px;
+  border-radius: 10px;
+  margin-right: 6px;
+}
+
+.txt-border span {
+  font-size: 15px;
+}
+
+/* .add-btn svg {
+  font-size: 20px;
+  margin-right: 4px;
+} */
+
 .add-btn:hover {
   background-color: #0072bc !important;
 }
+
 .a-table {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+}
+
+/* common styles */
+
+.common-header {
+  height: 50px !important;
+  border-radius: 0 !important;
+  position: initial !important;
+}
+
+.common-header .logo-text {
+  display: flex;
+  align-items: center;
+}
+
+.common-header .logo-text img {
+  margin: 0 !important;
+  margin-right: 10px !important;
+}
+
+.common-header span {
+  color: white;
+  font-family: "Roboto-Light";
+  font-size: 16px;
+}
+
+.common-header .navbar-collapse {
+  margin-right: 0px !important;
+  margin-top: 0px !important;
+}
+
+.common-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.common-header nav .nav-item a {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation flow styles */
+
+.navigation-flow {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.navigation-flow img {
+  width: 270px;
+}
+
+.navigation-flow .nav-items ul {
+  display: flex;
+}
+
+.navigation-flow .nav-items ul li {
+  font-size: 14px;
+  margin-right: 20px;
+  font-family: "Roboto-Medium";
+  cursor: pointer;
+}
+
+.navigation-flow .nav-items ul li:last-child {
+  margin-right: 0;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+}
+
+.nav-user svg {
+  color: #0072bc;
+  margin-right: 5px;
+}
+
+.MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+  height: 30px !important;
+  line-height: 14px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 10px;
+}
+
+.MuiStepLabel-completed span {
+  color: #000000 !important;
+  font-family: "Roboto-Bold";
+}
+
+.MuiStepLabel-active span {
+  color: black;
+}
+
+.input-block .MuiSelect-icon {
+  display: none !important;
+}
+
+.input-block .MuiSelect-select.MuiSelect-select {
+  background-image: url("./views/images/select-dropdown.png");
+  background-repeat: no-repeat;
+  background-position: right top 16px;
+}
+
+.back-icon {
+  border: 2px dotted;
+  border-radius: 20px;
+  font-size: 20px;
+  margin-right: 10px;
+  transform: rotate(180deg);
+}
+
+.rotate-0 {
+  transform: rotate(0deg);
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.MuiButton-root.MuiButton-contained.makeStyles-backButton-5:hover {
+  background-color: #ee5050 !important;
+}
+
+.MuiButton-root.MuiButton-contained.makeStyles-nextButton-6:hover {
+  background-color: #ee5050 !important;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-contained:hover {
+  background-color: #ee5050 !important;
+}
+
+.about-origin {
+  margin: 20px 0 0 0;
+}
+
+.about-origin .text {
+  margin-bottom: 14px;
+}
+
+.label-width {
+  width: 244px;
+}
+
+.about-date .MuiInputBase-adornedEnd button {
+  outline: 0;
+  right: -15px;
+  position: relative;
+}
+
+.about-date .MuiFormControl-marginNormal {
+  width: 100%;
+}
+
+.MuiPickersCalendar-week button {
+  outline: 0;
+}
+
+/* 
+.about-date .MuiPopover-paper {
+  left: 70% !important;
+} */
+
+.services-icon {
+  font-size: 22px;
+}
+
+/* modal css */
+
+.header-modal {
+  width: 94%;
+  background: #0072bc;
+  margin: auto;
+  top: -20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0 10px 0;
+  border-radius: 4px;
+  border: 0;
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 5px 8px 0px rgb(0 0 0 / 14%), 0px 1px 14px 0px rgb(0 0 0 / 12%);
+}
+
+.header-modal svg {
+  color: white;
+  font-size: 50px;
+  border: 2px solid white;
+  border-radius: 40px;
+  padding: 4px;
+}
+
+.header-text {
+  position: relative;
+  top: -14px;
+}
+
+.header-text h4 {
+  font-size: 18px;
+  color: black;
+  font-family: 'Soleil-Regular';
+}
+
+.header-text p {
+  font-size: 12px;
+  color: black;
+}
+
+.modal-nav {
+  height: calc(100% - 103px);
+}
+
+.modal-nav .new-user-steps .MuiStep-horizontal {
+  padding: 0;
+}
+
+.modal-nav .new-user-steps .stper-pad {
+  padding: 0px !important;
+  background: #efe9e9;
+}
+
+.modal-nav .new-user-steps .MuiStepLabel-active {
+  background: #ee5050 !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+}
+
+.modal-nav .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+  height: 40px !important;
+  text-transform: uppercase;
+  font-family: 'Roboto-Regular';
+  top: 0;
+  letter-spacing: 0px !important;
+  font-size: 14px !important;
+}
+
+.profile-content {
+  padding: 6px 44px 30px 44px;
+}
+
+.profile-modal {
+  height: 100%;
+}
+
+.nav-btns {
+  /* display: flex;
+  justify-content: space-between; */
+  padding: 0 40px;
+  position: relative;
+  top: -30px;
+}
+
+.icon-back {
+  float: left;
+}
+
+.icon-forward {
+  float: right;
+}
+
+.nav-btns svg {
+  background: #ee5050 !important;
+  padding: 8px;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-content .gender-block {
+  flex-direction: column;
+  align-items: flex-start !important;
+}
+
+.contact-content .gender-block label {
+  margin-bottom: 14px;
+}
+
+.contact-content .gender ul li {
+  min-width: 130px;
+}
+
+.cust-chebox {
+  display: flex;
+  align-items: center;
+}
+
+.signin-content .cust-chebox, .signin-content .cust-chebox span {
+  padding-left: 0;
+}
+
+.signin-content .cust-chebox p {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-family: "Roboto-Regular";
+  font-size: 14px;
+  color: black;
+}
+
+.create-accnt {
+  min-width: 180px!important;
+  background: #ee5050 !important;
+  position: relative!important;
+  left: 50%;
+  transform: translate(-70%, 0px);
+  height: 40px;
+  text-transform: capitalize!important;
+  color: white!important;
+  font-family: 'Soleil-Regular'!important;
+  font-size: 16px!important;
+  outline: 0 !important;
+}
+
+/* login page styles */
+
+.login-account {
+  box-shadow: 0px 0.5px 5px 0.5px rgb(0 0 0 / 55%);
+  width: 80%;
+  margin: 60px auto;
+  padding: 0px 24px 60px 24px;
+  border-radius: 8px;
+}
+
+.login-account .login-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.login-logo img {
+  width: 250px;
+}
+
+.login-container {
+  background: white;
+}
+
+.login-view {
+  display: flex;
+  align-items: center;
+}
+
+.login-left, .login-right {
+  width: 50%;
+}
+
+.login-left img {
+  width: 90%;
+}
+
+.login-right h4 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.login-right .input-form-fields {
+  width: 90%;
+  margin: auto;
+}
+
+.b-l {
+  margin: auto;
+}
+
+.b-l:hover {
+  background-color: #ee5050 !important;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn-login {
+  width: 260px;
+  background-color: #ee5050 !important;
+  margin: 0 auto !important;
+  font-size: 16px !important;
+  color: white !important;
+  text-transform: capitalize !important;
+  outline: 0 !important;
+}
+
+.links {
+  margin-top: 40px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.links div {
+  font-size: 12px;
+  text-align: center;
+}
+
+.links .f-p {
+  text-decoration: underline;
+  color: BLACK;
+  font-family: 'Soleil-Regular';
+}
+
+.footer {
+  height: 30px;
+  background-color: red;
+}
+
+.login-footer {
+  height: 30px;
+  background-color: #0072bc;
+}
+
+.welcome-txt {
+  margin-bottom: 24px;
+}
+
+.welcome-txt p:first-child {
+  font-family: "Soleil-Bold";
+  font-size: 20px;
+  color: black;
+}
+
+.welcome-txt p:last-child {
+  font-size: 14px;
+  color: black;
+  font-family: 'Soleil-Regular';
+}
+
+.notifications {
+  padding: 14px 0 20px 0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 2px rgba(248, 211, 212, 1);
+  margin-bottom: 20px;
+}
+
+.notifications:last-child {
+  margin-bottom: 0;
+}
+
+.notifications .about-header {
+  padding: 0 14px;
+}
+
+.notifications .about-header span {
+  padding: 8px;
+}
+
+.notifications .about-header h3 {
+  font-family: 'Soleil-Light';
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.notifications table thead tr {
+  background: #f8d3d4;
+}
+
+.saved-app table thead tr {
+  background: #fef0df;
+}
+
+.submit-app table thead tr {
+  background: #f0f7e6;
+}
+
+table thead tr th, tbody tr td {
+  color: black !important;
+  font-family: "Roboto-Regular";
+}
+
+.notifications table tbody td:nth-child(2) {
+  text-align: center;
+}
+
+.saved-icon {
+  background-color: #fb8c00 !important;
+}
+
+.submit-icon {
+  background-color: #8cc542 !important;
+}
+
+.saved-app {
+  box-shadow: 0px 0px 4px 4px rgba(254, 240, 223, 1);
+}
+
+.submit-app {
+  box-shadow: 0px 0px 4px 4px rgba(240, 247, 230, 1);
+}
+
+.dashboard {
+  padding-bottom: 20px;
+}
+
+.dashboard .blocks-content {
+  padding: 0;
+  background-color: white;
+  box-shadow: 0px 0.5px 5px 0.5px rgb(0 0 0 / 55%);
+  border-radius: 8px;
+}
+
+.dashboard .documents .dash-box {
+  background-color: white;
+}
+
+.dashboard .documents .dash-box p {
+  font-family: "Roboto-Medium";
+  font-weight: bold;
+}
+
+.info-icon {
+  color: #6b6d6d;
 }

@@ -473,7 +473,7 @@ hr {
   line-height: 44px !important;
   font-size: 18px !important;
   color: #000 !important;
-  margin: 0 -8px !important;
+  /* margin: 0 -8px !important; */
 }
 .new-user-steps .MuiStepLabel-active {
   background: #0072bc !important;
@@ -536,7 +536,7 @@ hr {
   border-radius: 4px 4px 0px 0;
 }
 .blocks-content {
-  padding: 15px 25px;
+  /* padding: 15px 25px; */
   background-color: #eff8fa;
   border-radius: 0px 0px 4px 4px;
   overflow: hidden;
