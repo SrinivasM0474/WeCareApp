@@ -252,9 +252,9 @@ h3 {
   width: 100%;
 }
 
-.input-block .input-field svg {
+/* .input-block .input-field svg {
   color: red;
-}
+} */
 
 .input-field label, .input-label {
   font-size: 14px !important;
@@ -262,12 +262,12 @@ h3 {
   font-family: "Roboto-Regular" !important;
 }
 
-.input-block .icon {
+.input-block .MuiInputAdornment-positionEnd {
   position: absolute;
   right: 0;
-  font-size: 20px;
   color: rgb(0 0 0 / 50%);
-  bottom: 6px;
+  /* font-size: 20px;
+  bottom: 6px; */
 }
 
 .input-block .MuiInputBase-input {
@@ -632,9 +632,9 @@ table tbody tr:hover {
   position: relative;
 }
 
-.about-date .MuiFormControl-marginNormal {
+/* .about-date .MuiFormControl-marginNormal {
   width: 100%;
-}
+} */
 
 .MuiPickersCalendar-week button {
   outline: 0;
@@ -944,14 +944,18 @@ table tbody tr:hover {
   background: #f0f7e6;
 }
 
+.width-auto {
+  width: auto !important;
+}
 table thead tr th, tbody tr td {
   color: black !important;
   font-family: "Roboto-Regular";
+  width: 130px;
 }
 
-.notifications table tbody td:nth-child(2) {
+/* .notifications table tbody td:nth-child(2) {
   text-align: center;
-}
+} */
 
 .saved-icon {
   background-color: #fb8c00 !important;

@@ -150,27 +150,47 @@ const TellUsMoreAboutYou = (props) => {
                 </div>
               </div>
             </div>
-            {isPregnent && <div className="full-width input-block about-date">
-              <MuiPickersUtilsProvider
-                utils={DateFnsUtils}
-                className="full-width"
-              >
-                <KeyboardDatePicker
-                  disableToolbar
-                  variant="inline"
-                  format="MM/dd/yyyy"
-                  margin="normal"
-                  id="date-picker-inline"
-                  label="What is your due date?"
-                  value={selectedDate}
-                  onChange={handleDateChange}
-                  KeyboardButtonProps={{
-                    "aria-label": "change date",
-                  }}
-                  className="full-width button"
-                />
-              </MuiPickersUtilsProvider>
-            </div>}
+            {isPregnent && 
+            // <div className="full-width input-block about-date">
+            //   <MuiPickersUtilsProvider
+            //     utils={DateFnsUtils}
+            //     className="full-width"
+            //   >
+            //     <KeyboardDatePicker
+            //       disableToolbar
+            //       variant="inline"
+            //       format="MM/dd/yyyy"
+            //       margin="normal"
+            //       id="date-picker-inline"
+            //       label="What is your due date?"
+            //       value={selectedDate}
+            //       onChange={handleDateChange}
+            //       KeyboardButtonProps={{
+            //         "aria-label": "change date",
+            //       }}
+            //       className="full-width button"
+            //     />
+            //   </MuiPickersUtilsProvider>
+            // </div>
+            <div className="full-width input-block about-date">
+            <MuiPickersUtilsProvider
+              utils={DateFnsUtils}
+              className="full-width"
+            >
+              <KeyboardDatePicker
+                margin="normal"
+                id="dob"
+                label="Date of Birth"
+                format="MM/dd/yyyy"
+                value={selectedDate}
+                onChange={handleDateChange}
+                KeyboardButtonProps={{
+                  "aria-label": "change date",
+                }}
+              />
+            </MuiPickersUtilsProvider>
+          </div>
+            }
           </div>
         </div>
       </Container>

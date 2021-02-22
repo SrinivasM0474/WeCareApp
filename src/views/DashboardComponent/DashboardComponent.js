@@ -240,13 +240,13 @@ class LoginComponent extends React.Component {
                 <thead>
                   <tr>
                     <th>Received Date</th>
-                    <th>Message</th>
+                    <th className='text-center'>Message</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>2/11/2021</td>
-                    <td>Reduce holiday gathering risks. Maryland Department of Health lauanches mD... <Link>See more</Link></td>
+                    <td className='text-center'>Reduce holiday gathering risks. Maryland Department of Health lauanches mD... <Link>See more</Link></td>
                   </tr>
                 </tbody>
               </table>

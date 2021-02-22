@@ -32,6 +32,68 @@ import {
 import DateFnsUtils from "@date-io/date-fns";
 
 const TellResidentialAddress = (props) => {
+  const [isAnotherAddress, setIsAnotherAddress] = React.useState(false);
+  const handleAnotherAddress  = (value) => {
+    if (value === "Yes") {setIsAnotherAddress(true);
+      props.onFormControlChange(true);
+    }
+    else if (value === "No"){ 
+      props.onFormControlChange(false);
+      setIsAnotherAddress(false);}
+  }
+  const loginForm = React.useRef(null);
+  const addressNew = React.useRef(null);
+
+
+  //Variable declarations
+  const [errors, setErrors] = React.useState(null);
+  const [errorsAnother, setErrorsAnother] = React.useState(null);
+  const validate = (key) => {
+    let fields = key === 'all' ? ['AddressLine1', 'City','State','ZipCode'] : [key];
+    let errorsData = errors ? errors : {};
+    fields.forEach(field => {
+      let loginFormelements = loginForm.current;
+      if (!loginFormelements[field] || loginFormelements[field].value.trim() === '') {
+        errorsData[field] = (field) + 'is required';
+      } 
+      else {
+        delete errorsData[field];
+      }
+    });
+    setErrors(Object.assign({}, errorsData));
+    if (Object.keys(errorsData).length > 0) {
+      console.log('onchange')
+       props.onFormControlChange(true);
+      return false;
+    } else {          
+         props.onFormControlChange(false);   
+    
+      return true;
+    }
+  };
+  const validateAnother = (key) => {
+    let fieldsNew = key === 'all' ? ['AddressNew', 'City','State','ZipCode'] : [key];
+    let errorsDataNew = errorsAnother ? errorsAnother : {};
+    fieldsNew.forEach(fieldNew => {
+      let loginFormelementsNew = addressNew.current;
+      if (!loginFormelementsNew[fieldNew] || loginFormelementsNew[fieldNew].value.trim() === '') {
+        errorsDataNew[fieldNew] = (fieldNew) + 'is required';
+      } 
+      else {
+        delete errorsDataNew[fieldNew];
+      }
+    });
+    setErrorsAnother(Object.assign({}, errorsDataNew));
+    if (Object.keys(errorsDataNew).length > 0) {
+      console.log('onchange')
+       props.onFormControlChange(true);
+      return false;
+    } else {          
+         props.onFormControlChange(false);   
+    
+      return true;
+    }
+  };
   return (
     <div>
       <Container className="container" maxWidth="md">
@@ -43,14 +105,28 @@ const TellResidentialAddress = (props) => {
             </span>
             <h3>Tell us about your Residential Address</h3>
           </div>
+         
           <div className="input-form-fields">
+          <form ref={loginForm} >
             <div className="input-block">
               <TextField
+               type='text'
+               name='AddressLine1'
                 id="standard-basic"
                 label="Address Line 1 (Required)"
                 className="input-field"
+                autoComplete='off'
+                onBlur={() => { validate('AddressLine1'); }}
+                 error={errors && errors.AddressLine1}
+                helperText={errors && errors.AddressLine1 ? "Address Line 1 is required" : ""}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <PinDropSharpIcon className="icon" />
+                    </InputAdornment>
+                  ),
+                }}
               />
-              <PinDropSharpIcon className="icon" />
             </div>
 
             <div className="input-block">
@@ -58,33 +134,59 @@ const TellResidentialAddress = (props) => {
                 id="standard-basic"
                 label="Address Line 2"
                 className="input-field"
+                autoComplete='off'
               />
             </div>
 
             <div className="input-block">
               <TextField
+              type='text'
+               name='City'
                 id="standard-basic"
                 label="City (Required)"
                 className="input-field"
+                autoComplete='off'
+                onBlur={() => { validate('City'); }}
+                 error={errors && errors.City}
+                helperText={errors && errors.City ? "City is required" : ""}
               />
             </div>
 
             <div className="input-block">
               <TextField
+              type='text'
+              name='State'
                 id="standard-basic"
                 label="State (Required)"
                 className="input-field"
+                autoComplete='off'
+                onBlur={() => { validate('State'); }}
+                 error={errors && errors.State}
+                helperText={errors && errors.State ? "State is required" : ""}
               />
             </div>
 
             <div className="input-block">
               <TextField
+               type='text'
+               name='ZipCode'
                 id="standard-basic"
                 label="Zip Code (Required)"
                 className="input-field"
+                autoComplete='off'
+                onBlur={() => { validate('ZipCode'); }}
+                 error={errors && errors.ZipCode}
+                helperText={errors && errors.ZipCode ? "Zip Code is required" : ""}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <HomeSharpIcon className="icon" />
+                    </InputAdornment>
+                  ),
+                }}
               />
-              <HomeSharpIcon className="icon" />
             </div>
+            </form>
             <div className="about-origin">
               <p className="text">
                 Is there another address that we should send mail to?
@@ -92,21 +194,36 @@ const TellResidentialAddress = (props) => {
               <div className="input-block gender-block">
                 <div className="gender yes-no-block">
                   <ul>
-                    <li className="selected">Yes</li>
-                    <li>No</li>
+                    <li  onClick={() => { handleAnotherAddress("Yes") }} className={isAnotherAddress ? "selected" : ""}>Yes</li>
+                    <li onClick={() => { handleAnotherAddress("No") }} className={isAnotherAddress ? "" : "selected"}>No</li>
                   </ul>
                 </div>
               </div>
+              
             </div>
-            <div className="input-block">
+            {isAnotherAddress&&
+            <div>
+                 <form ref={addressNew} >
+              <div className="input-block">
               <TextField
+               type='text'
+               name='AddressNew'
                 id="standard-basic"
                 label="Address Line 1 (Required)"
                 className="input-field"
+                autoComplete='off'
+                onBlur={() => { validateAnother('AddressNew'); }}
+                 error={errorsAnother && errorsAnother.AddressNew}
+                helperText={errorsAnother && errorsAnother.AddressNew ? "Address Line 1 is required" : ""}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <PinDropSharpIcon className="icon" />
+                    </InputAdornment>
+                  ),
+                }}
               />
-              <PinDropSharpIcon className="icon" />
             </div>
-
             <div className="input-block">
               <TextField
                 id="standard-basic"
@@ -114,31 +231,63 @@ const TellResidentialAddress = (props) => {
                 className="input-field"
               />
             </div>
-
             <div className="input-block">
               <TextField
+               type='text'
+               name='City'
                 id="standard-basic"
                 label="City (Required)"
                 className="input-field"
+                autoComplete='off'
+                onBlur={() => { validateAnother('City'); }}
+                 error={errorsAnother && errorsAnother.City}
+                helperText={errorsAnother && errorsAnother.City ? "City is required" : ""}
               />
             </div>
-
             <div className="input-block">
               <TextField
+               type='text'
+               name='State'
                 id="standard-basic"
                 label="State (Required)"
                 className="input-field"
+                autoComplete='off'
+                onBlur={() => { validateAnother('State'); }}
+                 error={errorsAnother && errorsAnother.State}
+                helperText={errorsAnother && errorsAnother.State ? "State is required" : ""}
               />
             </div>
-
             <div className="input-block">
               <TextField
+               type='text'
+               name='ZipCode'
                 id="standard-basic"
                 label="Zip Code (Required)"
                 className="input-field"
+                autoComplete='off'
+                onBlur={() => { validateAnother('ZipCode'); }}
+                 error={errorsAnother && errorsAnother.ZipCode}
+                helperText={errorsAnother && errorsAnother.ZipCode ? "Zip Code is required" : ""}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <HomeSharpIcon className="icon" />
+                    </InputAdornment>
+                  ),
+                }}
               />
-              <HomeSharpIcon className="icon" />
             </div> 
+            </form>
+            </div>
+            }
+            
+            
+
+           
+
+           
+
+            
           </div>
         </div>
       </Container>

@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import PinDropSharpIcon from "@material-ui/icons/PinDropSharp";
 import HomeSharpIcon from "@material-ui/icons/HomeSharp";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 
 import '../../../style.css';
@@ -68,8 +69,14 @@ const ProfileComponent = (props) => {
                         id="standard-basic"
                         label="Address Line 1 (Required)"
                         className="input-field"
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <PinDropSharpIcon className="icon" />
+                                </InputAdornment>
+                            ),
+                        }}
                     />
-                    <PinDropSharpIcon className="icon" />
                 </div>
 
                 <div className="input-block">
@@ -101,8 +108,14 @@ const ProfileComponent = (props) => {
                         id="standard-basic"
                         label="Zip Code (Required)"
                         className="input-field"
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <HomeSharpIcon className="icon" />
+                                </InputAdornment>
+                            ),
+                        }}
                     />
-                    <HomeSharpIcon className="icon" />
                 </div>
             </div>
         </div>

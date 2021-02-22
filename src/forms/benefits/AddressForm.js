@@ -37,25 +37,44 @@ class AddressForm extends React.Component {
       }],
       totalValue: 0,
       errorMess: null,
+      isActiveChildernYes:false,
+      isActiveChildernNo:true,
+      itemChildern:[{
+        firstName:'',
+        middleName:'',
+        lastName:'',
+        dateOfBirth:'',
+        gender:'',
+        relationship:'',
+        editItem:false
+        }],
     };
   }
   handleClick=()=>{
     this.setState({isActiveYes:!this.state.isActiveYes?true:false,
-    isActiveNo:!this.state.isActiveNo?true:false})
+      isActiveNo:!this.state.isActiveNo?true:false})
     
   }
-  itemChange=(e, i,testvalue)=>{
+  handleChildrenClick=()=>{
+    this.setState({isActiveChildernYes:!this.state.isActiveChildernYes?true:false,
+      isActiveChildernNo:!this.state.isActiveChildernNo?true:false})
+  }
+  itemChange=(e, i,testvalue,name)=>{
     e.preventDefault()
     
-    let addValues=this.state.itemValue
-    this.state.itemValue[i][testvalue]=e.target.value;
-    console.log(this.state.itemValue[i],'testvaluesssssssssssss')
+    let addValues=name==='adults'?this.state.itemValue:this.state.itemChildern
+    addValues[i][testvalue]=e.target.value;
+   if(name==='adults'){
     this.setState({itemValue:addValues})
+   }else{
+     this.setState({itemChildern:addValues})
+   }
+   
 
   }
-  addItems=()=>{
-    let increaseItems=(this.state.itemValue);
-    let editvalueDisable=this.state.itemValue.length
+  addItems=(name)=>{
+    let increaseItems=name==='adults'?this.state.itemValue:this.state.itemChildern;
+    let editvalueDisable=name==='adults'?this.state.itemValue.length:this.state.itemChildern.length
     increaseItems.push({
       firstName:'',
       middleName:'',
@@ -65,21 +84,39 @@ class AddressForm extends React.Component {
       relationship:'',
       
       })
+     
+     if(name==='adults'){
+      this.setState({itemValue:increaseItems})
       this.state.itemValue[editvalueDisable-1].editItem=true;
-    this.setState({itemValue:increaseItems})
+     }
+    else{
+      this.setState({itemChildern:increaseItems})
+      this.state.itemChildern[editvalueDisable-1].editItem=true;
+    }
   }
   editItem=(i)=>{
     let editItem=this.state.itemValue;
     editItem[i].editItem=!this.state.itemValue[i].editItem
     this.setState({itemValue:editItem})
   }
-  removeItem=(i)=>{
-    if(this.state.itemValue.length>1){
+  editItemChildern=(i)=>{
+    let editItem=this.state.itemChildern;
+    editItem[i].editItem=!this.state.itemChildern[i].editItem
+    this.setState({itemChildern:editItem})
+  }
+  removeItem=(i,name)=>{
+    if(this.state.itemValue.length>1||this.state.itemChildern.length>1){
+      let removeItems=name==='adults'?this.state.itemValue:this.state.itemChildern
       let removeValue=
-      this.state.itemValue.filter((test,index)=>{
+      removeItems.filter((test,index)=>{
         return index!==i
       })
-      this.setState({itemValue:removeValue})
+      if(name==='adults'){
+        this.setState({itemValue:removeValue})
+      }else{
+        this.setState({itemChildern:removeValue})
+      }
+     
     }
    
    
@@ -112,7 +149,7 @@ class AddressForm extends React.Component {
                 <WcIcon />
                 <span>Adult(s)</span>
               </div>
-              <Button className="add-btn" onClick={()=>this.addItems()}>Add</Button>
+              <Button className="add-btn" onClick={()=>this.addItems('adults')}>Add</Button>
             </div>
             <table>
               <thead>
@@ -136,14 +173,14 @@ class AddressForm extends React.Component {
                           <input type='text' style={{width:'100px'}}
                           disabled={val.editItem}
                            value={val.firstName}
-                           onChange={(e) => this.itemChange(e,i,'firstName')}
+                           onChange={(e) => this.itemChange(e,i,'firstName','adults')}
                        
                       /></td>
                       <td>
                       <input type='text' style={{width:'100px'}}
                            value={val.middleName}
                            disabled={val.editItem}
-                           onChange={(e) => this.itemChange(e,i,'middleName')}
+                           onChange={(e) => this.itemChange(e,i,'middleName','adults')}
                        
                       />
                       </td>
@@ -151,28 +188,28 @@ class AddressForm extends React.Component {
                       <input type='text' style={{width:'100px'}}
                            value={val.lastName}
                            disabled={val.editItem}
-                           onChange={(e) => this.itemChange(e,i,'lastName')}                       
+                           onChange={(e) => this.itemChange(e,i,'lastName','adults')}                       
                       />
                       </td>
                       <td>
                       <input type='number' style={{width:'100px'}}
                            value={val.dateOfBirth}
                            disabled={val.editItem}
-                           onChange={(e) => this.itemChange(e,i,'dateOfBirth')}
+                           onChange={(e) => this.itemChange(e,i,'dateOfBirth','adults')}
                       />
                       </td>
                       <td>
                       <input type='text' style={{width:'100px'}}
                            value={val.gender}
                            disabled={val.editItem}
-                           onChange={(e) => this.itemChange(e,i,'gender')}
+                           onChange={(e) => this.itemChange(e,i,'gender','adults')}
                       />
                       </td>
                       <td>
                       <input type='text' style={{width:'100px'}}
                            value={val.relationship}
                            disabled={val.editItem}
-                           onChange={(e) => this.itemChange(e,i,'relationship')}
+                           onChange={(e) => this.itemChange(e,i,'relationship','adults')}
                       />
                       </td>
                       <td>
@@ -180,7 +217,7 @@ class AddressForm extends React.Component {
                       <EditIcon className="edit-icon" onClick={()=>this.editItem(i,'edit')} />
                     </span>
                     <span>
-                      <CloseIcon className="close-icon" onClick={()=>this.removeItem(i)} />
+                      <CloseIcon className="close-icon" onClick={()=>this.removeItem(i,'adults')} />
                     </span>
                       </td>
                       </tr>
@@ -197,23 +234,24 @@ class AddressForm extends React.Component {
             
           </div>
           <div className="input-form-fields">
-            <p className="text">Are you adding any adults to your application?</p>
+            <p className="text">Are you adding any children to your application?</p>
   
             <div className="input-block gender-block">
               <div className="gender yes-no-block">
                 <ul>
-                  <li className="selected">Yes</li>
-                  <li>No</li>
+                  <li className={this.state.isActiveChildernYes?"selected":''} onClick={()=>this.handleChildrenClick()}>Yes</li>
+                  <li className={this.state.isActiveChildernNo?"selected":''} onClick={()=>this.handleChildrenClick()}>No</li>
                 </ul>
               </div>
             </div>
+            {this.state.isActiveChildernYes===true&&
             <div className="a-table">
               <div className="adults">
                 <div>
                   <WcIcon />
                   <span>Children</span>
                 </div>
-                <Button className="add-btn">Add</Button>
+                <Button className="add-btn" onClick={()=>this.addItems('children')}>Add</Button>
               </div>
               <table>
                 <thead>
@@ -228,41 +266,68 @@ class AddressForm extends React.Component {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>First Name</td>
-                    <td>Middle Name</td>
-                    <td>Last Name</td>
-                    <td>Date Of Birth</td>
-                    <td>Gender</td>
-                    <td>Relationship</td>
-                    <td>
+                {
+                     _.map(this.state.itemChildern, (val, i) => {
+                      return (
+                        <tr>
+                        <td> 
+                          <input type='text' style={{width:'100px'}}
+                          disabled={val.editItem}
+                           value={val.firstName}
+                           onChange={(e) => this.itemChange(e,i,'firstName','children')}
+                       
+                      /></td>
+                      <td>
+                      <input type='text' style={{width:'100px'}}
+                           value={val.middleName}
+                           disabled={val.editItem}
+                           onChange={(e) => this.itemChange(e,i,'middleName','children')}
+                       
+                      />
+                      </td>
+                      <td>
+                      <input type='text' style={{width:'100px'}}
+                           value={val.lastName}
+                           disabled={val.editItem}
+                           onChange={(e) => this.itemChange(e,i,'lastName','children')}                       
+                      />
+                      </td>
+                      <td>
+                      <input type='number' style={{width:'100px'}}
+                           value={val.dateOfBirth}
+                           disabled={val.editItem}
+                           onChange={(e) => this.itemChange(e,i,'dateOfBirth','children')}
+                      />
+                      </td>
+                      <td>
+                      <input type='text' style={{width:'100px'}}
+                           value={val.gender}
+                           disabled={val.editItem}
+                           onChange={(e) => this.itemChange(e,i,'gender','children')}
+                      />
+                      </td>
+                      <td>
+                      <input type='text' style={{width:'100px'}}
+                           value={val.relationship}
+                           disabled={val.editItem}
+                           onChange={(e) => this.itemChange(e,i,'relationship','children')}
+                      />
+                      </td>
+                      <td>
                       <span>
-                        <EditIcon className="edit-icon" />
-                      </span>
-                      <span>
-                        <CloseIcon className="close-icon" />
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>First Name</td>
-                    <td>Middle Name</td>
-                    <td>Last Name</td>
-                    <td>Date Of Birth</td>
-                    <td>Gender</td>
-                    <td>Relationship</td>
-                    <td>
-                      <span>
-                        <EditIcon className="edit-icon" />
-                      </span>
-                      <span>
-                        <CloseIcon className="close-icon" />
-                      </span>
-                    </td>
-                  </tr>
+                      <EditIcon className="edit-icon" onClick={()=>this.editItemChildern(i,'edit')} />
+                    </span>
+                    <span>
+                      <CloseIcon className="close-icon" onClick={()=>this.removeItem(i,'children')} />
+                    </span>
+                      </td>
+                      </tr>
+                       )
+                    })
+                  }
                 </tbody>
               </table>
-            </div>
+            </div>}
           </div>
         </div>
       </Container>

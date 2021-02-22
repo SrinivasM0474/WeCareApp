@@ -78,8 +78,14 @@ const ProfileComponent = (props) => {
                         id="standard-basic"
                         label="First Name(Required)"
                         className="input-field"
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <FaceRoundedIcon className="icon" />
+                                </InputAdornment>
+                            ),
+                        }}
                     />
-                    <FaceRoundedIcon className="icon" />
                 </div>
                 <div className="input-block">
                     <TextField
@@ -95,8 +101,14 @@ const ProfileComponent = (props) => {
                         id="standard-basic"
                         label="Last Name(Required)"
                         className="input-field"
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <RecordVoiceOverIcon className="icon" />
+                                </InputAdornment>
+                            ),
+                        }}
                     />
-                    <RecordVoiceOverIcon className="icon" />
                 </div>
                 <div className="input-block">
                     <TextField
@@ -106,7 +118,7 @@ const ProfileComponent = (props) => {
                         className="input-field"
                     />
                 </div>
-                <div className="full-width input-block about-date">
+                {/* <div className="full-width input-block about-date">
                     <MuiPickersUtilsProvider
                         utils={DateFnsUtils}
                         className="full-width"
@@ -124,6 +136,24 @@ const ProfileComponent = (props) => {
                                 "aria-label": "change date",
                             }}
                             className="full-width button"
+                        />
+                    </MuiPickersUtilsProvider>
+                </div> */}
+                <div className="full-width input-block about-date">
+                    <MuiPickersUtilsProvider
+                        utils={DateFnsUtils}
+                        className="full-width"
+                    >
+                        <KeyboardDatePicker
+                            margin="normal"
+                            id="dob"
+                            label="Date of Birth"
+                            format="MM/dd/yyyy"
+                            value={selectedDate}
+                            onChange={handleDateChange}
+                            KeyboardButtonProps={{
+                                "aria-label": "change date",
+                            }}
                         />
                     </MuiPickersUtilsProvider>
                 </div>

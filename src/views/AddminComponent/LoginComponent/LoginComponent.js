@@ -146,10 +146,14 @@ class LoginComponent extends React.Component {
                                             id="standard-basic"
                                             label="Email"
                                             className="input-field"
-
+                                            InputProps={{
+                                                endAdornment: (
+                                                  <InputAdornment position="end">
+                                                    <MailIcon className="icon" />
+                                                  </InputAdornment>
+                                                ),
+                                              }} 
                                         />
-
-                                        <MailIcon className="icon" />
 
                                     </div>
                                     <div className="input-block">
@@ -157,8 +161,14 @@ class LoginComponent extends React.Component {
                                             id="standard-basic"
                                             label="Password"
                                             className="input-field"
+                                            InputProps={{
+                                                endAdornment: (
+                                                  <InputAdornment position="end">
+                                                    <VpnKeyIcon className="icon" />
+                                                  </InputAdornment>
+                                                ),
+                                              }} 
                                         />
-                                        <VpnKeyIcon className="icon" />
                                     </div>
                                 </div>
                                 <div className='d-flex links'>

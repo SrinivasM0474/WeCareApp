@@ -3,6 +3,7 @@ import { TextField, FormLabel, Checkbox, FormControl } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import Link from '@material-ui/core/Link';
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 import '../../../style.css';
 
@@ -72,8 +73,14 @@ const ProfileComponent = (props) => {
                         id="standard-basic"
                         label="Password (Required)"
                         className="input-field"
+                        InputProps={{
+                            endAdornment: (
+                              <InputAdornment position="end">
+                                <VpnKeyIcon className="icon" />
+                              </InputAdornment>
+                            ),
+                          }} 
                     />
-                    <VpnKeyIcon className="icon" />
                 </div>
 
                 <div className="input-block">
@@ -81,8 +88,14 @@ const ProfileComponent = (props) => {
                         id="standard-basic"
                         label="Re-enter Password (Required)"
                         className="input-field"
+                        InputProps={{
+                            endAdornment: (
+                              <InputAdornment position="end">
+                                <VpnKeyIcon className="icon" />
+                              </InputAdornment>
+                            ),
+                          }} 
                     />
-                    <VpnKeyIcon className="icon" />
                 </div>
                 <div className="cust-chebox">
                     <Checkbox

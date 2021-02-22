@@ -219,6 +219,7 @@ if(activeStep===0){
   
 }
 if(activeStep===1&&page.household<2){
+  setFormIsValid(true);
   setpages((preVal) => {
     return{
       benefits:0,
@@ -239,8 +240,9 @@ if(page.household===2){
   };
 
   const handleBack = () => {
+    
     if(activeStep===1&&page.household!==0){
-      
+     
       setpages((preVal) => {
         return{
           benefits:0,
@@ -249,6 +251,7 @@ if(page.household===2){
         }    
       });
     }else{
+      
        setActiveStep((prevActiveStep) => prevActiveStep - 1);
     }
     // setActiveStep((prevActiveStep) => prevActiveStep - 1);
@@ -321,9 +324,13 @@ if(page.household===2){
                 />
               )}
               {activeStep === 1 &&page.household===0&& <TellUsMoreAboutYou />}
-              {activeStep === 1 && page.household===1&& <TellContactInformation />}
+              {activeStep === 1 && page.household===1&& <TellContactInformation
+              onFormControlChange={onFormControlChangeHandler}
+              />}
               {/* {activeStep === 2 && <AddressForm />} */}
-              {activeStep === 1 &&page.household===2&& <TellResidentialAddress />}
+              {activeStep === 1 &&page.household===2&& <TellResidentialAddress
+              onFormControlChange={onFormControlChangeHandler}
+              />}
               {activeStep === 2 && <AddressForm />}
 
 

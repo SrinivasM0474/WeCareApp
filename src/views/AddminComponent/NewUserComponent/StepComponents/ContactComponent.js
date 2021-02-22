@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from "@material-ui/core/InputLabel";
 import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
 import LanguageIcon from "@material-ui/icons/Language";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 
 import '../../../style.css';
@@ -71,16 +72,28 @@ const ProfileComponent = (props) => {
                         id="standard-basic"
                         label="Phone (Required)"
                         className="input-field"
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <PhoneInTalkSharpIcon className="icon" />
+                                </InputAdornment>
+                            ),
+                        }}
                     />
-                    <PhoneInTalkSharpIcon className="icon" />
                 </div>
                 <div className="input-block">
                     <TextField
                         id="standard-basic"
                         label="Preferred Launguage (Required)"
                         className="input-field"
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <LanguageIcon className="icon" />
+                                </InputAdornment>
+                            ),
+                        }}
                     />
-                    <LanguageIcon className="icon" />
                 </div>
             </div>
         </div>
