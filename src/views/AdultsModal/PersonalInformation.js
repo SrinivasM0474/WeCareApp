@@ -29,7 +29,7 @@ import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
 import MailIcon from "@material-ui/icons/Mail";
 import LanguageIcon from "@material-ui/icons/Language";
 import MaskedInput from 'react-text-mask'
-import { GENDER_MALE, GENDER_OTHER, GENDER_FEMALE } from "../../../src/constants";
+import { GENDER_MALE, GENDER_OTHER, GENDER_FEMALE } from "./../../../src/constants";
 import IconButton from '@material-ui/core/IconButton';
 
 import "date-fns";
@@ -39,7 +39,7 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 
-const AboutYourSelfPageNew = (props) => {
+const PersonalInformation = (props) => {
   const classes = useStyles();
   const [isActive, setIsActive] = useState(false);
   const [isGender, setIsGender] = useState(false);
@@ -112,14 +112,14 @@ const AboutYourSelfPageNew = (props) => {
     setErrors(Object.assign({}, errorsData));
     if (Object.keys(errorsData).length > 0) {
       console.log('onchange')
-      props.onFormControlChange(true);
+    //   props.onFormControlChange(true);
       return false;
     } else {
       if (isGender === false) {
-        props.onFormControlChange(true);
+        // props.onFormControlChange(true);
       }
       else {
-        props.onFormControlChange(false);
+        // props.onFormControlChange(false);
       }
 
       return true;
@@ -141,9 +141,9 @@ const AboutYourSelfPageNew = (props) => {
     if (value === GENDER_FEMALE) setIsGender(GENDER_FEMALE);
     else if (value === GENDER_MALE) setIsGender(GENDER_MALE);
     else setIsGender(GENDER_OTHER);
-    if (!errors.firstName && !errors.lastName) {
-      props.onFormControlChange(false);
-    }
+    // if (!errors.firstName && !errors.lastName) {
+    // //   props.onFormControlChange(false);
+    // }
 
   };
 
@@ -152,14 +152,20 @@ const AboutYourSelfPageNew = (props) => {
       <Container className="container" maxWidth="md">
         <form ref={loginForm} >
           <div className="about-yourself">
-            <div className="about-header d-flex">
-              <span>
-                {" "}
-                <PersonIcon />
-              </span>
-              <h3>Tell us about yourself</h3>
-            </div>
             <div className="input-form-fields">
+            <div className="full-width input-block">
+                <FormControl className="full-width">
+                  <InputLabel className="input-label">What is ypur relatioship to the adult you are about to provide data? (Required) </InputLabel>
+                  <Select className="text-left">
+                    {formdata.suffix['options'].map((val) => {
+                      return (
+                        <MenuItem value={val.value}>{val.displayValue}</MenuItem>
+                      )
+                    })}
+
+                  </Select>
+                </FormControl>
+              </div>
               <div className="input-block">
                 <TextField
                   type='text'
@@ -277,6 +283,7 @@ const AboutYourSelfPageNew = (props) => {
                   </ul>
                 </div>
               </div>
+              
               <div className="input-block">
                 <MaskedInput
                   mask={[/[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
@@ -296,4 +303,4 @@ const AboutYourSelfPageNew = (props) => {
   );
 };
 
-export default AboutYourSelfPageNew;
+export default PersonalInformation;

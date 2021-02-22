@@ -996,3 +996,8 @@ table thead tr th, tbody tr td {
 .info-icon {
   color: #6b6d6d;
 }
+
+.dashboard-user {
+  width: 1200px !important;
+  padding: 0 !important;
+}
