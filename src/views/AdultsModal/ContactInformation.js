@@ -112,7 +112,7 @@ const ContactInformation = (props) => {
   return (
     <div>
       <Container className="container" maxWidth="md">
-        <div className="about-yourself">
+        <div className="about-yourself adult-household">
           <div className="input-form-fields">
          
             <form ref={loginForm} >

@@ -59,7 +59,7 @@ const AdditionalInformation = (props) => {
     <div>
       {/* Tell us more about you design */}
       <Container className="container" maxWidth="md">
-        <div className="about-yourself">
+        <div className="about-yourself adult-household">
           <div className="input-form-fields">
 
             <div className="full-width input-block">
@@ -97,25 +97,25 @@ const AdditionalInformation = (props) => {
                 </div>
               </div>
             </div>
-            {isPregnent && 
-            <div className="full-width input-block about-date">
-            <MuiPickersUtilsProvider
-              utils={DateFnsUtils}
-              className="full-width"
-            >
-              <KeyboardDatePicker
-                margin="normal"
-                id="dob"
-                label="What is her due date?"
-                format="MM/dd/yyyy"
-                value={selectedDate}
-                onChange={handleDateChange}
-                KeyboardButtonProps={{
-                  "aria-label": "change date",
-                }}
-              />
-            </MuiPickersUtilsProvider>
-          </div>
+            {isPregnent &&
+              <div className="full-width input-block about-date">
+                <MuiPickersUtilsProvider
+                  utils={DateFnsUtils}
+                  className="full-width"
+                >
+                  <KeyboardDatePicker
+                    margin="normal"
+                    id="dob"
+                    label="What is her due date?"
+                    format="MM/dd/yyyy"
+                    value={selectedDate}
+                    onChange={handleDateChange}
+                    KeyboardButtonProps={{
+                      "aria-label": "change date",
+                    }}
+                  />
+                </MuiPickersUtilsProvider>
+              </div>
             }
           </div>
         </div>

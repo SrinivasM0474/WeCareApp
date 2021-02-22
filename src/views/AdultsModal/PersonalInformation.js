@@ -151,7 +151,7 @@ const PersonalInformation = (props) => {
     <div>
       <Container className="container" maxWidth="md">
         <form ref={loginForm} >
-          <div className="about-yourself">
+          <div className="about-yourself adult-household">
             <div className="input-form-fields">
             <div className="full-width input-block">
                 <FormControl className="full-width">
