@@ -318,17 +318,17 @@ if(page.household===2){
               )} */}
              
               {activeStep === 0 && (
-                <AboutYourSelfPageNew
+                <AddressForm
                   onFormControlChange={onFormControlChangeHandler}
                   triggerValidation={nextButtonClicked}
                 />
               )}
-              {activeStep === 1 &&page.household===0&& <TellUsMoreAboutYou />}
-              {activeStep === 1 && page.household===1&& <TellContactInformation
+              {activeStep === 1 &&page.household===0&& <TellContactInformation />}
+              {activeStep === 1 && page.household===1&& <TellResidentialAddress
               onFormControlChange={onFormControlChangeHandler}
               />}
               {/* {activeStep === 2 && <AddressForm />} */}
-              {activeStep === 1 &&page.household===2&& <TellResidentialAddress
+              {activeStep === 1 &&page.household===2&& <TellUsMoreAboutYou
               onFormControlChange={onFormControlChangeHandler}
               />}
               {activeStep === 2 && <AddressForm />}

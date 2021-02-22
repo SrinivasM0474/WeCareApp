@@ -216,7 +216,7 @@ class LoginComponent extends React.Component {
           </div>
         </Container> */}
 
-        <Container>
+        <Container className='dashboard-user'>
           <div className='welcome-txt'>
             <Typography className='name'>Welcome Mike John</Typography>
             <Typography className='txt'>Welcome to your personal Community Connect Account Page. You can manage your account, apply for DHHS services,<br /> monitor your case status(es),

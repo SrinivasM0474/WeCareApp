@@ -25,7 +25,7 @@ import HomeSharpIcon from "@material-ui/icons/HomeSharp";
 import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
 import MailIcon from "@material-ui/icons/Mail";
 import LanguageIcon from "@material-ui/icons/Language";
-import FormData from "./Form";
+// import FormData from "./Form";
 import {
   HOME, MOBILE, WORK, INTERPRETERNO, INTERPRETERYES,
   COMMUNICATE_EMAIL, COMMUNICATE_PHONE, COMMUNICATE_MAIL,
@@ -38,7 +38,7 @@ import {
 import DateFnsUtils from "@date-io/date-fns";
 
 
-const TellContactInformation = (props) => {
+const ContactInformation = (props) => {
   const [isPhoneNo, setIsPhoneNO] = useState(MOBILE);
   const [isInterpreter, setIsInterpreter] = useState(INTERPRETER_NO);
   const [isCommunicate, setIsCommunicate] = useState(COMMUNICATE_EMAIL);
@@ -102,8 +102,7 @@ const TellContactInformation = (props) => {
       console.log('onchange')
       // props.onFormControlChange(true);
       return false;
-    } 
-    else {
+    } else {
       // props.onFormControlChange(false);
 
       return true;
@@ -113,16 +112,32 @@ const TellContactInformation = (props) => {
   return (
     <div>
       <Container className="container" maxWidth="md">
-        <div className="about-yourself">
-          <div className="about-header d-flex">
-            <span>
-              {" "}
-              <PersonOutlineTwoToneIcon />
-            </span>
-            <h3>Tell us about your contact information</h3>
-          </div>
+        <div className="about-yourself adult-household">
           <div className="input-form-fields">
-            <div className="input-block gender-block p-t-16">
+         
+            <form ref={loginForm} >
+              <div className="input-block">
+                <TextField
+                  type='text'
+                  name='phoneno'
+                  error={errors && errors.phoneno}
+                  autoComplete='off'
+                  id="standard-basic"
+                  label="Phone (Required)"
+                  className="input-field"
+                  onBlur={() => { validatecontact('phoneno'); }}
+                  helperText={errors && errors.phoneno ? "Phone no is required" : ""}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <PhoneInTalkSharpIcon className="icon" />
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </div>
+
+              <div className="input-block gender-block p-t-16">
               <InputLabel className="input-label label-width">
                 Choose your Primary Phone Number
               </InputLabel>
@@ -149,27 +164,6 @@ const TellContactInformation = (props) => {
                 </ul>
               </div>
             </div>
-            <form ref={loginForm} >
-              <div className="input-block">
-                <TextField
-                  type='text'
-                  name='phoneno'
-                  error={errors && errors.phoneno}
-                  autoComplete='off'
-                  id="standard-basic"
-                  label="Phone (Required)"
-                  className="input-field"
-                  onBlur={() => { validatecontact('phoneno'); }}
-                  helperText={errors && errors.phoneno ? "Phone no is required" : ""}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <PhoneInTalkSharpIcon className="icon" />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              </div>
 
               <div className="input-block">
                 <TextField
@@ -191,100 +185,7 @@ const TellContactInformation = (props) => {
                   }}
                 />
               </div>
-
-              <div className="input-block">
-                <TextField
-                  type='text'
-                  name='launguage'
-                  error={errors && errors.launguage}
-                  autoComplete='off'
-                  id="standard-basic"
-                  label="Preferred Launguage (Required)"
-                  className="input-field"
-                  helperText={errors && errors.launguage ? "launguage is required" : ""}
-                  onBlur={() => { validatecontact('launguage'); }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <LanguageIcon className="icon" />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              </div>
             </form>
-            <div className="input-block gender-block p-t-16">
-              <InputLabel className="input-label label-width">
-                Do you need an Interpreter?
-              </InputLabel>
-              <div className="gender">
-                <ul>
-                  <li className={isInterpreter === INTERPRETER_NO ? "selected" : ""}
-                    onClick={() => {
-                      handleInterpreterChange("InterpreterNo");
-                    }}>No</li>
-                  <li
-                    className={isInterpreter === INTERPRETER_YES ? "selected" : ""}
-                    onClick={() => {
-                      handleInterpreterChange("InterpreterYes");
-                    }}
-                  >Yes</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="input-block gender-block p-t-16">
-              <InputLabel className="input-label label-width">
-                How do you want us to communicate?
-              </InputLabel>
-              <div className="gender">
-                <ul>
-                  <li className={isCommunicate === COMMUNICATE_EMAIL ? "selected" : ""}
-                    onClick={() => {
-                      handlecommunicateChange("CommunicateEmail");
-                    }}>Email</li>
-                  <li
-                    className={isCommunicate === COMMUNICATE_PHONE ? "selected" : ""}
-                    onClick={() => {
-                      handlecommunicateChange("CommunicatePhone");
-                    }}
-                  >Phone</li>
-                  <li
-                    className={isCommunicate === COMMUNICATE_MAIL ? "selected" : ""}
-                    onClick={() => {
-                      handlecommunicateChange("CommunicateMail");
-                    }}
-                  >Mail</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="input-block gender-block p-t-16">
-              <InputLabel className="input-label label-width">
-                Do you need any accommodations ?
-              </InputLabel>
-              <div className="gender">
-                <ul>
-                  <li className={isAccommodations === ACCOMMODATIONS_YES ? "selected" : ""}
-                    onClick={() => {
-                      handleAccommodationsChange("AccommodationsYes");
-                    }}>Yes</li>
-                  <li
-                    className={isAccommodations === ACCOMMODATIONS_NO ? "selected" : ""}
-                    onClick={() => {
-                      handleAccommodationsChange("AccommodationsNo");
-                    }}
-                  >No</li>
-                </ul>
-              </div>
-            </div>
-            <div className="input-block">
-              <TextField
-                id="standard-basic"
-                label="What kind of accommodations do you need?"
-                className="input-field"
-              />
-            </div>
           </div>
         </div>
       </Container>
@@ -292,4 +193,4 @@ const TellContactInformation = (props) => {
   );
 };
 
-export default TellContactInformation;
+export default ContactInformation;
