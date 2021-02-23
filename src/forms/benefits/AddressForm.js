@@ -81,10 +81,11 @@ class AddressForm extends React.Component {
 
   }
   addItems = (name) => {
-    this.setState({ isOpenAdultsModal: true });
-    if(name==='adults'){
+    console.log(name);
+    // this.setState({ isOpenAdultsModal: true });
+    if (name === 'adults') {
       this.setState({ isOpenAdultsModal: true });
-    }else{
+    } else {
       this.setState({ isOpenChildrenModal: true });
     }
     // let increaseItems=name==='adults'?this.state.itemValue:this.state.itemChildern;
@@ -133,9 +134,15 @@ class AddressForm extends React.Component {
 
     }
   }
+
   isOpenProfileModel = (isClosePopup) => {
     console.log(isClosePopup);
     this.setState({ isOpenAdultsModal: isClosePopup });
+  }
+
+  isOpenChildrenModel = (isClosePopup) => {
+    this.setState({ isOpenChildrenModal: isClosePopup });
+
   }
   render() {
     console.log(this.state, 'previewpopup>>>>>>>')
@@ -347,7 +354,7 @@ class AddressForm extends React.Component {
           </div>
         </div>
         {this.state.isOpenAdultsModal && <AdultsModalInformation closeModal={() => { this.isOpenProfileModel(false) }} />}
-        {this.state.isOpenChildrenModal && <AdultsModalInformation closeModal={() => { this.isOpenProfileModel(false) }} />}
+        {this.state.isOpenChildrenModal && <ChildrenModalInformation closeModal={() => { this.isOpenChildrenModel(false) }} />}
       </Container>
     );
   }
