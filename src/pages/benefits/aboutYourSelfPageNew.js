@@ -42,6 +42,7 @@ import {
 const AboutYourSelfPageNew = (props) => {
   const classes = useStyles();
   const [isActive, setIsActive] = useState(false);
+  const [isActiveDate, setIsActiveDate] = useState(false);
   const [isGender, setIsGender] = useState(false);
 
   const [formdata, setFormdata] = useState({
@@ -100,7 +101,7 @@ const AboutYourSelfPageNew = (props) => {
   */
   const validate = (key) => {
     let fields = key === 'all' ? ['firstName', 'lastName'] : [key];
-    let errorsData = errors ? errors : {};
+    let errorsData = errors ? errors : {firstName:'',lastName:''};
     fields.forEach(field => {
       let loginFormelements = loginForm.current;
       if (!loginFormelements[field] || loginFormelements[field].value.trim() === '') {
@@ -111,18 +112,11 @@ const AboutYourSelfPageNew = (props) => {
     });
     setErrors(Object.assign({}, errorsData));
     if (Object.keys(errorsData).length > 0) {
-      console.log('onchange')
       props.onFormControlChange(true);
       return false;
     } else {
-      if (isGender === false) {
-        props.onFormControlChange(true);
-      }
-      else {
-        props.onFormControlChange(false);
-      }
-
-      return true;
+      props.onFormControlChange(false);
+          return true;
     }
   };
 
@@ -134,6 +128,13 @@ const AboutYourSelfPageNew = (props) => {
 
 
   const handleDateChange = (date) => {
+    if (date.toDateString() === 'Invalid Date'){
+      props.onFormControlChange(true);
+    }
+    else{
+      if(errors!==null&&Object.keys(errors).length === 0)
+       props.onFormControlChange(false);
+    }
     setSelectedDate(date);
   };
 
@@ -141,11 +142,7 @@ const AboutYourSelfPageNew = (props) => {
     if (value === GENDER_FEMALE) setIsGender(GENDER_FEMALE);
     else if (value === GENDER_MALE) setIsGender(GENDER_MALE);
     else setIsGender(GENDER_OTHER);
-    if (!errors.firstName && !errors.lastName) {
-      props.onFormControlChange(false);
-    }
-
-  };
+      };
 
   return (
     <div>
@@ -168,7 +165,8 @@ const AboutYourSelfPageNew = (props) => {
                   className="input-field"
                   label="First Name (Required)"
                   autoComplete='off'
-                  onBlur={() => { validate('firstName'); }}
+                  onChange={() => { validate('firstName'); }}
+                  onFocus={() => { validate('firstName'); }}
                   error={errors && errors.firstName}
                   helperText={errors && errors.firstName ? "First Name is required" : ""}
                   InputProps={{
@@ -199,7 +197,8 @@ const AboutYourSelfPageNew = (props) => {
                   name='lastName'
                   label="Last Name(Required)"
                   className="input-field"
-                  onBlur={() => { validate('lastName'); }}
+                  onFocus={() => { validate('lastName'); }}
+                  onChange={() => { validate('lastName'); }}
                   autoComplete='off'
                   helperText={errors && errors.lastName ? "Last Name is required" : ""}
                   InputProps={{
@@ -239,6 +238,7 @@ const AboutYourSelfPageNew = (props) => {
                     label="Date of Birth"
                     format="MM/dd/yyyy"
                     value={selectedDate}
+                   
                     onChange={handleDateChange}
                     KeyboardButtonProps={{
                       "aria-label": "change date",

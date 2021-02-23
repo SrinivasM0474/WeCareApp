@@ -39,10 +39,10 @@ import DateFnsUtils from "@date-io/date-fns";
 
 
 const TellContactInformation = (props) => {
-  const [isPhoneNo, setIsPhoneNO] = useState(MOBILE);
-  const [isInterpreter, setIsInterpreter] = useState(INTERPRETER_NO);
-  const [isCommunicate, setIsCommunicate] = useState(COMMUNICATE_EMAIL);
-  const [isAccommodations, setIsAccommodations] = useState(ACCOMMODATIONS_YES);
+  const [isPhoneNo, setIsPhoneNO] = useState(false);
+  const [isInterpreter, setIsInterpreter] = useState(false);
+  const [isCommunicate, setIsCommunicate] = useState(false);
+  const [isAccommodations, setIsAccommodations] = useState(false);
 
   const handlePhoneNoChange = (value) => {
     if (value === MOBILE) setIsPhoneNO(MOBILE);
@@ -80,7 +80,7 @@ const TellContactInformation = (props) => {
   );
   const validatecontact = (key) => {
     let fields = key === 'all' ? ['phoneno', 'Launguage', 'email'] : [key];
-    let errorsData = errors ? errors : {};
+    let errorsData = errors ? errors : {phoneno:'',Launguage:'',email:''};
     fields.forEach(field => {
       let loginFormelements = loginForm.current;
       if (!loginFormelements[field] || loginFormelements[field].value.trim() === '') {
@@ -98,13 +98,13 @@ const TellContactInformation = (props) => {
       }
     });
     setErrors(Object.assign({}, errorsData));
+    console.log(errorsData,'errorsData')
     if (Object.keys(errorsData).length > 0) {
-      console.log('onchange')
-      // props.onFormControlChange(true);
+           props.onFormControlChange(true);
       return false;
     } 
     else {
-      // props.onFormControlChange(false);
+       props.onFormControlChange(false);
 
       return true;
     }
@@ -160,6 +160,7 @@ const TellContactInformation = (props) => {
                   label="Phone (Required)"
                   className="input-field"
                   onBlur={() => { validatecontact('phoneno'); }}
+                    onBlur={() => { validatecontact('phoneno'); }}
                   helperText={errors && errors.phoneno ? "Phone no is required" : ""}
                   InputProps={{
                     endAdornment: (
@@ -195,14 +196,14 @@ const TellContactInformation = (props) => {
               <div className="input-block">
                 <TextField
                   type='text'
-                  name='launguage'
-                  error={errors && errors.launguage}
+                  name='Launguage'
+                  error={errors && errors.Launguage}
                   autoComplete='off'
                   id="standard-basic"
                   label="Preferred Launguage (Required)"
                   className="input-field"
-                  helperText={errors && errors.launguage ? "launguage is required" : ""}
-                  onBlur={() => { validatecontact('launguage'); }}
+                  helperText={errors && errors.Launguage ? "Launguage is required" : ""}
+                  onBlur={() => { validatecontact('Launguage'); }}
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">

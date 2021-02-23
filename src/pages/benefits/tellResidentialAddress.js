@@ -50,7 +50,7 @@ const TellResidentialAddress = (props) => {
   const [errorsAnother, setErrorsAnother] = React.useState(null);
   const validate = (key) => {
     let fields = key === 'all' ? ['AddressLine1', 'City','State','ZipCode'] : [key];
-    let errorsData = errors ? errors : {};
+    let errorsData = errors ? errors : {AddressLine1:'',City:'',State:'',ZipCode:''};
     fields.forEach(field => {
       let loginFormelements = loginForm.current;
       if (!loginFormelements[field] || loginFormelements[field].value.trim() === '') {
@@ -62,8 +62,7 @@ const TellResidentialAddress = (props) => {
     });
     setErrors(Object.assign({}, errorsData));
     if (Object.keys(errorsData).length > 0) {
-      console.log('onchange')
-       props.onFormControlChange(true);
+            props.onFormControlChange(true);
       return false;
     } else {          
          props.onFormControlChange(false);   
@@ -73,7 +72,7 @@ const TellResidentialAddress = (props) => {
   };
   const validateAnother = (key) => {
     let fieldsNew = key === 'all' ? ['AddressNew', 'City','State','ZipCode'] : [key];
-    let errorsDataNew = errorsAnother ? errorsAnother : {};
+    let errorsDataNew = errorsAnother ? errorsAnother : {AddressNew:'',City:'',State:'',ZipCode:''};
     fieldsNew.forEach(fieldNew => {
       let loginFormelementsNew = addressNew.current;
       if (!loginFormelementsNew[fieldNew] || loginFormelementsNew[fieldNew].value.trim() === '') {
@@ -85,8 +84,7 @@ const TellResidentialAddress = (props) => {
     });
     setErrorsAnother(Object.assign({}, errorsDataNew));
     if (Object.keys(errorsDataNew).length > 0) {
-      console.log('onchange')
-       props.onFormControlChange(true);
+           props.onFormControlChange(true);
       return false;
     } else {          
          props.onFormControlChange(false);   
@@ -117,6 +115,8 @@ const TellResidentialAddress = (props) => {
                 className="input-field"
                 autoComplete='off'
                 onBlur={() => { validate('AddressLine1'); }}
+                onChange={() => { validate('AddressLine1'); }}
+                
                  error={errors && errors.AddressLine1}
                 helperText={errors && errors.AddressLine1 ? "Address Line 1 is required" : ""}
                 InputProps={{
@@ -147,6 +147,7 @@ const TellResidentialAddress = (props) => {
                 className="input-field"
                 autoComplete='off'
                 onBlur={() => { validate('City'); }}
+                onChange={() => { validate('City'); }}
                  error={errors && errors.City}
                 helperText={errors && errors.City ? "City is required" : ""}
               />
@@ -161,6 +162,7 @@ const TellResidentialAddress = (props) => {
                 className="input-field"
                 autoComplete='off'
                 onBlur={() => { validate('State'); }}
+                onChange={() => { validate('State'); }}
                  error={errors && errors.State}
                 helperText={errors && errors.State ? "State is required" : ""}
               />
@@ -175,6 +177,7 @@ const TellResidentialAddress = (props) => {
                 className="input-field"
                 autoComplete='off'
                 onBlur={() => { validate('ZipCode'); }}
+                onChange={() => { validate('ZipCode'); }}
                  error={errors && errors.ZipCode}
                 helperText={errors && errors.ZipCode ? "Zip Code is required" : ""}
                 InputProps={{
@@ -213,6 +216,7 @@ const TellResidentialAddress = (props) => {
                 className="input-field"
                 autoComplete='off'
                 onBlur={() => { validateAnother('AddressNew'); }}
+                onChange={() => { validateAnother('AddressNew'); }}
                  error={errorsAnother && errorsAnother.AddressNew}
                 helperText={errorsAnother && errorsAnother.AddressNew ? "Address Line 1 is required" : ""}
                 InputProps={{
@@ -223,6 +227,7 @@ const TellResidentialAddress = (props) => {
                   ),
                 }}
               />
+             
             </div>
             <div className="input-block">
               <TextField
@@ -240,6 +245,8 @@ const TellResidentialAddress = (props) => {
                 className="input-field"
                 autoComplete='off'
                 onBlur={() => { validateAnother('City'); }}
+                onChange={() => { validateAnother('City'); }}
+
                  error={errorsAnother && errorsAnother.City}
                 helperText={errorsAnother && errorsAnother.City ? "City is required" : ""}
               />
@@ -253,6 +260,7 @@ const TellResidentialAddress = (props) => {
                 className="input-field"
                 autoComplete='off'
                 onBlur={() => { validateAnother('State'); }}
+                onChange={() => { validateAnother('State'); }}
                  error={errorsAnother && errorsAnother.State}
                 helperText={errorsAnother && errorsAnother.State ? "State is required" : ""}
               />
@@ -266,6 +274,8 @@ const TellResidentialAddress = (props) => {
                 className="input-field"
                 autoComplete='off'
                 onBlur={() => { validateAnother('ZipCode'); }}
+                onChange={() => { validateAnother('ZipCode'); }}
+
                  error={errorsAnother && errorsAnother.ZipCode}
                 helperText={errorsAnother && errorsAnother.ZipCode ? "Zip Code is required" : ""}
                 InputProps={{
