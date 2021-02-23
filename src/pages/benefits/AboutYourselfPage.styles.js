@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     // marginLeft: "11%",
     // width: "80%",
     // backgroundColor: "#F8F8F8",
-    width: "70%",
+    width: "80%",
     backgroundColor: "#F8F8F8",
     margin: "auto",
     padding: "24px 0",
@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
       right: "calc(50 % + 20px)",
       position: "absolute",
       width: "100%",
-      left: "-16px"
+      left: "calc(50% - 65px)"
     }
   },
 }));

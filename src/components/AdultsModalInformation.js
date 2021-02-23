@@ -46,10 +46,11 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         position: 'absolute',
         width: '80%',
-        height: '90%',
+        height: 'auto',
         backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
-        borderRadius: '8px'
+        borderRadius: '8px',
+        paddingBottom: '20px'
         // padding: theme.spacing(2, 4, 3),
     },
 }));
@@ -146,7 +147,7 @@ const AdultsModalInformation = (props) => {
 										</Button> */}
                                                     {activeStep !== 0 &&
                                                         <ArrowBackIcon onClick={handleNext} onClick={handleBack} className='icon-back' />}
-                                                    {activeStep !== 2 && <Button className='create-accnt'>Cancel</Button>}
+                                                    {/* {activeStep !== 2 && <Button className='create-accnt'>Cancel</Button>} */}
                                                     {activeStep === 2 && <Button className='create-accnt'>Save</Button>}
                                                     {activeStep !== 2 && <ArrowForwardIcon onClick={handleNext} className='icon-forward' />}
                                                     {/* <Button variant="contained" className="step-btn-nxt" color="primary" onClick={handleNext}>
