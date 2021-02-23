@@ -112,7 +112,7 @@ const PersonalInformation = (props) => {
     setErrors(Object.assign({}, errorsData));
     if (Object.keys(errorsData).length > 0) {
       console.log('onchange')
-    //   props.onFormControlChange(true);
+      //   props.onFormControlChange(true);
       return false;
     } else {
       if (isGender === false) {
@@ -153,9 +153,9 @@ const PersonalInformation = (props) => {
         <form ref={loginForm} >
           <div className="about-yourself adult-household profile-content">
             <div className="input-form-fields">
-            <div className="full-width input-block">
+              <div className="full-width input-block">
                 <FormControl className="full-width">
-                  <InputLabel className="input-label">What is ypur relatioship to the adult you are about to provide data? (Required) </InputLabel>
+                  <InputLabel className="input-label">What is ypur relationship to the adult you are about to provide data? (Required) </InputLabel>
                   <Select className="text-left">
                     {formdata.suffix['options'].map((val) => {
                       return (
@@ -183,8 +183,8 @@ const PersonalInformation = (props) => {
                         <FaceRoundedIcon className="icon" />
                       </InputAdornment>
                     ),
-                  }} 
-                  />
+                  }}
+                />
               </div>
 
               <div className="input-block">
@@ -214,7 +214,7 @@ const PersonalInformation = (props) => {
                         <RecordVoiceOverIcon className="icon" />
                       </InputAdornment>
                     ),
-                  }} 
+                  }}
                 // onChange={(e) => {
                 //   handleNameChange(e);
                 // }}
@@ -283,17 +283,23 @@ const PersonalInformation = (props) => {
                   </ul>
                 </div>
               </div>
-              
+
               <div className="input-block">
-                <MaskedInput
-                  mask={[/[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
-                  className="form-control"
-                  placeholder="SSN"
-                  guide={false}
-                  id="my-input-id"
-                  onBlur={() => { }}
-                  onChange={() => { }}
-                />
+                <div className='floating_labels'>
+                  <MaskedInput
+                    mask={[/[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                    className="floating-input"
+                    // type={isType}
+                    autoComplete='off'
+                    guide={false}
+                    id="my-input-id"
+                    // onBlur={() => { }}
+                    // onChange={(e) => { changeValids(e) }}
+                    required
+                  />
+                  <label>SSN</label>
+                </div>
+
               </div>
             </div>
           </div>

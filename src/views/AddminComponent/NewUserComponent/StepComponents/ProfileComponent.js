@@ -14,6 +14,7 @@ import {
     KeyboardDatePicker,
 } from "@material-ui/pickers";
 import InputLabel from "@material-ui/core/InputLabel";
+import MaskedInput from 'react-text-mask';
 
 import '../../../style.css';
 
@@ -168,11 +169,21 @@ const ProfileComponent = (props) => {
                     </div>
                 </div>
                 <div className="input-block">
-                    <TextField
-                        id="standard-basic"
-                        label="SSN"
-                        className="input-field"
-                    />
+                    <div className='floating_labels'>
+                        <MaskedInput
+                            mask={[/[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                            className="floating-input"
+                            // type={isType}
+                            autoComplete='off'
+                            guide={false}
+                            id="my-input-id"
+                            // onBlur={() => { }}
+                            // onChange={(e) => { changeValids(e) }}
+                            required
+                        />
+                        <label>SSN</label>
+                    </div>
+
                 </div>
             </div>
         </div>
