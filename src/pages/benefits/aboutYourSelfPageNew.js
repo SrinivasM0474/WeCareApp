@@ -28,7 +28,7 @@ import HomeSharpIcon from "@material-ui/icons/HomeSharp";
 import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
 import MailIcon from "@material-ui/icons/Mail";
 import LanguageIcon from "@material-ui/icons/Language";
-import MaskedInput from 'react-text-mask'
+import MaskedInput from 'react-text-mask';
 import { GENDER_MALE, GENDER_OTHER, GENDER_FEMALE } from "../../../src/constants";
 import IconButton from '@material-ui/core/IconButton';
 
@@ -88,7 +88,7 @@ const AboutYourSelfPageNew = (props) => {
 
   //Variable declarations
   const [errors, setErrors] = React.useState(null);
-  const [isType,setIsType]=useState('text')
+  const [isType, setIsType] = useState('text')
 
   const handleClick = (buttonFlag) => {
     setIsActive(buttonFlag);
@@ -102,7 +102,7 @@ const AboutYourSelfPageNew = (props) => {
   */
   const validate = (key) => {
     let fields = key === 'all' ? ['firstName', 'lastName'] : [key];
-    let errorsData = errors ? errors : {firstName:'',lastName:''};
+    let errorsData = errors ? errors : { firstName: '', lastName: '' };
     fields.forEach(field => {
       let loginFormelements = loginForm.current;
       if (!loginFormelements[field] || loginFormelements[field].value.trim() === '') {
@@ -117,7 +117,7 @@ const AboutYourSelfPageNew = (props) => {
       return false;
     } else {
       props.onFormControlChange(false);
-          return true;
+      return true;
     }
   };
 
@@ -129,31 +129,31 @@ const AboutYourSelfPageNew = (props) => {
 
 
   const handleDateChange = (date) => {
-    if (date.toDateString() === 'Invalid Date'){
+    if (date.toDateString() === 'Invalid Date') {
       props.onFormControlChange(true);
     }
-    else{
-      if(errors!==null&&Object.keys(errors).length === 0)
-       props.onFormControlChange(false);
+    else {
+      if (errors !== null && Object.keys(errors).length === 0)
+        props.onFormControlChange(false);
     }
     setSelectedDate(date);
   };
-  const changeValids=(e)=>{
-    if(e.target.value.length===11){
+  const changeValids = (e) => {
+    if (e.target.value.length === 11) {
       setIsType('password')
     }
-    
-    else{
+
+    else {
       setIsType('text')
     }
-  
+
   }
 
   const handleGenderChange = (value) => {
     if (value === GENDER_FEMALE) setIsGender(GENDER_FEMALE);
     else if (value === GENDER_MALE) setIsGender(GENDER_MALE);
     else setIsGender(GENDER_OTHER);
-      };
+  };
 
   return (
     <div>
@@ -186,8 +186,8 @@ const AboutYourSelfPageNew = (props) => {
                         <FaceRoundedIcon className="icon" />
                       </InputAdornment>
                     ),
-                  }} 
-                  />
+                  }}
+                />
               </div>
 
               <div className="input-block">
@@ -218,7 +218,7 @@ const AboutYourSelfPageNew = (props) => {
                         <RecordVoiceOverIcon className="icon" />
                       </InputAdornment>
                     ),
-                  }} 
+                  }}
                 // onChange={(e) => {
                 //   handleNameChange(e);
                 // }}
@@ -248,7 +248,7 @@ const AboutYourSelfPageNew = (props) => {
                     id="dob"
                     label="Date of Birth"
                     format="MM/dd/yyyy"
-                    value={selectedDate}                  
+                    value={selectedDate}
                     onChange={handleDateChange}
                     KeyboardButtonProps={{
                       "aria-label": "change date",
@@ -288,17 +288,21 @@ const AboutYourSelfPageNew = (props) => {
                 </div>
               </div>
               <div className="input-block">
-              <MaskedInput
-                mask={[ /[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
-                className="form-control"
-              type={isType}
-              autoComplete='off'
-                placeholder="SSN"
-                guide={false}
-                id="my-input-id"
-                onBlur={() => {}}
-                onChange={(e) => {changeValids(e)}}
-                />
+                <div className='floating_labels'>
+                  <MaskedInput
+                    mask={[/[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                    className="floating-input"
+                    type={isType}
+                    autoComplete='off'
+                    guide={false}
+                    id="my-input-id"
+                    onBlur={() => { }}
+                    onChange={(e) => { changeValids(e) }}
+                    required
+                  />
+                  <label>SSN</label>
+                </div>
+
               </div>
             </div>
           </div>

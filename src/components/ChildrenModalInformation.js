@@ -15,6 +15,22 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import PersonalInformation from './../views/AdultsModal/PersonalInformation';
 import ContactInformation from './../views/AdultsModal/ContactInformation';
 import AdditionalInformation from './../views/AdultsModal/AdditionalInformation';
+import FaceRoundedIcon from "@material-ui/icons/FaceRounded";
+import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOver";
+import "date-fns";
+import DateFnsUtils from "@date-io/date-fns";
+import {
+    MuiPickersUtilsProvider,
+    KeyboardDatePicker,
+} from "@material-ui/pickers";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import MaskedInput from 'react-text-mask';
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import CloseIcon from '@material-ui/icons/Close';
 
 function getModalStyle() {
     const top = 50;
@@ -45,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         position: 'absolute',
-        width: '80%',
+        width: '70%',
         height: 'auto',
         backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
@@ -55,44 +71,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const getSteps = () => {
-    return ['personal information', 'Contact Information', 'additional information'];
-}
-
-const getStepContent = (stepIndex) => {
-    switch (stepIndex) {
-        case 0:
-            return <PersonalInformation />;
-        case 1:
-            return <ContactInformation />;
-        case 2:
-            return <AdditionalInformation />;
-        default:
-            return 'Unknown stepIndex';
-    }
-}
 
 const ChildrenModalInformation = (props) => {
     const classes = useStyles();
     const [activeStep, setActiveStep] = React.useState(0);
     const [modalStyle] = React.useState(getModalStyle);
     const [open, setOpen] = React.useState(false);
-    const steps = getSteps();
-    const handleNext = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    };
-
-    const handleBack = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    };
-
-    const handleReset = () => {
-        setActiveStep(0);
-    };
-    const handleOpen = () => {
-        setOpen(true);
-    };
-
     const handleClose = () => {
         props.closeModal(false);
         console.log('handleClose')
@@ -113,45 +97,154 @@ const ChildrenModalInformation = (props) => {
                             <GroupAddOutlinedIcon />
                         </div>
                         <div className='header-text text-center'>
-                            <h4>Household Children</h4>                           
+                            <h4>Household Children</h4>
                         </div>
-
-                        <div className='modal-nav'>
-                            <div className="new-user-steps">
-
-                              
-                                <div>
-                                    {activeStep === steps.length ? (
-                                        <div>
-                                            <Typography className={classes.instructions}>All steps completed</Typography>
-                                            <Button onClick={handleReset}>Reset</Button>
+                        <Container className="container" maxWidth="md">
+                            <form >
+                                <div className="about-yourself adult-household profile-content">
+                                    <div className="input-form-fields">
+                                        <div className="full-width input-block">
+                                            <FormControl className="full-width">
+                                                <InputLabel className="input-label">What is ypur relatioship to the adult you are about to provide data? (Required) </InputLabel>
+                                                <Select className="text-left">
+                                                    <MenuItem>One</MenuItem>
+                                                    <MenuItem>One</MenuItem>
+                                                    <MenuItem>One</MenuItem>
+                                                </Select>
+                                            </FormControl>
                                         </div>
-                                    ) : (
-                                            <div>
-                                                <div className={classes.instructions}>{getStepContent(activeStep)}</div>
-                                                <div className='nav-btns'>
-                                                    {/* <Button
-                                                disabled={activeStep === 0}
-                                                onClick={handleBack}
-                                                variant="contained"
-                                                className="step-btn-bck"
+                                        <div className="input-block">
+                                            <TextField
+                                                type='text'
+                                                name='firstName'
+                                                id="standard-basic"
+                                                className="input-field"
+                                                label="First Name (Required)"
+                                                autoComplete='off'
+                                                InputProps={{
+                                                    endAdornment: (
+                                                        <InputAdornment position="end">
+                                                            <FaceRoundedIcon className="icon" />
+                                                        </InputAdornment>
+                                                    ),
+                                                }}
+                                            />
+                                        </div>
+
+                                        <div className="input-block">
+                                            <TextField
+                                                name='mName'
+                                                id="standard-basic"
+                                                label="Middle Name"
+                                                className="input-field"
+                                                autoComplete='off'
+                                            />
+                                        </div>
+                                        <div className="input-block">
+                                            <TextField
+                                                type='text'
+                                                name='lastName'
+                                                id="standard-basic"
+                                                name='lastName'
+                                                label="Last Name(Required)"
+                                                className="input-field"
+                                                autoComplete='off'
+                                                InputProps={{
+                                                    endAdornment: (
+                                                        <InputAdornment position="end">
+                                                            <RecordVoiceOverIcon className="icon" />
+                                                        </InputAdornment>
+                                                    ),
+                                                }}
+                                            />
+                                        </div>
+
+                                        <div className="full-width input-block">
+                                            <FormControl className="full-width">
+                                                <InputLabel className="input-label">Suffix</InputLabel>
+                                                <Select className="text-left">
+                                                    <MenuItem>One</MenuItem>
+                                                    <MenuItem>One</MenuItem>
+                                                    <MenuItem>One</MenuItem>
+                                                </Select>
+                                            </FormControl>
+                                        </div>
+                                        <div className="full-width input-block about-date">
+                                            <MuiPickersUtilsProvider
+                                                utils={DateFnsUtils}
+                                                className="full-width"
                                             >
-                                                Back
-										</Button> */}
-                                                    {activeStep !== 0 &&
-                                                        <ArrowBackIcon onClick={handleNext} onClick={handleBack} className='icon-back' />}
-                                                    {/* {activeStep !== 2 && <Button className='create-accnt'>Cancel</Button>} */}
-                                                    {activeStep === 2 && <Button className='create-accnt'>Save</Button>}
-                                                    {activeStep !== 2 && <ArrowForwardIcon onClick={handleNext} className='icon-forward' />}
-                                                    {/* <Button variant="contained" className="step-btn-nxt" color="primary" onClick={handleNext}>
-                                                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                                            </Button> */}
+                                                <KeyboardDatePicker
+                                                    margin="normal"
+                                                    id="dob"
+                                                    label="Date of Birth"
+                                                    format="MM/dd/yyyy"
+                                                    KeyboardButtonProps={{
+                                                        "aria-label": "change date",
+                                                    }}
+                                                />
+                                            </MuiPickersUtilsProvider>
+                                        </div>
+                                        <div className="input-block gender-block p-t-16">
+                                            <InputLabel className="input-label">Gender</InputLabel>
+                                            <div className="gender">
+                                                <ul>
+                                                    <li>  Female</li>
+                                                    <li> Male </li>
+                                                    <li> Other</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div className="input-block">
+                                            <div className='floating_labels'>
+                                                <MaskedInput
+                                                    mask={[/[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                                                    className="floating-input"
+                                                    // type={isType}
+                                                    autoComplete='off'
+                                                    guide={false}
+                                                    id="my-input-id"
+                                                    // onBlur={() => { }}
+                                                    // onChange={(e) => { changeValids(e) }}
+                                                    required
+                                                />
+                                                <label>SSN</label>
+                                            </div>
+
+                                        </div>
+                                        <div className="about-origin">
+                                            <p className="text">Does the child have any special needs ?</p>
+                                            <div className="input-block gender-block">
+                                                <div className="gender yes-no-block">
+                                                    <ul>
+                                                        <li >Yes</li>
+                                                        <li >No</li>
+                                                    </ul>
                                                 </div>
                                             </div>
-                                        )}
+
+                                        </div>
+                                        <div className="about-origin">
+                                            <p className="text">Are you applying for the benefits for this child ?</p>
+                                            <div className="input-block gender-block">
+                                                <div className="gender yes-no-block">
+                                                    <ul>
+                                                        <li >Yes</li>
+                                                        <li >No</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
+                        </Container>
+                        <div className='children-btns'>
+                            <Button className='create-accnt' onClick={handleClose}><CloseIcon className='save-icon'/> Cancel</Button>
+                            <Button className='create-accnt'><span><BookmarkBorderIcon className='save-icon'/></span>Save</Button>
                         </div>
+
                     </div>
                 </div>
             </Modal>
