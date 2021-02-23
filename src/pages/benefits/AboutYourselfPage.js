@@ -214,12 +214,13 @@ const AboutYourselfPage = () => {
   const steps = getSteps();
 
   const handleNext = () => {
+    console.log('LLLLLLLLLL',activeStep,page.household)
 if(activeStep===0){
-  setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  
+  setFormIsValid(true); 
+  setActiveStep((prevActiveStep) => prevActiveStep + 1);  
 }
-if(activeStep===1&&page.household<2){
-  setFormIsValid(true);
+if(activeStep===1 &&page.household===0 )setFormIsValid(true); 
+if(activeStep===1&&page.household<2){  
   setpages((preVal) => {
     return{
       benefits:0,
@@ -262,7 +263,6 @@ if(page.household===2){
   };
   
   const onFormControlChangeHandler = (isFormValid) => {
-    console.log('>>>>>>>>>>>>',isFormValid)
     setFormIsValid(isFormValid);
     setNextButtonClicked(false);
   };
@@ -323,8 +323,12 @@ if(page.household===2){
                   triggerValidation={nextButtonClicked}
                 />
               )}
-              {activeStep === 1 &&page.household===0&& <TellContactInformation />}
-              {activeStep === 1 && page.household===1&& <TellResidentialAddress
+              {activeStep === 1 &&page.household===0&& 
+              
+              <TellContactInformation 
+              onFormControlChange={onFormControlChangeHandler} />}
+              {activeStep === 1 && page.household===1&&
+               <TellResidentialAddress
               onFormControlChange={onFormControlChangeHandler}
               />}
               {/* {activeStep === 2 && <AddressForm />} */}
