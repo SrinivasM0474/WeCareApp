@@ -21,6 +21,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import WcIcon from "@material-ui/icons/Wc";
 import _ from "lodash";
 import AdultsModalInformation from './../../components/AdultsModalInformation'
+import ChildrenModalInformation from './../../components/ChildrenModalInformation'
 class AddressForm extends React.Component {
   constructor() {
     super();
@@ -49,7 +50,8 @@ class AddressForm extends React.Component {
         relationship: '',
         editItem: false
       }],
-      isOpenModal: false
+      isOpenAdultsModal: false,
+      isOpenChildrenModal: false
     };
   }
   handleClick = () => {
@@ -79,7 +81,12 @@ class AddressForm extends React.Component {
 
   }
   addItems = (name) => {
-    this.setState({ isOpenModal: true });
+    this.setState({ isOpenAdultsModal: true });
+    if(name==='adults'){
+      this.setState({ isOpenAdultsModal: true });
+    }else{
+      this.setState({ isOpenChildrenModal: true });
+    }
     // let increaseItems=name==='adults'?this.state.itemValue:this.state.itemChildern;
     // let editvalueDisable=name==='adults'?this.state.itemValue.length:this.state.itemChildern.length
     // increaseItems.push({
@@ -128,7 +135,7 @@ class AddressForm extends React.Component {
   }
   isOpenProfileModel = (isClosePopup) => {
     console.log(isClosePopup);
-    this.setState({ isOpenModal: isClosePopup });
+    this.setState({ isOpenAdultsModal: isClosePopup });
   }
   render() {
     console.log(this.state, 'previewpopup>>>>>>>')
@@ -339,7 +346,8 @@ class AddressForm extends React.Component {
               </div>}
           </div>
         </div>
-        {this.state.isOpenModal && <AdultsModalInformation closeModal={() => { this.isOpenProfileModel(false) }} />}
+        {this.state.isOpenAdultsModal && <AdultsModalInformation closeModal={() => { this.isOpenProfileModel(false) }} />}
+        {this.state.isOpenChildrenModal && <AdultsModalInformation closeModal={() => { this.isOpenProfileModel(false) }} />}
       </Container>
     );
   }
