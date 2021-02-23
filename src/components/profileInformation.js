@@ -50,10 +50,11 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         position: 'absolute',
         width: '80%',
-        height: '90%',
+        height: 'auto',
         backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
-        borderRadius: '8px'
+        borderRadius: '8px',
+        paddingBottom: '24px'
         // padding: theme.spacing(2, 4, 3),
     },
 }));
