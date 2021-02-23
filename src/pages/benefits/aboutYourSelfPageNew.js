@@ -88,6 +88,7 @@ const AboutYourSelfPageNew = (props) => {
 
   //Variable declarations
   const [errors, setErrors] = React.useState(null);
+  const [isType,setIsType]=useState('text')
 
   const handleClick = (buttonFlag) => {
     setIsActive(buttonFlag);
@@ -137,6 +138,16 @@ const AboutYourSelfPageNew = (props) => {
     }
     setSelectedDate(date);
   };
+  const changeValids=(e)=>{
+    if(e.target.value.length===11){
+      setIsType('password')
+    }
+    
+    else{
+      setIsType('text')
+    }
+  
+  }
 
   const handleGenderChange = (value) => {
     if (value === GENDER_FEMALE) setIsGender(GENDER_FEMALE);
@@ -237,8 +248,7 @@ const AboutYourSelfPageNew = (props) => {
                     id="dob"
                     label="Date of Birth"
                     format="MM/dd/yyyy"
-                    value={selectedDate}
-                   
+                    value={selectedDate}                  
                     onChange={handleDateChange}
                     KeyboardButtonProps={{
                       "aria-label": "change date",
@@ -278,14 +288,16 @@ const AboutYourSelfPageNew = (props) => {
                 </div>
               </div>
               <div className="input-block">
-                <MaskedInput
-                  mask={[/[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
-                  className="form-control"
-                  placeholder="SSN"
-                  guide={false}
-                  id="my-input-id"
-                  onBlur={() => { }}
-                  onChange={() => { }}
+              <MaskedInput
+                mask={[ /[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                className="form-control"
+              type={isType}
+              autoComplete='off'
+                placeholder="SSN"
+                guide={false}
+                id="my-input-id"
+                onBlur={() => {}}
+                onChange={(e) => {changeValids(e)}}
                 />
               </div>
             </div>
