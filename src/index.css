@@ -513,7 +513,7 @@ table tbody tr:hover {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  width: 80% !important;
+  max-width: 80% !important;
 }
 
 .common-header nav .nav-item a {
