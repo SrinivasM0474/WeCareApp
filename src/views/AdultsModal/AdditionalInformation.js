@@ -58,7 +58,7 @@ const AdditionalInformation = (props) => {
   return (
     <div>
       {/* Tell us more about you design */}
-      <Container className="container" maxWidth="md">
+      <Container className="modal-container" maxWidth="md">
         <div className="about-yourself adult-household">
           <div className="input-form-fields">
 

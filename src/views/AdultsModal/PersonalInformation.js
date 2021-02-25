@@ -149,7 +149,7 @@ const PersonalInformation = (props) => {
 
   return (
     <div>
-      <Container className="container" maxWidth="md">
+      <Container className="modal-container" maxWidth="md">
         <form ref={loginForm} >
           <div className="about-yourself adult-household profile-content">
             <div className="input-form-fields">
