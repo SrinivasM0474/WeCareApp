@@ -57,7 +57,7 @@ class LoginComponent extends React.Component {
 
     render() {
         return (
-            <div className="graph-bg">
+            <div className="">
                 {/* <Container>
                     <div className="specer"></div>
                     <div className="content-body">

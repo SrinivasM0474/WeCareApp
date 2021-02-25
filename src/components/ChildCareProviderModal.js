@@ -12,9 +12,9 @@ import GroupAddOutlinedIcon from '@material-ui/icons/GroupAddOutlined';
 import './../views/style.css';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import PersonalInformation from './../views/AdultsModal/PersonalInformation';
-import ContactInformation from './../views/AdultsModal/ContactInformation';
-import AdditionalInformation from './../views/AdultsModal/AdditionalInformation';
+import ProviderInformation from '../views/ChildCareModal/ProviderInformation';
+import ProviderAddress from '../views/ChildCareModal/Address';
+import ProviderAdditionalInformation from '../views/ChildCareModal/AdditionalInformation';
 
 function getModalStyle() {
     const top = 50;
@@ -56,23 +56,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const getSteps = () => {
-    return ['personal information', 'Contact Information', 'additional information'];
+    return ['provider information', 'address', 'additional information'];
 }
 
 const getStepContent = (stepIndex) => {
     switch (stepIndex) {
         case 0:
-            return <PersonalInformation />;
+            return <ProviderInformation />;
         case 1:
-            return <ContactInformation />;
+            return <ProviderAddress />;
         case 2:
-            return <AdditionalInformation />;
+            return <ProviderAdditionalInformation />;
         default:
             return 'Unknown stepIndex';
     }
 }
 
-const AdultsModalInformation = (props) => {
+const ChildCareProviderModal = (props) => {
     const classes = useStyles();
     const [activeStep, setActiveStep] = React.useState(0);
     const [modalStyle] = React.useState(getModalStyle);
@@ -113,8 +113,7 @@ const AdultsModalInformation = (props) => {
                             <GroupAddOutlinedIcon />
                         </div>
                         <div className='header-text text-center'>
-                            <h4>Household Adult's</h4>
-                            <Typography>This information will let us know more about you.</Typography>
+                            <h4>Child Care Provider</h4>
                         </div>
 
                         <div className='modal-nav'>
@@ -167,4 +166,4 @@ const AdultsModalInformation = (props) => {
     )
 }
 
-export default AdultsModalInformation
+export default ChildCareProviderModal

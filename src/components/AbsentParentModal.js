@@ -12,9 +12,13 @@ import GroupAddOutlinedIcon from '@material-ui/icons/GroupAddOutlined';
 import './../views/style.css';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import PersonalInformation from './../views/AdultsModal/PersonalInformation';
-import ContactInformation from './../views/AdultsModal/ContactInformation';
-import AdditionalInformation from './../views/AdultsModal/AdditionalInformation';
+// import ProviderInformation from '../views/ChildCareModal/ProviderInformation';
+// import ProviderAddress from '../views/ChildCareModal/Address';
+// import ProviderAdditionalInformation from '../views/ChildCareModal/AdditionalInformation';
+import ContactInformation from '../views/AbsentParentModalComponent/ContactInformation';
+import ProviderInformation from '../views/AbsentParentModalComponent/ProviderInformation';
+import ProviderAddress from '../views/AbsentParentModalComponent/Address';
+import ProviderAdditionalInformation from '../views/AbsentParentModalComponent/AdditionalInformation';
 
 function getModalStyle() {
     const top = 50;
@@ -56,23 +60,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const getSteps = () => {
-    return ['personal information', 'Contact Information', 'additional information'];
+    return ['provider information', 'contact information', 'address', 'additional information'];
 }
 
 const getStepContent = (stepIndex) => {
     switch (stepIndex) {
         case 0:
-            return <PersonalInformation />;
+            return <ProviderInformation />;
         case 1:
             return <ContactInformation />;
         case 2:
-            return <AdditionalInformation />;
+            return <ProviderAddress />;
+        case 3:
+            return <ProviderAdditionalInformation />;
+
         default:
             return 'Unknown stepIndex';
     }
 }
 
-const AdultsModalInformation = (props) => {
+const AbsentParentModal = (props) => {
     const classes = useStyles();
     const [activeStep, setActiveStep] = React.useState(0);
     const [modalStyle] = React.useState(getModalStyle);
@@ -113,8 +120,7 @@ const AdultsModalInformation = (props) => {
                             <GroupAddOutlinedIcon />
                         </div>
                         <div className='header-text text-center'>
-                            <h4>Household Adult's</h4>
-                            <Typography>This information will let us know more about you.</Typography>
+                            <h4 className='mb-10'>Absent Parent</h4>
                         </div>
 
                         <div className='modal-nav'>
@@ -148,8 +154,8 @@ const AdultsModalInformation = (props) => {
                                                     {activeStep !== 0 &&
                                                         <ArrowBackIcon onClick={handleNext} onClick={handleBack} className='icon-back' />}
                                                     {/* {activeStep !== 2 && <Button className='create-accnt'>Cancel</Button>} */}
-                                                    {activeStep === 2 && <Button className='create-accnt'>Save</Button>}
-                                                    {activeStep !== 2 && <ArrowForwardIcon onClick={handleNext} className='icon-forward' />}
+                                                    {activeStep === 3 && <Button className='create-accnt'>Save</Button>}
+                                                    {activeStep !== 3 && <ArrowForwardIcon onClick={handleNext} className='icon-forward' />}
                                                     {/* <Button variant="contained" className="step-btn-nxt" color="primary" onClick={handleNext}>
                                                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                             </Button> */}
@@ -167,4 +173,4 @@ const AdultsModalInformation = (props) => {
     )
 }
 
-export default AdultsModalInformation
+export default AbsentParentModal
