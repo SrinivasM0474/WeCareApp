@@ -14,6 +14,8 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import AppUser from '../images/application_user.png';
 // import FillApp from '../images/fill-app.png';
 
+import Header from './../../components/Header';
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import '../style.css';
 
 const styles = theme => ({
@@ -49,7 +51,9 @@ class AppBenifits extends React.Component {
     render(){
         return(
             <div className="">
-                <Container>
+                <Header />
+
+                <Container className='p-0'>
                     <div className="login-container">
                         <Grid container spacing={3}>
                             <Grid item xs={12}>
@@ -90,7 +94,10 @@ class AppBenifits extends React.Component {
                         </Grid>
                     </div>
                 </Container>
-                <button  onClick={() => this.props.history.push("/aboutyou")}>Next</button>
+                <div className='text-center'>
+                        <button onClick={() => this.props.history.push("/aboutyou")} className='btn-nxt'> <span>Next</span>
+                            <ArrowForwardIcon className="back-icon rotate-0" /></button>
+                    </div>
             </div>
         );
     }

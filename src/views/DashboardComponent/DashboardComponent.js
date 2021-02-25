@@ -236,11 +236,11 @@ class LoginComponent extends React.Component {
               </div>
             </div>
             <div>
-              <table>
+              <table className='n-table'>
                 <thead>
                   <tr>
                     <th>Received Date</th>
-                    <th className='text-center'>Message</th>
+                    <th>Message</th>
                   </tr>
                 </thead>
                 <tbody>

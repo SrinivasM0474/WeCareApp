@@ -481,7 +481,8 @@ hr {
   color: #fff !important;
 }
 .new-user-steps .MuiStep-horizontal {
-  background: #f5fafb;
+  /* background: #f5fafb; */
+  background-color: #f5f6f7;
 }
 .new-user-steps .MuiStepConnector-lineHorizontal,
 .new-user-steps .MuiStepLabel-iconContainer {
