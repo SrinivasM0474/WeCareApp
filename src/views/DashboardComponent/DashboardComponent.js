@@ -354,7 +354,7 @@ class LoginComponent extends React.Component {
                     item
                     xs={12}
                     md={6}
-                    onClick={() => this.props.history.push("/aboutyou")}
+                    onClick={() => this.props.history.push("/app-process")}
                     style={{ cursor: "pointer" }}
                   >
                     <>
