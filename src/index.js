@@ -11,6 +11,8 @@ import LoginComponent from "./views/AddminComponent/LoginComponent/LoginComponen
 import NewUserComponent from "./views/AddminComponent/NewUserComponent/NewUserComponent";
 import DashboardComponent from "./views/DashboardComponent/DashboardComponent";
 import AboutYourselfPage from "./pages/benefits/AboutYourselfPage";
+import AppProcess from "../src/views/DashboardComponent/AppProcess";
+import AppBenifits from "../src/views/DashboardComponent/AppBenifits";
 
 var hist = new createBrowserHistory();
 
@@ -22,6 +24,8 @@ ReactDOM.render(
       <Route exact path="/new-user" component={NewUserComponent} />
       <Route exact path="/user-dashboard" component={DashboardComponent} />
       <Route exact path="/aboutyou" component={AboutYourselfPage} />
+      <Route exact path="/app-process" component={AppProcess} />
+      <Route exact path="/app-benifits" component={AppBenifits} />
     </Switch>
   </Router>,
   document.getElementById("root")

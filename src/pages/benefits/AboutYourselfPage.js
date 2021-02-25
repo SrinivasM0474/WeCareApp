@@ -35,6 +35,8 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import TellUsMoreAboutYou from "./tellUsmoreaboutYou";
 import TellResidentialAddress from "./tellResidentialAddress";
 import TellContactInformation from "./tellContactInformation";
+import Benefits from "../../views/DashboardComponent/Benefits";
+import AbsentParent from "../../pages/AbsentParent/AbsentParent";
 const styles = {
   width: "100%",
   height: "100%",
@@ -206,7 +208,7 @@ function ColorlibStepIcon(props: StepIconProps) {
 }
 
 const AboutYourselfPage = () => {
-  const [formIsValid, setFormIsValid] = useState(true);
+  const [formIsValid, setFormIsValid] = useState(false);
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [nextButtonClicked, setNextButtonClicked] = React.useState(false);
@@ -219,8 +221,9 @@ if(activeStep===0){
   setFormIsValid(true); 
   setActiveStep((prevActiveStep) => prevActiveStep + 1);  
 }
-if(activeStep===1 &&page.household===0 )setFormIsValid(true); 
-if(activeStep===1&&page.household<2){  
+if(activeStep===1 &&page.household<2 )setFormIsValid(true); 
+// if(activeStep===1 &&page.household===1 )setFormIsValid(true); 
+if(activeStep===1&&page.household<3){  
   setpages((preVal) => {
     return{
       benefits:0,
@@ -230,7 +233,7 @@ if(activeStep===1&&page.household<2){
   });
 
 }
-if(page.household===2){
+if(page.household===3){
   setActiveStep((prevActiveStep) => prevActiveStep + 1);
 }
     // if (!foifrmIsValid) {
@@ -318,24 +321,31 @@ if(page.household===2){
               )} */}
              
               {activeStep === 0 && (
-                <AboutYourSelfPageNew
-                  onFormControlChange={onFormControlChangeHandler}
-                  triggerValidation={nextButtonClicked}
-                />
+                <Benefits/>
+                // <AboutYourSelfPageNew
+                //   onFormControlChange={onFormControlChangeHandler}
+                //   triggerValidation={nextButtonClicked}
+                // />
               )}
               {activeStep === 1 &&page.household===0&& 
               
-              <TellContactInformation 
+              <AboutYourSelfPageNew 
               onFormControlChange={onFormControlChangeHandler} />}
               {activeStep === 1 && page.household===1&&
-               <TellResidentialAddress
+               <TellContactInformation
               onFormControlChange={onFormControlChangeHandler}
               />}
               {/* {activeStep === 2 && <AddressForm />} */}
-              {activeStep === 1 &&page.household===2&& <TellUsMoreAboutYou
+              {activeStep === 1 &&page.household===2&& 
+              <TellResidentialAddress
+              onFormControlChange={onFormControlChangeHandler}
+              />}
+                {activeStep === 1 &&page.household===3&& <TellUsMoreAboutYou
               onFormControlChange={onFormControlChangeHandler}
               />}
               {activeStep === 2 && <AddressForm />}
+              {activeStep === 3 && <AbsentParent />}
+              
 
 
               <div className={classes.buttons}>
