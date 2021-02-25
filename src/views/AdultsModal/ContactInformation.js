@@ -111,7 +111,7 @@ const ContactInformation = (props) => {
 
   return (
     <div>
-      <Container className="container" maxWidth="md">
+      <Container className="modal-container" maxWidth="md">
         <div className="about-yourself adult-household">
           <div className="input-form-fields">
          
