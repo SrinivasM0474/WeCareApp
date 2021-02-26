@@ -53,6 +53,11 @@ import SubmitIcon from '../../views/images/stepper/submit-icon-g.png';
 import SummayIconG from '../../views/images/stepper/summary-icon-g.png';
 import SummaryIconW from '../../views/images/stepper/summary-icon-w.png';
 import UploadIcon from '../../views/images/stepper/upload-icon-g.png';
+import benifitsIconW from '../../views/images/stepper/benefits-icon-w.png';
+import headIconO from '../../views/images/stepper/head-icon-o.png';
+import headIconW from '../../views/images/stepper/head-icon-w.png';
+import MembersIconO from '../../views/images/stepper/Members-icon-o.png';
+import MembersIconG from '../../views/images/stepper/Members-icon-g.png';
 
 
 
@@ -200,58 +205,63 @@ const ColorlibConnector = withStyles({
   },
 })(StepConnector);
 
-function ColorlibStepIcon(props: StepIconProps) {
-  const classes = useColorlibStepIconStyles();
-  const { active, completed } = props;
 
-  const icons: { [index: string]: React.ReactElement } = {
-    1: <img src={BenefitsImage} />,
-    2: <img src={HeadIcon} />,
-    3: <img src={MenmbersIcon} />,
-    4: <img src={AbsentParentIcon} />,
-    5: <img src={ChildCareIcon} />,
-    6: <img src={AuthorizedIcon} />,
-    7: <img src={IncomeIcon} />,
-    8: <img src={ExpensesIcon} />,
-    9: <img src={AssetsIcon} />,
-    10: <img src={UploadIcon} />,
-    11: <img src={SummaryIconW} />,
-    12: <img src={AgreementIcon} />,
-    13: <img src={SubmitIcon} />,
-  };
-
-  return (
-    <div
-      className={clsx(classes.root, {
-        [classes.active]: active,
-        [classes.completed]: completed,
-      })}
-    >
-      {icons[String(props.icon)]}
-    </div>
-  );
-}
 
 const AboutYourselfPage = () => {
   const [formIsValid, setFormIsValid] = useState(false);
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [nextButtonClicked, setNextButtonClicked] = React.useState(false);
-  const [page, setpages] = useState({ benefits: 0, household: 0, members: 0 })
+  const[imgIcon,setImgIcon]=React.useState({benifitsImage:false,headImg:false,membersImg:false});
+  const [page, setpages] = useState({ benefits: 0, household: 0, members: 0 ,steperImg:0})
   const steps = getSteps();
+  const ColorlibStepIcon=(props: StepIconProps)=> {
+    const classes = useColorlibStepIconStyles();
+    const { active, completed } = props;
+  console.log(active,'>>>>>>>>>>>')
+    const icons: { [index: string]: React.ReactElement } = {
+      1: <img src={page.benefits===0? BenefitsImage:benifitsIconW} />,
+      2: <img src={page.steperImg===1?headIconO :page.household===3?headIconW:HeadIcon} />,
+      3: <img src={page.members===0?MenmbersIcon:page.members===1?MembersIconG:MembersIconO} />,
+      4: <img src={AbsentParentIcon} />,
+      5: <img src={ChildCareIcon} />,
+      6: <img src={AuthorizedIcon} />,
+      7: <img src={IncomeIcon} />,
+      8: <img src={ExpensesIcon} />,
+      9: <img src={AssetsIcon} />,
+      10: <img src={UploadIcon} />,
+      11: <img src={SummaryIconW} />,
+      12: <img src={AgreementIcon} />,
+      13: <img src={SubmitIcon} />,
+    };
+  
+    return (
+      <div
+        className={clsx(classes.root, {
+          [classes.active]: active,
+          [classes.completed]: completed,
+        })}
+      >
+        {icons[String(props.icon)]}
+      </div>
+    );
+  }
 
   const handleNext = () => {
-    console.log('LLLLLLLLLL', activeStep, page.household)
-    if (activeStep === 0) {
+console.log('page.household',activeStep,page)
+     if (activeStep === 0) {
       setFormIsValid(true);
+      setpages(()=>{return{benefits:1,household:0,members:0,steperImg:1}})
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
+
     if (activeStep === 1 && page.household < 2) setFormIsValid(true);
     // if(activeStep===1 &&page.household===1 )setFormIsValid(true); 
     if (activeStep === 1 && page.household < 3) {
       setpages((preVal) => {
         return {
-          benefits: 0,
+          benefits: 1,
+          steperImg:1,
           household: (preVal.household) + 1,
           members: 0
         }
@@ -259,6 +269,14 @@ const AboutYourselfPage = () => {
 
     }
     if (page.household === 3) {
+      setpages((preVal) => {
+        return {
+          benefits: 1,
+          steperImg:0,
+          household: 3,
+          members: 1
+        }
+      });
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
     // if (!foifrmIsValid) {
@@ -317,6 +335,7 @@ const AboutYourselfPage = () => {
             className={classes.stepper}
             connector={<ColorlibConnector />}
           >
+            {console.log('setImgIcon.benefits',imgIcon)}
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel StepIconComponent={ColorlibStepIcon}>
@@ -327,6 +346,7 @@ const AboutYourselfPage = () => {
           </Stepper>
         </div>
         <div>
+          {console.log('activestep',activeStep,page)}
           {activeStep === steps.length ? (
             <div>
               <Typography className={classes.instructions}>
@@ -385,7 +405,7 @@ const AboutYourselfPage = () => {
                   <Button
                     variant="contained"
                     onClick={handleNext}
-                    disabled={formIsValid}
+                    // disabled={formIsValid}
                     className={classes.nextButton}
                   >
                     {console.log('formIsValid', formIsValid)}
