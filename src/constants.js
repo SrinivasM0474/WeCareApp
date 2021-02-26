@@ -11,4 +11,6 @@ export const COMMUNICATE_PHONE = "CommunicatePhone";
 export const COMMUNICATE_MAIL = "CommunicateMail";
 export const ACCOMMODATIONS_YES = "AccommodationsYes";
 export const ACCOMMODATIONS_NO = "AccommodationsNo";
+export const YES = "Yes";
+export const NO = "No";
 

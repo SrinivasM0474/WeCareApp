@@ -25,6 +25,7 @@ import HomeSharpIcon from "@material-ui/icons/HomeSharp";
 import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
 import MailIcon from "@material-ui/icons/Mail";
 import LanguageIcon from "@material-ui/icons/Language";
+import { YES,NO } from "../../constants";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
@@ -46,13 +47,13 @@ const TellUsMoreAboutYou = (props) => {
 
 
   const handleOrigin = (value) => {
-    if (value === "Yes") setOrigin(true);
-    else if (value === "No") setOrigin(false);
+    if (value === "Yes") setOrigin(YES);
+    else if (value === "No") setOrigin(NO);
   };
 
   const handleIspregnent = (value) => {
-    if (value === "Yes") setIsPregnent(true);
-    else if (value === "No") setIsPregnent(false);
+    if (value === "Yes") setIsPregnent(YES);
+    else if (value === "No") setIsPregnent(NO);
   }
 
   return (
@@ -129,10 +130,10 @@ const TellUsMoreAboutYou = (props) => {
               <div className="input-block gender-block">
                 <div className="gender yes-no-block">
                   <ul>
-                    <li className={isOrigin ? "" : "selected"} onClick={() => {
+                    <li className={isOrigin===NO ? "selected" : ""} onClick={() => {
                       handleOrigin("No");
                     }}>No</li>
-                    <li className={isOrigin ? "selected" : ""} onClick={() => {
+                    <li className={isOrigin===YES ? "selected" : ""} onClick={() => {
                       handleOrigin("Yes");
                     }}>Yes</li>
                   </ul>
@@ -144,34 +145,14 @@ const TellUsMoreAboutYou = (props) => {
               <div className="input-block gender-block">
                 <div className="gender yes-no-block">
                   <ul>
-                    <li onClick={() => { handleIspregnent("No") }} className={isPregnent ? "" : "selected"}>No</li>
-                    <li onClick={() => { handleIspregnent("Yes") }} className={isPregnent ? "selected" : ""}>Yes</li>
+                    <li onClick={() => { handleIspregnent("No") }} className={isPregnent===NO ? "selected" : ""}>No</li>
+                    <li onClick={() => { handleIspregnent("Yes") }} className={isPregnent===YES ? "selected" : ""}>Yes</li>
                   </ul>
                 </div>
               </div>
             </div>
-            {isPregnent && 
-            // <div className="full-width input-block about-date">
-            //   <MuiPickersUtilsProvider
-            //     utils={DateFnsUtils}
-            //     className="full-width"
-            //   >
-            //     <KeyboardDatePicker
-            //       disableToolbar
-            //       variant="inline"
-            //       format="MM/dd/yyyy"
-            //       margin="normal"
-            //       id="date-picker-inline"
-            //       label="What is your due date?"
-            //       value={selectedDate}
-            //       onChange={handleDateChange}
-            //       KeyboardButtonProps={{
-            //         "aria-label": "change date",
-            //       }}
-            //       className="full-width button"
-            //     />
-            //   </MuiPickersUtilsProvider>
-            // </div>
+            {isPregnent===YES && 
+           
             <div className="full-width input-block about-date">
             <MuiPickersUtilsProvider
               utils={DateFnsUtils}

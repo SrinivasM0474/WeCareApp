@@ -266,26 +266,26 @@ const TellContactInformation = (props) => {
               </InputLabel>
               <div className="gender">
                 <ul>
-                  <li className={isAccommodations === ACCOMMODATIONS_YES ? "selected" : ""}
-                    onClick={() => {
-                      handleAccommodationsChange("AccommodationsYes");
-                    }}>Yes</li>
-                  <li
+                <li
                     className={isAccommodations === ACCOMMODATIONS_NO ? "selected" : ""}
                     onClick={() => {
                       handleAccommodationsChange("AccommodationsNo");
                     }}
                   >No</li>
+                  <li className={isAccommodations === ACCOMMODATIONS_YES ? "selected" : ""}
+                    onClick={() => {
+                      handleAccommodationsChange("AccommodationsYes");
+                    }}>Yes</li>                  
                 </ul>
               </div>
             </div>
-            <div className="input-block">
-              <TextField
-                id="standard-basic"
-                label="What kind of accommodations do you need?"
-                className="input-field"
-              />
-            </div>
+          {isAccommodations===ACCOMMODATIONS_YES&&<div className="input-block">
+            <TextField
+              id="standard-basic"
+              label="What kind of accommodations do you need?"
+              className="input-field"
+            />
+          </div>}
           </div>
         </div>
       </Container>
