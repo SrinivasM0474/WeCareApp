@@ -162,20 +162,23 @@ const useColorlibStepIconStyles = makeStyles({
     backgroundColor: '#fff',
     border: '2px solid #cdcdcd',
     '& img': {
-     width: '30px',
-     height: '30px'
+      width: '30px',
+      height: '30px'
     }
   },
   active: {
     // backgroundImage:
     //   "linear-gradient( 136deg, rgb(15 114 188) 0%, rgb(15 114 188) 50%, rgb(15 114 188) 100%)",
     // boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)",
-    backgroundColor: "#FB8C00",
+    backgroundColor: "#fff",
+    border: '2px solid #FB8C00',
   },
   completed: {
     // backgroundImage:
     //   "linear-gradient( 136deg, rgb(15 114 188) 0%, rgb(15 114 188) 50%, rgb(15 114 188) 100%)",
     backgroundColor: "#FB8C00",
+    border: '2px solid #FB8C00',
+
   },
 });
 
@@ -212,17 +215,17 @@ const AboutYourselfPage = () => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [nextButtonClicked, setNextButtonClicked] = React.useState(false);
-  const[imgIcon,setImgIcon]=React.useState({benifitsImage:false,headImg:false,membersImg:false});
-  const [page, setpages] = useState({ benefits: 0, household: 0, members: 0 ,steperImg:0})
+  const [imgIcon, setImgIcon] = React.useState({ benifitsImage: false, headImg: false, membersImg: false });
+  const [page, setpages] = useState({ benefits: 0, household: 0, members: 0, steperImg: 0 })
   const steps = getSteps();
-  const ColorlibStepIcon=(props: StepIconProps)=> {
+  const ColorlibStepIcon = (props: StepIconProps) => {
     const classes = useColorlibStepIconStyles();
     const { active, completed } = props;
-  console.log(active,'>>>>>>>>>>>')
+    console.log(active, '>>>>>>>>>>>')
     const icons: { [index: string]: React.ReactElement } = {
-      1: <img src={page.benefits===0? BenefitsImage:benifitsIconW} />,
-      2: <img src={page.steperImg===1?headIconO :page.household===3?headIconW:HeadIcon} />,
-      3: <img src={page.members===0?MenmbersIcon:page.members===1?MembersIconG:MembersIconO} />,
+      1: <img src={page.benefits === 0 ? BenefitsImage : benifitsIconW} />,
+      2: <img src={page.steperImg === 1 ? headIconO : page.household === 3 ? headIconW : HeadIcon} />,
+      3: <img src={page.members === 0 ? MenmbersIcon : page.members === 1 ? MembersIconG : MembersIconO} />,
       4: <img src={AbsentParentIcon} />,
       5: <img src={ChildCareIcon} />,
       6: <img src={AuthorizedIcon} />,
@@ -234,7 +237,7 @@ const AboutYourselfPage = () => {
       12: <img src={AgreementIcon} />,
       13: <img src={SubmitIcon} />,
     };
-  
+
     return (
       <div
         className={clsx(classes.root, {
@@ -248,10 +251,10 @@ const AboutYourselfPage = () => {
   }
 
   const handleNext = () => {
-console.log('page.household',activeStep,page)
-     if (activeStep === 0) {
+    console.log('page.household', activeStep, page)
+    if (activeStep === 0) {
       setFormIsValid(true);
-      setpages(()=>{return{benefits:1,household:0,members:0,steperImg:1}})
+      setpages(() => { return { benefits: 1, household: 0, members: 0, steperImg: 1 } })
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
 
@@ -261,7 +264,7 @@ console.log('page.household',activeStep,page)
       setpages((preVal) => {
         return {
           benefits: 1,
-          steperImg:1,
+          steperImg: 1,
           household: (preVal.household) + 1,
           members: 0
         }
@@ -272,7 +275,7 @@ console.log('page.household',activeStep,page)
       setpages((preVal) => {
         return {
           benefits: 1,
-          steperImg:0,
+          steperImg: 0,
           household: 3,
           members: 1
         }
@@ -335,7 +338,7 @@ console.log('page.household',activeStep,page)
             className={classes.stepper}
             connector={<ColorlibConnector />}
           >
-            {console.log('setImgIcon.benefits',imgIcon)}
+            {console.log('setImgIcon.benefits', imgIcon)}
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel StepIconComponent={ColorlibStepIcon}>
@@ -346,7 +349,7 @@ console.log('page.household',activeStep,page)
           </Stepper>
         </div>
         <div>
-          {console.log('activestep',activeStep,page)}
+          {console.log('activestep', activeStep, page)}
           {activeStep === steps.length ? (
             <div>
               <Typography className={classes.instructions}>
