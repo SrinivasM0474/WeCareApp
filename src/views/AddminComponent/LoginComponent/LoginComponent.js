@@ -126,7 +126,7 @@ class LoginComponent extends React.Component {
                     </div>
                 </Container>
                 {this.state.isOPenModal && <ProfileInformation closeModal={() => { this.isOpenProfileModel(false) }} />} */}
-                <Container className='p-0 login-container'>
+                <Container className='p-0 login-container m-0'>
                     <AdminHeader />
                     <div className='login-account'>
                         <div className='login-logo'>
