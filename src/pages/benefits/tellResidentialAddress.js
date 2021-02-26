@@ -25,6 +25,7 @@ import HomeSharpIcon from "@material-ui/icons/HomeSharp";
 import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
 import MailIcon from "@material-ui/icons/Mail";
 import LanguageIcon from "@material-ui/icons/Language";
+import { YES,NO } from "../../constants";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
@@ -33,13 +34,16 @@ import DateFnsUtils from "@date-io/date-fns";
 
 const TellResidentialAddress = (props) => {
   const [isAnotherAddress, setIsAnotherAddress] = React.useState(false);
+ 
   const handleAnotherAddress  = (value) => {
-    if (value === "Yes") {setIsAnotherAddress(true);
+    if (value === YES) {setIsAnotherAddress(YES);
       props.onFormControlChange(true);
     }
-    else if (value === "No"){ 
-      props.onFormControlChange(false);
-      setIsAnotherAddress(false);}
+    else if (value === NO){ 
+      if (errors!==null&&Object.keys(errors).length ===0) {
+        props.onFormControlChange(false);
+      }     
+      setIsAnotherAddress(NO);}
   }
   const loginForm = React.useRef(null);
   const addressNew = React.useRef(null);
@@ -86,7 +90,8 @@ const TellResidentialAddress = (props) => {
     if (Object.keys(errorsDataNew).length > 0) {
            props.onFormControlChange(true);
       return false;
-    } else {          
+    } else { 
+      console.log('dddddddddddddd',errors)         
          props.onFormControlChange(false);   
     
       return true;
@@ -197,14 +202,15 @@ const TellResidentialAddress = (props) => {
               <div className="input-block gender-block">
                 <div className="gender yes-no-block">
                   <ul>
-                    <li  onClick={() => { handleAnotherAddress("Yes") }} className={isAnotherAddress ? "selected" : ""}>Yes</li>
-                    <li onClick={() => { handleAnotherAddress("No") }} className={isAnotherAddress ? "" : "selected"}>No</li>
+                  <li onClick={() => { handleAnotherAddress("No") }} className={isAnotherAddress ===NO? "selected" : ""}>No</li>
+                    <li  onClick={() => { handleAnotherAddress("Yes") }} className={isAnotherAddress ===YES? "selected" : ""}>Yes</li>
+                    
                   </ul>
                 </div>
               </div>
               
             </div>
-            {isAnotherAddress&&
+            {isAnotherAddress===YES&&
             <div>
                  <form ref={addressNew} >
               <div className="input-block">
@@ -290,13 +296,6 @@ const TellResidentialAddress = (props) => {
             </form>
             </div>
             }
-            
-            
-
-           
-
-           
-
             
           </div>
         </div>

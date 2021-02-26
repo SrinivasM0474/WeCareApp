@@ -15,6 +15,7 @@ import {
 } from "@material-ui/pickers";
 import InputLabel from "@material-ui/core/InputLabel";
 import MaskedInput from 'react-text-mask';
+import { GENDER_MALE, GENDER_OTHER, GENDER_FEMALE } from "../../../../constants";
 
 import '../../../style.css';
 
@@ -31,6 +32,7 @@ const ProfileComponent = (props) => {
     const dateValue = {
         date: null
     };
+    const [isGender, setIsGender] = useState(false);
     const [selectedDate, setSelectedDate] = React.useState(
         new Date("2014-08-18T21:11:54")
     );
@@ -38,6 +40,11 @@ const ProfileComponent = (props) => {
     const handleDateChange = (date) => {
         setSelectedDate(date);
     };
+    const handleGenderChange = (value) => {
+        if (value === GENDER_FEMALE) setIsGender(GENDER_FEMALE);
+        else if (value === GENDER_MALE) setIsGender(GENDER_MALE);
+        else setIsGender(GENDER_OTHER);
+      };
     return (
         <div className="profile-content">
             {/* <form className="" noValidate autoComplete="off">
@@ -161,11 +168,32 @@ const ProfileComponent = (props) => {
                 <div className="input-block gender-block p-t-16">
                     <InputLabel className="input-label">Gender</InputLabel>
                     <div className="gender">
-                        <ul>
-                            <li className="selected">Female</li>
-                            <li>Male</li>
-                            <li>Other</li>
-                        </ul>
+                    <ul>
+                    <li
+                      onClick={() => {
+                        handleGenderChange("Female");
+                      }}
+                      className={isGender === GENDER_FEMALE ? "selected" : ""}
+                    >
+                      Female
+                  </li>
+                    <li
+                      onClick={() => {
+                        handleGenderChange("Male");
+                      }}
+                      className={isGender === GENDER_MALE ? "selected" : ""}
+                    >
+                      Male
+                  </li>
+                    <li
+                      onClick={() => {
+                        handleGenderChange("Other");
+                      }}
+                      className={isGender === GENDER_OTHER ? "selected" : ""}
+                    >
+                      Other
+                  </li>
+                  </ul>
                     </div>
                 </div>
                 <div className="input-block">

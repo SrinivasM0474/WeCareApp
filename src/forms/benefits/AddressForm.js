@@ -22,12 +22,12 @@ import WcIcon from "@material-ui/icons/Wc";
 import _ from "lodash";
 import AdultsModalInformation from './../../components/AdultsModalInformation'
 import ChildrenModalInformation from './../../components/ChildrenModalInformation'
+import { YES,NO } from "../../constants";
 class AddressForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      isActiveYes: false,
-      isActiveNo: true,
+      isActive: false,
       itemValue: [{
         firstName: '',
         middleName: '',
@@ -39,8 +39,7 @@ class AddressForm extends React.Component {
       }],
       totalValue: 0,
       errorMess: null,
-      isActiveChildernYes: false,
-      isActiveChildernNo: true,
+      isActiveChildern: false,      
       itemChildern: [{
         firstName: '',
         middleName: '',
@@ -54,18 +53,15 @@ class AddressForm extends React.Component {
       isOpenChildrenModal: false
     };
   }
-  handleClick = () => {
-    this.setState({
-      isActiveYes: !this.state.isActiveYes ? true : false,
-      isActiveNo: !this.state.isActiveNo ? true : false
-    })
+  handleClick = (value) => {
+    if (value === "Yes") this.setState({isActive:YES});
+    else if (value === "No") this.setState({isActive: NO});
 
   }
-  handleChildrenClick = () => {
-    this.setState({
-      isActiveChildernYes: !this.state.isActiveChildernYes ? true : false,
-      isActiveChildernNo: !this.state.isActiveChildernNo ? true : false
-    })
+  handleChildrenClick = (value) => {
+    if (value === "Yes") this.setState({isActiveChildern:YES});
+    else if (value === "No") this.setState({isActiveChildern: NO});
+    
   }
   itemChange = (e, i, testvalue, name) => {
     e.preventDefault()
@@ -145,7 +141,7 @@ class AddressForm extends React.Component {
 
   }
   render() {
-    console.log(this.state, 'previewpopup>>>>>>>')
+    
     return (
       <Container maxWidth="md" className="container">
         <div className="about-yourself">
@@ -161,11 +157,12 @@ class AddressForm extends React.Component {
             <div className="input-block gender-block">
               <div className="gender yes-no-block">
                 <ul>
-                  <li className={this.state.isActiveYes ? "selected" : ''} onClick={() => this.handleClick()}>Yes</li>
-                  <li className={this.state.isActiveNo ? "selected" : ''} onClick={() => this.handleClick()}  >No</li>
+                <li className={this.state.isActive===NO ? "selected" : ''} onClick={() => this.handleClick("No")}  >No</li>
+                  <li className={this.state.isActive===YES ? "selected" : ''} onClick={() => this.handleClick('Yes')}>Yes</li>
+                 
                 </ul>
               </div>
-            </div>{this.state.isActiveYes === true &&
+            </div>{this.state.isActive === YES &&
               <div className="a-table">
                 <div className="adults">
                   <div>
@@ -262,12 +259,13 @@ class AddressForm extends React.Component {
             <div className="input-block gender-block">
               <div className="gender yes-no-block">
                 <ul>
-                  <li className={this.state.isActiveChildernYes ? "selected" : ''} onClick={() => this.handleChildrenClick()}>Yes</li>
-                  <li className={this.state.isActiveChildernNo ? "selected" : ''} onClick={() => this.handleChildrenClick()}>No</li>
+                <li className={this.state.isActiveChildern===NO ? "selected" : ''} onClick={() => this.handleChildrenClick("No")}>No</li>
+                  <li className={this.state.isActiveChildern===YES ? "selected" : ''} onClick={() => this.handleChildrenClick("Yes")}>Yes</li>
+                 
                 </ul>
               </div>
             </div>
-            {this.state.isActiveChildernYes === true &&
+            {this.state.isActiveChildern === YES &&
               <div className="a-table">
                 <div className="adults">
                   <div>

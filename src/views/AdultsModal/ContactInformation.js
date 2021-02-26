@@ -27,10 +27,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import LanguageIcon from "@material-ui/icons/Language";
 // import FormData from "./Form";
 import {
-  HOME, MOBILE, WORK, INTERPRETERNO, INTERPRETERYES,
-  COMMUNICATE_EMAIL, COMMUNICATE_PHONE, COMMUNICATE_MAIL,
-  ACCOMMODATIONS_NO, ACCOMMODATIONS_YES, INTERPRETER_NO, INTERPRETER_YES
-} from "../../../src/constants";
+  HOME, MOBILE, WORK} from "../../../src/constants";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
@@ -39,11 +36,8 @@ import DateFnsUtils from "@date-io/date-fns";
 
 
 const ContactInformation = (props) => {
-  const [isPhoneNo, setIsPhoneNO] = useState(MOBILE);
-  const [isInterpreter, setIsInterpreter] = useState(INTERPRETER_NO);
-  const [isCommunicate, setIsCommunicate] = useState(COMMUNICATE_EMAIL);
-  const [isAccommodations, setIsAccommodations] = useState(ACCOMMODATIONS_YES);
-
+  const [isPhoneNo, setIsPhoneNO] = useState(false);
+  
   const handlePhoneNoChange = (value) => {
     if (value === MOBILE) setIsPhoneNO(MOBILE);
     else if (value === HOME) setIsPhoneNO(HOME);
@@ -52,25 +46,7 @@ const ContactInformation = (props) => {
 
   };
 
-  const handleInterpreterChange = (value) => {
-    if (value === INTERPRETER_YES) setIsInterpreter(INTERPRETER_YES);
-    else setIsInterpreter(INTERPRETER_NO);
-
-
-  };
-  const handlecommunicateChange = (value) => {
-    if (value === COMMUNICATE_MAIL) setIsCommunicate(COMMUNICATE_MAIL);
-    else if (value === COMMUNICATE_PHONE) setIsCommunicate(COMMUNICATE_PHONE);
-    else setIsCommunicate(COMMUNICATE_EMAIL);
-
-
-  };
-  const handleAccommodationsChange = (value) => {
-    if (value === ACCOMMODATIONS_NO) setIsAccommodations(ACCOMMODATIONS_NO);
-    else setIsAccommodations(ACCOMMODATIONS_YES);
-
-
-  };
+ 
   const loginForm = React.useRef(null);
   const classes = useStyles();
   const [errors, setErrors] = React.useState(null);

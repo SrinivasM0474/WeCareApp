@@ -244,7 +244,7 @@ if(page.household===3){
   };
 
   const handleBack = () => {
-    
+    setFormIsValid(false)
     if(activeStep===1&&page.household!==0){
      
       setpages((preVal) => {
@@ -349,14 +349,14 @@ if(page.household===3){
 
 
               <div className={classes.buttons}>
-                <Button
-                  // disabled={activeStep === 0}
-                  variant="contained"
-                  onClick={handleBack}
-                  className={classes.backButton}
-                >
-                  <ArrowForwardIcon className="back-icon" /> <span>Back</span>
-                </Button>
+              {activeStep!==0&& <Button
+                // disabled={activeStep === 0}
+                variant="contained"
+                onClick={handleBack}
+                className={classes.backButton}
+              >
+                <ArrowForwardIcon className="back-icon" /> <span>Back</span>
+              </Button>}
                 <Button
                   variant="contained"
                   onClick={handleNext}

@@ -30,29 +30,19 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
+import { YES,NO } from "../../constants";
 const AdditionalInformation = (props) => {
   const [selectedDate, setSelectedDate] = React.useState(
     new Date("2014-08-18T21:11:54")
   );
-
-  const [isOrigin, setOrigin] = React.useState(false);
-
   const [isPregnent, setIsPregnent] = React.useState(false);
-
-
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
-
-
-  const handleOrigin = (value) => {
-    if (value === "Yes") setOrigin(true);
-    else if (value === "No") setOrigin(false);
-  };
-
+  
   const handleIspregnent = (value) => {
-    if (value === "Yes") setIsPregnent(true);
-    else if (value === "No") setIsPregnent(false);
+    if (value === "Yes") setIsPregnent(YES);
+    else if (value === "No") setIsPregnent(NO);
   }
 
   return (
@@ -91,13 +81,13 @@ const AdditionalInformation = (props) => {
               <div className="input-block gender-block">
                 <div className="gender yes-no-block">
                   <ul>
-                    <li onClick={() => { handleIspregnent("No") }} className={isPregnent ? "" : "selected"}>No</li>
-                    <li onClick={() => { handleIspregnent("Yes") }} className={isPregnent ? "selected" : ""}>Yes</li>
+                    <li onClick={() => { handleIspregnent("No") }} className={isPregnent===NO ? "selected" : ""}>No</li>
+                    <li onClick={() => { handleIspregnent("Yes") }} className={isPregnent ===YES? "selected" : ""}>Yes</li>
                   </ul>
                 </div>
               </div>
             </div>
-            {isPregnent &&
+            {isPregnent===YES &&
               <div className="full-width input-block about-date">
                 <MuiPickersUtilsProvider
                   utils={DateFnsUtils}
