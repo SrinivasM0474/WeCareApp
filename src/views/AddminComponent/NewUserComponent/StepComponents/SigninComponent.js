@@ -6,6 +6,7 @@ import Link from '@material-ui/core/Link';
 import InputAdornment from "@material-ui/core/InputAdornment";
 
 import '../../../style.css';
+import MailIcon from "@material-ui/icons/Mail";
 
 const useStyles = makeStyles((theme) => ({
     textField: {
@@ -65,6 +66,13 @@ const ProfileComponent = (props) => {
                         id="standard-basic"
                         label="Email (Required)"
                         className="input-field"
+                        InputProps={{
+                            endAdornment: (
+                              <InputAdornment position="end">
+                                <MailIcon className="icon" />
+                              </InputAdornment>
+                            ),
+                          }}
                     />
                 </div>
 

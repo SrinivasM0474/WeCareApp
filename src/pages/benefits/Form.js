@@ -3,6 +3,7 @@ import { TextField } from "@material-ui/core";
 import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
 import MailIcon from "@material-ui/icons/Mail";
 import LanguageIcon from "@material-ui/icons/Language";
+import IconLanguage from './../../views/images/language-icon.png';
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
@@ -125,7 +126,8 @@ class FormData extends Component {
                 className="input-field"
                 onChange={this.handleChange}
               />
-              <LanguageIcon className="icon" />
+              {/* <LanguageIcon className="icon" /> */}
+              <img src={IconLanguage} />
             </div>
         {/* <div className="form-wrapper">
           <h1>Create Account</h1>

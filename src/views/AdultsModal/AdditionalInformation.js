@@ -91,7 +91,7 @@ const AdditionalInformation = (props) => {
               <div className="full-width input-block about-date">
                 <MuiPickersUtilsProvider
                   utils={DateFnsUtils}
-                  className="full-width"
+                  className="full-width date"
                 >
                   <KeyboardDatePicker
                     margin="normal"

@@ -37,7 +37,7 @@ import {
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 import AppUser from '../../views/images/tellus-title-icon.png';
-
+import IconLanguage from '../../views/images/language-icon.png';
 
 const TellContactInformation = (props) => {
   const [isPhoneNo, setIsPhoneNO] = useState(false);
@@ -207,7 +207,8 @@ const TellContactInformation = (props) => {
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <LanguageIcon className="icon" />
+                        {/* <LanguageIcon className="icon" /> */}
+                        <img src={IconLanguage} />
                       </InputAdornment>
                     ),
                   }}
@@ -266,7 +267,7 @@ const TellContactInformation = (props) => {
               </InputLabel>
               <div className="gender">
                 <ul>
-                <li
+                  <li
                     className={isAccommodations === ACCOMMODATIONS_NO ? "selected" : ""}
                     onClick={() => {
                       handleAccommodationsChange("AccommodationsNo");
@@ -275,17 +276,17 @@ const TellContactInformation = (props) => {
                   <li className={isAccommodations === ACCOMMODATIONS_YES ? "selected" : ""}
                     onClick={() => {
                       handleAccommodationsChange("AccommodationsYes");
-                    }}>Yes</li>                  
+                    }}>Yes</li>
                 </ul>
               </div>
             </div>
-          {isAccommodations===ACCOMMODATIONS_YES&&<div className="input-block">
-            <TextField
-              id="standard-basic"
-              label="What kind of accommodations do you need?"
-              className="input-field"
-            />
-          </div>}
+            {isAccommodations === ACCOMMODATIONS_YES && <div className="input-block">
+              <TextField
+                id="standard-basic"
+                label="What kind of accommodations do you need?"
+                className="input-field"
+              />
+            </div>}
           </div>
         </div>
       </Container>

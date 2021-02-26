@@ -168,13 +168,6 @@ const AboutYourSelfPageNew = (props) => {
       <Container className="container" maxWidth="md">
         <form ref={loginForm} >
           <div className="about-yourself">
-            {/* <div className="about-header d-flex">
-              <span>
-                {" "}
-                <PersonIcon />
-              </span>
-              <h3>Tell us about yourself</h3>
-            </div> */}
             <div className="about-header d-flex">
               <span>
                 <img src={AppUser} alt="App usre" width='30' />
@@ -252,7 +245,8 @@ const AboutYourSelfPageNew = (props) => {
                   </Select>
                 </FormControl>
               </div>
-              <div className="full-width input-block about-date">
+              <div className="full-width input-block about-date date-pick">
+                <label>Date of Birth (Required)</label>
                 <MuiPickersUtilsProvider
                   utils={DateFnsUtils}
                   className="full-width"

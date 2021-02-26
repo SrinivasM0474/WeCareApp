@@ -29,6 +29,7 @@ import SubmitImage from '../../views/images/dashboard-submitted-icon.png';
 import SavedImage from '../../views/images/dashboad-saved-icon.png';
 import NewApplicationImage from '../../views/images/dashboard-new-application-icon.png';
 import UploadDocumentIMage from '../../views/images/dashboard-upload-documents-icon.png';
+import InfoImage from '../../views/images/dashboad-info-icon.png';
 
 
 
@@ -238,12 +239,13 @@ class LoginComponent extends React.Component {
               <div className='d-flex'>
                 <span>
                   {/* <NotificationsOutlinedIcon /> */}
-                  <img src={NotificationImage} alt='notifications'/>
+                  <img src={NotificationImage} alt='notifications' />
                 </span>
                 <h3>Notifications</h3>
               </div>
               <div>
-                <InfoIcon className='info-icon'/>
+                {/* <InfoIcon className='info-icon'/> */}
+                <img src={InfoImage} width={20}/>
               </div>
             </div>
             <div>
@@ -268,13 +270,15 @@ class LoginComponent extends React.Component {
             <div className="about-header d-flex justify-content-between">
               <div className='d-flex'>
                 <span className='saved-icon'>
-                  <img src={SavedImage} alt='saved-icon'/>
+                  <img src={SavedImage} alt='saved-icon' />
                   {/* <BookmarkIcon /> */}
                 </span>
                 <h3>My Saved Applications</h3>
               </div>
               <div>
-                <InfoIcon className='info-icon'/>
+                {/* <InfoIcon className='info-icon'/> */}
+                <img src={InfoImage}  width={20}/>
+
               </div>
             </div>
             <div>
@@ -316,12 +320,14 @@ class LoginComponent extends React.Component {
             <div className="about-header d-flex justify-content-between">
               <div className='d-flex'>
                 <span className='submit-icon'>
-                <img src={SubmitImage} alt='submit-icon'/>
+                  <img src={SubmitImage} alt='submit-icon' />
                 </span>
                 <h3>My submitted Applications</h3>
               </div>
               <div>
-                <InfoIcon className='info-icon'/>
+                {/* <InfoIcon className='info-icon'/> */}
+                <img src={InfoImage}  width={20}/>
+
               </div>
             </div>
             <div>
@@ -389,9 +395,9 @@ class LoginComponent extends React.Component {
             </div>
           </div>
         </Container>
-          <div className='login-footer'>
+        <div className='login-footer'>
 
-          </div>
+        </div>
       </div>
     );
   }
