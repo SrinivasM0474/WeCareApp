@@ -133,15 +133,16 @@ const AboutYourSelfPageNew = (props) => {
 
 
   const handleDateChange = (date) => {
-  
-    if (date&&date.toDateString() === 'Invalid Date') {
-      props.onFormControlChange(true);
-    }
-    else {
-      if (errors !== null && Object.keys(errors).length === 0)
-        props.onFormControlChange(false);
-    }
     setSelectedDate(date);
+    props.onFormControlChange(false);
+    // if (date&&date.toDateString() === 'Invalid Date') {
+    //   props.onFormControlChange(true);
+    // }
+    // else {
+    //   if (errors !== null && Object.keys(errors).length === 0)
+    //     props.onFormControlChange(false);
+    // }
+    
   };
   const changeValids = (e) => {
     if (e.target.value.length === 11) {
