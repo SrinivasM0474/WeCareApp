@@ -193,14 +193,14 @@ class AddressForm extends React.Component {
                         return (
                           <tr>
                             <td>
-                              <input type='text' style={{ width: '100px' }}
+                              <input type='text' style={{ width: '100%' }}
                                 disabled={val.editItem}
                                 value={val.firstName}
                                 onChange={(e) => this.itemChange(e, i, 'firstName', 'adults')}
 
                               /></td>
                             <td>
-                              <input type='text' style={{ width: '100px' }}
+                              <input type='text' style={{ width: '100%' }}
                                 value={val.middleName}
                                 disabled={val.editItem}
                                 onChange={(e) => this.itemChange(e, i, 'middleName', 'adults')}
@@ -208,28 +208,28 @@ class AddressForm extends React.Component {
                               />
                             </td>
                             <td>
-                              <input type='text' style={{ width: '100px' }}
+                              <input type='text' style={{ width: '100%' }}
                                 value={val.lastName}
                                 disabled={val.editItem}
                                 onChange={(e) => this.itemChange(e, i, 'lastName', 'adults')}
                               />
                             </td>
                             <td>
-                              <input type='number' style={{ width: '100px' }}
+                              <input type='number' style={{ width: '100%' }}
                                 value={val.dateOfBirth}
                                 disabled={val.editItem}
                                 onChange={(e) => this.itemChange(e, i, 'dateOfBirth', 'adults')}
                               />
                             </td>
                             <td>
-                              <input type='text' style={{ width: '100px' }}
+                              <input type='text' style={{ width: '100%' }}
                                 value={val.gender}
                                 disabled={val.editItem}
                                 onChange={(e) => this.itemChange(e, i, 'gender', 'adults')}
                               />
                             </td>
                             <td>
-                              <input type='text' style={{ width: '100px' }}
+                              <input type='text' style={{ width: '100%' }}
                                 value={val.relationship}
                                 disabled={val.editItem}
                                 onChange={(e) => this.itemChange(e, i, 'relationship', 'adults')}
@@ -294,14 +294,14 @@ class AddressForm extends React.Component {
                         return (
                           <tr>
                             <td>
-                              <input type='text' style={{ width: '100px' }}
+                              <input type='text' style={{ width: '100%' }}
                                 disabled={val.editItem}
                                 value={val.firstName}
                                 onChange={(e) => this.itemChange(e, i, 'firstName', 'children')}
 
                               /></td>
                             <td>
-                              <input type='text' style={{ width: '100px' }}
+                              <input type='text' style={{ width: '100%' }}
                                 value={val.middleName}
                                 disabled={val.editItem}
                                 onChange={(e) => this.itemChange(e, i, 'middleName', 'children')}
@@ -309,28 +309,28 @@ class AddressForm extends React.Component {
                               />
                             </td>
                             <td>
-                              <input type='text' style={{ width: '100px' }}
+                              <input type='text' style={{ width: '100%' }}
                                 value={val.lastName}
                                 disabled={val.editItem}
                                 onChange={(e) => this.itemChange(e, i, 'lastName', 'children')}
                               />
                             </td>
                             <td>
-                              <input type='number' style={{ width: '100px' }}
+                              <input type='number' style={{ width: '100%' }}
                                 value={val.dateOfBirth}
                                 disabled={val.editItem}
                                 onChange={(e) => this.itemChange(e, i, 'dateOfBirth', 'children')}
                               />
                             </td>
                             <td>
-                              <input type='text' style={{ width: '100px' }}
+                              <input type='text' style={{ width: '100%' }}
                                 value={val.gender}
                                 disabled={val.editItem}
                                 onChange={(e) => this.itemChange(e, i, 'gender', 'children')}
                               />
                             </td>
                             <td>
-                              <input type='text' style={{ width: '100px' }}
+                              <input type='text' style={{ width: '100%' }}
                                 value={val.relationship}
                                 disabled={val.editItem}
                                 onChange={(e) => this.itemChange(e, i, 'relationship', 'children')}

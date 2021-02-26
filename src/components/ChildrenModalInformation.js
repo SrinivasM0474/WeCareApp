@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         position: 'absolute',
-        width: '70%',
+        width: '65%',
         height: 'auto',
         backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
@@ -99,7 +99,7 @@ const ChildrenModalInformation = (props) => {
                         <div className='header-text text-center'>
                             <h4>Household Children</h4>
                         </div>
-                        <Container className="container" maxWidth="md">
+                        <Container className="modal-container" maxWidth="md">
                             <form >
                                 <div className="about-yourself adult-household profile-content">
                                     <div className="input-form-fields">

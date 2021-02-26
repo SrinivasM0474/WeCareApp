@@ -197,7 +197,7 @@ h3 {
   padding: 30px 0 0 0 !important;
   /* margin-left: "15%";
   margin-right: "15%"; */
-  max-width: 80% !important;
+  max-width: 70% !important;
 }
 
 .about-yourself {
@@ -513,7 +513,7 @@ table tbody tr:hover {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  max-width: 80% !important;
+  max-width: 70% !important;
 }
 
 .common-header nav .nav-item a {
@@ -524,7 +524,7 @@ table tbody tr:hover {
 /* Navigation flow styles */
 
 .navigation-flow {
-  max-width: 80%;
+  max-width: 70%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -537,6 +537,7 @@ table tbody tr:hover {
 
 .navigation-flow .nav-items ul {
   display: flex;
+  align-items: center;
 }
 
 .navigation-flow .nav-items ul li {
@@ -558,6 +559,7 @@ table tbody tr:hover {
 .nav-user svg {
   color: #0072bc;
   margin-right: 5px;
+  font-size: 20px;
 }
 
 .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
@@ -647,7 +649,9 @@ table tbody tr:hover {
 } */
 
 .services-icon {
-  font-size: 22px;
+  font-size: 18px !important;
+  position: relative;
+  top: 1px;
 }
 
 /* modal css */
@@ -720,7 +724,7 @@ table tbody tr:hover {
 }
 
 .profile-content {
-  padding: 24px 44px 30px 44px;
+  padding: 10px 44px 30px 44px;
   max-height: calc(100vh - 300px);
   overflow: auto;
   height: auto;
@@ -805,8 +809,8 @@ table tbody tr:hover {
 
 .login-account {
   box-shadow: 0px 0.5px 5px 0.5px rgb(0 0 0 / 55%);
-  width: 80%;
-  margin: 60px auto;
+  width: 60%;
+  margin: 10% auto;
   padding: 0px 24px 60px 24px;
   border-radius: 8px;
 }
@@ -841,6 +845,7 @@ table tbody tr:hover {
   text-align: center;
   font-size: 16px;
   font-weight: bold;
+  font-family: "Roboto-Bold";
 }
 
 .login-right .input-form-fields {
@@ -1003,7 +1008,7 @@ table thead tr th, tbody tr td {
 }
 
 .dashboard-user {
-  width: 80% !important;
+  max-width: 70% !important;
   padding: 0 !important;
 }
 
@@ -1079,19 +1084,149 @@ table thead tr th, tbody tr td {
 
 .children-btns .create-accnt {
   min-width: 120px !important;
-  
 }
 
 .children-btns .create-accnt:first-child {
   margin-right: 12px;
-  
 }
+
 .save-icon {
   border: 3px dotted white;
-    border-radius: 10px;
-    padding: 1px;
-    font-size: 22px !important;
-    position: relative;
-    top: -2px;
-    margin-right: 10px;
+  border-radius: 10px;
+  padding: 1px;
+  font-size: 22px !important;
+  position: relative;
+  top: -2px;
+  margin-right: 10px;
+}
+
+.n-table thead tr th :first-child, .n-table tbody tr td:first-child {
+  width: 130px;
+}
+
+.n-table thead tr th :nth-child(2), .n-table tbody tr td:nth-child(2) {
+  width: auto;
+}
+
+/*New app start */
+
+.new-app-s {
+  padding: 20px 24px;
+}
+
+.login-container {
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0 0 12px -2px #999;
+  margin: 50px auto;
+  padding-bottom: 10px;
+}
+
+.heading-b {
+  display: flex;
+  padding: 0 0 20px 0;
+  position: relative;
+}
+
+.heading-b>img {
+  height: 52px;
+  margin-right: 20px;
+}
+
+.heading-b h5 {
+  font-size: 24px;
+  padding-top: 10px;
+  font-weight: bold;
+  font-family: "Soleil-Bold";
+}
+
+.body-copy {
+  padding-bottom: 10px;
+}
+
+.data-container {
+  border-radius: 20px;
+  box-shadow: 0 0 12px -2px #999;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.data-container>img {
+  float: left;
+  margin-right: 20px;
+}
+
+.data-container>h6 {
+  font-weight: bold;
+}
+
+.heading-b .pad-t-0 {
+  padding-top: 0;
+  margin-top: -5px;
+}
+
+.fs17 {
+  font-size: 17px;
+}
+
+.new-app-s ul {
+  padding-bottom: 20px;
+  padding-left: 5px;
+}
+
+.new-app-s ul li {
+  background: url("./views/images/li.png") no-repeat left 18px;
+  list-style: none;
+  font-size: 17px;
+  line-height: 40px;
+  padding-left: 25px;
+}
+
+.benefits>h6 {
+  font-weight: normal;
+  color: #0072bc;
+}
+
+.new-app-s .yes-no-block ul li {
+  background-image: none;
+  padding-left: 0;
+  line-height: 22px;
+  border-radius: 3px;
+}
+
+.new-app-s .yes-no-block ul {
+  padding-left: 0;
+}
+
+.new-app-s .yes-no-block ul li:hover {
+  background-color: #316e03;
+  color: white;
+}
+
+.assprogram {
+  padding-left: 75px;
+}
+
+.btn-nxt {
+  color: white;
+    outline: none !important;
+    font-family: "Roboto-Light";
+    font-weight: bold;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    background-color: #EE5050;
+    padding: 5.5px 16px;
+    min-width: 64px;
+    border: 0;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+    margin-bottom: 30px;
+}
+
+.modal-container {
+  max-width: 100% !important;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
 }

@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     // marginLeft: "11%",
     // width: "80%",
     // backgroundColor: "#F8F8F8",
-    width: "80%",
+    width: "70%",
     backgroundColor: "#F8F8F8",
     margin: "auto",
     padding: "24px 0",
