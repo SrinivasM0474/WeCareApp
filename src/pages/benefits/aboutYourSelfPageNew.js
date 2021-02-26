@@ -115,21 +115,26 @@ const AboutYourSelfPageNew = (props) => {
     if (Object.keys(errorsData).length > 0) {
       props.onFormControlChange(true);
       return false;
-    } else {
-      props.onFormControlChange(false);
+    } else {     
+      if(selectedDate===null){
+        props.onFormControlChange(true);
+      }else{
+        props.onFormControlChange(false); 
+      }
+          
+     
       return true;
     }
   };
 
 
 
-  const [selectedDate, setSelectedDate] = React.useState(
-    new Date("2014-08-18T21:11:54")
-  );
+  const [selectedDate, setSelectedDate] = React.useState(null);
 
 
   const handleDateChange = (date) => {
-    if (date.toDateString() === 'Invalid Date') {
+  
+    if (date&&date.toDateString() === 'Invalid Date') {
       props.onFormControlChange(true);
     }
     else {
@@ -140,6 +145,7 @@ const AboutYourSelfPageNew = (props) => {
   };
   const changeValids = (e) => {
     if (e.target.value.length === 11) {
+      
       setIsType('password')
     }
 
@@ -244,15 +250,14 @@ const AboutYourSelfPageNew = (props) => {
                   className="full-width"
                 >
                   <KeyboardDatePicker
-                    margin="normal"
-                    id="dob"
-                    label="Date of Birth"
-                    format="MM/dd/yyyy"
-                    value={selectedDate}
+                    placeholder="MM/DD/yyyy"
+                    format={"MM/dd/yyyy"}
+                    autoOk={false}
                     onChange={handleDateChange}
-                    KeyboardButtonProps={{
-                      "aria-label": "change date",
-                    }}
+                    value={selectedDate}
+                    onBlur={(e)=>validate(e)}
+                   
+                   
                   />
                 </MuiPickersUtilsProvider>
               </div>
