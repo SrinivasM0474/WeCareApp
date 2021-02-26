@@ -77,7 +77,7 @@ const TellContactInformation = (props) => {
   const [errors, setErrors] = React.useState(null);
 
   const emailRegex = RegExp(
-    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   );
   const validatecontact = (key) => {
     let fields = key === 'all' ? ['phoneno', 'Launguage', 'email'] : [key];
@@ -266,26 +266,26 @@ const TellContactInformation = (props) => {
               </InputLabel>
               <div className="gender">
                 <ul>
-                  <li className={isAccommodations === ACCOMMODATIONS_YES ? "selected" : ""}
-                    onClick={() => {
-                      handleAccommodationsChange("AccommodationsYes");
-                    }}>Yes</li>
-                  <li
+                <li
                     className={isAccommodations === ACCOMMODATIONS_NO ? "selected" : ""}
                     onClick={() => {
                       handleAccommodationsChange("AccommodationsNo");
                     }}
                   >No</li>
+                  <li className={isAccommodations === ACCOMMODATIONS_YES ? "selected" : ""}
+                    onClick={() => {
+                      handleAccommodationsChange("AccommodationsYes");
+                    }}>Yes</li>                  
                 </ul>
               </div>
             </div>
-            <div className="input-block">
-              <TextField
-                id="standard-basic"
-                label="What kind of accommodations do you need?"
-                className="input-field"
-              />
-            </div>
+          {isAccommodations===ACCOMMODATIONS_YES&&<div className="input-block">
+            <TextField
+              id="standard-basic"
+              label="What kind of accommodations do you need?"
+              className="input-field"
+            />
+          </div>}
           </div>
         </div>
       </Container>

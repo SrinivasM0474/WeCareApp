@@ -10,6 +10,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
 import LanguageIcon from "@material-ui/icons/Language";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import { HOME, MOBILE, WORK } from "../../../../constants";
 
 
 import '../../../style.css';
@@ -23,11 +24,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ProfileComponent = (props) => {
-    const [value, setValue] = React.useState('female');
+    
+    const [isPhoneNo, setIsPhoneNO] = React.useState(false);
     const classes = useStyles();
-    const handleChange = (event) => {
-        setValue(event.target.value);
-    };
+    const handlePhoneNoChange = (value) => {
+        if (value === MOBILE) setIsPhoneNO(MOBILE);
+        else if (value === HOME) setIsPhoneNO(HOME);
+        else setIsPhoneNO(WORK);  
+    
+      };
+   
     return (
         <div className="profile-content contact-content">
             {/* <form className="" noValidate autoComplete="off">
@@ -60,11 +66,26 @@ const ProfileComponent = (props) => {
                         Choose your Primary Phone Number
               </InputLabel>
                     <div className="gender">
-                        <ul>
-                            <li className="selected">Mobile</li>
-                            <li>Home</li>
-                            <li>Work</li>
-                        </ul>
+                    <ul>
+
+<li className="selected"
+  onClick={() => {
+    handlePhoneNoChange("Mobile");
+  }}
+  className={isPhoneNo === MOBILE ? "selected" : ""}>Mobile</li>
+<li
+  className={isPhoneNo === HOME ? "selected" : ""}
+  onClick={() => {
+    handlePhoneNoChange("Home");
+  }}
+>Home</li>
+<li
+  className={isPhoneNo === WORK ? "selected" : ""}
+  onClick={() => {
+    handlePhoneNoChange("Work");
+  }}
+>Work</li>
+</ul>
                     </div>
                 </div>
                 <div className="input-block">

@@ -44,7 +44,6 @@ import {
 const AboutYourSelfPageNew = (props) => {
   const classes = useStyles();
   const [isActive, setIsActive] = useState(false);
-  const [isActiveDate, setIsActiveDate] = useState(false);
   const [isGender, setIsGender] = useState(false);
 
   const [formdata, setFormdata] = useState({

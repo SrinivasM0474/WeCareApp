@@ -28,12 +28,14 @@ import MembersChildrenImage from '../../views/images/members-childrens-icon.png'
 import AddImage from '../../views/images/cancel-icon.png';
 
 
+import AdultsModalInformation from './../../components/AdultsModalInformation'
+import ChildrenModalInformation from './../../components/ChildrenModalInformation'
+import { YES, NO } from "../../constants";
 class AddressForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      isActiveYes: false,
-      isActiveNo: true,
+      isActive: false,
       itemValue: [{
         firstName: '',
         middleName: '',
@@ -45,8 +47,7 @@ class AddressForm extends React.Component {
       }],
       totalValue: 0,
       errorMess: null,
-      isActiveChildernYes: false,
-      isActiveChildernNo: true,
+      isActiveChildern: false,
       itemChildern: [{
         firstName: '',
         middleName: '',
@@ -60,18 +61,15 @@ class AddressForm extends React.Component {
       isOpenChildrenModal: false
     };
   }
-  handleClick = () => {
-    this.setState({
-      isActiveYes: !this.state.isActiveYes ? true : false,
-      isActiveNo: !this.state.isActiveNo ? true : false
-    })
+  handleClick = (value) => {
+    if (value === "Yes") this.setState({ isActive: YES });
+    else if (value === "No") this.setState({ isActive: NO });
 
   }
-  handleChildrenClick = () => {
-    this.setState({
-      isActiveChildernYes: !this.state.isActiveChildernYes ? true : false,
-      isActiveChildernNo: !this.state.isActiveChildernNo ? true : false
-    })
+  handleChildrenClick = (value) => {
+    if (value === "Yes") this.setState({ isActiveChildern: YES });
+    else if (value === "No") this.setState({ isActiveChildern: NO });
+
   }
   itemChange = (e, i, testvalue, name) => {
     e.preventDefault()
@@ -151,7 +149,7 @@ class AddressForm extends React.Component {
 
   }
   render() {
-    console.log(this.state, 'previewpopup>>>>>>>')
+
     return (
       <Container maxWidth="md" className="container">
         <div className="about-yourself">
@@ -174,19 +172,20 @@ class AddressForm extends React.Component {
             <div className="input-block gender-block">
               <div className="gender yes-no-block">
                 <ul>
-                  <li className={this.state.isActiveYes ? "selected" : ''} onClick={() => this.handleClick()}>Yes</li>
-                  <li className={this.state.isActiveNo ? "selected" : ''} onClick={() => this.handleClick()}  >No</li>
+                  <li className={this.state.isActive === NO ? "selected" : ''} onClick={() => this.handleClick("No")}  >No</li>
+                  <li className={this.state.isActive === YES ? "selected" : ''} onClick={() => this.handleClick('Yes')}>Yes</li>
+
                 </ul>
               </div>
-            </div>{this.state.isActiveYes === true &&
+            </div>{this.state.isActive === YES &&
               <div className="a-table">
                 <div className="adults">
                   <div>
                     {/* <WcIcon /> */}
-                    <img src={MembersAdultImage} alt='adults' width='20px'/>
+                    <img src={MembersAdultImage} alt='adults' width='20px' />
                     <span>Adult(s)</span>
                   </div>
-                  <Button className="add-btn" onClick={() => this.addItems('adults')}><img src={AddImage} alt='add'/>Add</Button>
+                  <Button className="add-btn" onClick={() => this.addItems('adults')}><img src={AddImage} alt='add' />Add</Button>
                 </div>
                 <table>
                   <thead>
@@ -270,107 +269,108 @@ class AddressForm extends React.Component {
             }
 
           </div>
-        <div className="input-form-fields">
-          <p className="text">Are you adding any children to your application?</p>
+          <div className="input-form-fields">
+            <p className="text">Are you adding any children to your application?</p>
 
-          <div className="input-block gender-block">
-            <div className="gender yes-no-block">
-              <ul>
-                <li className={this.state.isActiveChildernYes ? "selected" : ''} onClick={() => this.handleChildrenClick()}>Yes</li>
-                <li className={this.state.isActiveChildernNo ? "selected" : ''} onClick={() => this.handleChildrenClick()}>No</li>
-              </ul>
-            </div>
-          </div>
-          {this.state.isActiveChildernYes === true &&
-            <div className="a-table">
-              <div className="adults">
-                <div>
-                  {/* <WcIcon /> */}
-                  <img src={MembersChildrenImage} alt='children' width='20px' />
+            <div className="input-block gender-block">
+              <div className="gender yes-no-block">
+                <ul>
+                  <li className={this.state.isActiveChildern === NO ? "selected" : ''} onClick={() => this.handleChildrenClick("No")}>No</li>
+                  <li className={this.state.isActiveChildern === YES ? "selected" : ''} onClick={() => this.handleChildrenClick("Yes")}>Yes</li>
 
-                  <span>Children</span>
-                </div>
-                <Button className="add-btn" onClick={() => this.addItems('children')}><img src={AddImage} alt='add'/>Add</Button>
+                </ul>
               </div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Last Name</th>
-                    <th>Date Of Birth</th>
-                    <th>Gender</th>
-                    <th>Relationship</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {
-                    _.map(this.state.itemChildern, (val, i) => {
-                      return (
-                        <tr>
-                          <td>
-                            <input type='text' style={{ width: '100%' }}
-                              disabled={val.editItem}
-                              value={val.firstName}
-                              onChange={(e) => this.itemChange(e, i, 'firstName', 'children')}
+            </div>
+            {this.state.isActiveChildern === YES &&
+              <div className="a-table">
+                <div className="adults">
+                  <div>
+                    {/* <WcIcon /> */}
+                    <img src={MembersChildrenImage} alt='children' width='20px' />
 
-                            /></td>
-                          <td>
-                            <input type='text' style={{ width: '100%' }}
-                              value={val.middleName}
-                              disabled={val.editItem}
-                              onChange={(e) => this.itemChange(e, i, 'middleName', 'children')}
+                    <span>Children</span>
+                  </div>
+                  <Button className="add-btn" onClick={() => this.addItems('children')}><img src={AddImage} alt='add' />Add</Button>
+                </div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Middle Name</th>
+                      <th>Last Name</th>
+                      <th>Date Of Birth</th>
+                      <th>Gender</th>
+                      <th>Relationship</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      _.map(this.state.itemChildern, (val, i) => {
+                        return (
+                          <tr>
+                            <td>
+                              <input type='text' style={{ width: '100%' }}
+                                disabled={val.editItem}
+                                value={val.firstName}
+                                onChange={(e) => this.itemChange(e, i, 'firstName', 'children')}
 
-                            />
-                          </td>
-                          <td>
-                            <input type='text' style={{ width: '100%' }}
-                              value={val.lastName}
-                              disabled={val.editItem}
-                              onChange={(e) => this.itemChange(e, i, 'lastName', 'children')}
-                            />
-                          </td>
-                          <td>
-                            <input type='number' style={{ width: '100%' }}
-                              value={val.dateOfBirth}
-                              disabled={val.editItem}
-                              onChange={(e) => this.itemChange(e, i, 'dateOfBirth', 'children')}
-                            />
-                          </td>
-                          <td>
-                            <input type='text' style={{ width: '100%' }}
-                              value={val.gender}
-                              disabled={val.editItem}
-                              onChange={(e) => this.itemChange(e, i, 'gender', 'children')}
-                            />
-                          </td>
-                          <td>
-                            <input type='text' style={{ width: '100%' }}
-                              value={val.relationship}
-                              disabled={val.editItem}
-                              onChange={(e) => this.itemChange(e, i, 'relationship', 'children')}
-                            />
-                          </td>
-                          <td>
-                            <span>
-                              <EditIcon className="edit-icon" onClick={() => this.editItemChildern(i, 'edit')} />
-                            </span>
-                            <span>
-                              <CloseIcon className="close-icon" onClick={() => this.removeItem(i, 'children')} />
-                            </span>
-                          </td>
-                        </tr>
-                      )
-                    })
-                  }
-                </tbody>
-              </table>
-            </div>}
+                              /></td>
+                            <td>
+                              <input type='text' style={{ width: '100%' }}
+                                value={val.middleName}
+                                disabled={val.editItem}
+                                onChange={(e) => this.itemChange(e, i, 'middleName', 'children')}
+
+                              />
+                            </td>
+                            <td>
+                              <input type='text' style={{ width: '100%' }}
+                                value={val.lastName}
+                                disabled={val.editItem}
+                                onChange={(e) => this.itemChange(e, i, 'lastName', 'children')}
+                              />
+                            </td>
+                            <td>
+                              <input type='number' style={{ width: '100%' }}
+                                value={val.dateOfBirth}
+                                disabled={val.editItem}
+                                onChange={(e) => this.itemChange(e, i, 'dateOfBirth', 'children')}
+                              />
+                            </td>
+                            <td>
+                              <input type='text' style={{ width: '100%' }}
+                                value={val.gender}
+                                disabled={val.editItem}
+                                onChange={(e) => this.itemChange(e, i, 'gender', 'children')}
+                              />
+                            </td>
+                            <td>
+                              <input type='text' style={{ width: '100%' }}
+                                value={val.relationship}
+                                disabled={val.editItem}
+                                onChange={(e) => this.itemChange(e, i, 'relationship', 'children')}
+                              />
+                            </td>
+                            <td>
+                              <span>
+                                <EditIcon className="edit-icon" onClick={() => this.editItemChildern(i, 'edit')} />
+                              </span>
+                              <span>
+                                <CloseIcon className="close-icon" onClick={() => this.removeItem(i, 'children')} />
+                              </span>
+                            </td>
+                          </tr>
+                        )
+                      })
+                    }
+                  </tbody>
+                </table>
+              </div>}
+          </div>
         </div>
-        </div>
-        { this.state.isOpenAdultsModal && <AdultsModalInformation closeModal={() => { this.isOpenProfileModel(false) }} /> }
-    { this.state.isOpenChildrenModal && <ChildrenModalInformation closeModal={() => { this.isOpenChildrenModel(false) }} /> }
+        { this.state.isOpenAdultsModal && <AdultsModalInformation closeModal={() => { this.isOpenProfileModel(false) }} />}
+        { this.state.isOpenChildrenModal && <ChildrenModalInformation closeModal={() => { this.isOpenChildrenModel(false) }} />}
       </Container >
     );
   }

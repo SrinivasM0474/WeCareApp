@@ -21,6 +21,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import WcIcon from "@material-ui/icons/Wc";
 import _ from "lodash";
 import AbsentParentModal from './../../components/AbsentParentModal'
+import { YES,NO } from "../../constants";
 // import ChildrenModalInformation from './../../components/ChildrenModalInformation'
 import HouseHoldImage from '../../views/images/authorized-Rep-title-icon.png';
 import AbsentParentImage from '../../views/images/absent-parent-icon.png';
@@ -30,8 +31,7 @@ class AbsentParent extends React.Component {
   constructor() {
     super();
     this.state = {
-      isActiveYes: false,
-      isActiveNo: true,
+      isActive: false,      
       itemValue: [{
         firstName: '',
         middleName: '',
@@ -42,10 +42,8 @@ class AbsentParent extends React.Component {
         editItem: false
       }],
       totalValue: 0,
-      errorMess: null,
-      isActiveChildernYes: false,
-      isActiveChildernNo: true,
-      itemChildern: [{
+      errorMess: null,     
+       itemChildern: [{
         firstName: '',
         middleName: '',
         lastName: '',
@@ -58,19 +56,12 @@ class AbsentParent extends React.Component {
       isOpenChildrenModal: false
     };
   }
-  handleClick = () => {
-    this.setState({
-      isActiveYes: !this.state.isActiveYes ? true : false,
-      isActiveNo: !this.state.isActiveNo ? true : false
-    })
-
+  handleClick = (value) => {
+    if (value === "Yes") this.setState({isActive:YES});
+    else if (value === "No") this.setState({isActive: NO});
+   
   }
-  handleChildrenClick = () => {
-    this.setState({
-      isActiveChildernYes: !this.state.isActiveChildernYes ? true : false,
-      isActiveChildernNo: !this.state.isActiveChildernNo ? true : false
-    })
-  }
+  
   itemChange = (e, i, testvalue, name) => {
     e.preventDefault()
 
@@ -145,11 +136,12 @@ class AbsentParent extends React.Component {
             <div className="input-block gender-block">
               <div className="gender yes-no-block">
                 <ul>
-                  <li className={this.state.isActiveYes ? "selected" : ''} onClick={() => this.handleClick()}>Yes</li>
-                  <li className={this.state.isActiveNo ? "selected" : ''} onClick={() => this.handleClick()}  >No</li>
+                   <li className={this.state.isActive===NO ? "selected" : ''} onClick={() => this.handleClick("No")}  >No</li>
+                  <li className={this.state.isActive===YES ? "selected" : ''} onClick={() => this.handleClick("Yes")}>Yes</li>
+                 
                 </ul>
               </div>
-            </div>{this.state.isActiveYes === true &&
+            </div>{this.state.isActive === YES &&
               <div className="a-table">
                 <div className="adults">
                   <div>

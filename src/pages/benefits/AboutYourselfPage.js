@@ -248,7 +248,7 @@ const AboutYourselfPage = () => {
   };
 
   const handleBack = () => {
-
+    setFormIsValid(false)
     if (activeStep === 1 && page.household !== 0) {
 
       setpages((preVal) => {
@@ -353,14 +353,14 @@ const AboutYourselfPage = () => {
 
 
                 <div className={classes.buttons}>
-                  <Button
+                  {activeStep !== 0 && <Button
                     // disabled={activeStep === 0}
                     variant="contained"
                     onClick={handleBack}
                     className={classes.backButton}
                   >
                     <img src={BackImage} alt='next' style={{ width: '24px', marginRight: '14px' }} /> <span>Back</span>
-                  </Button>
+                  </Button>}
                   <Button
                     variant="contained"
                     onClick={handleNext}
