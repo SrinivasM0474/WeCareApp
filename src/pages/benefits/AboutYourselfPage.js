@@ -405,7 +405,7 @@ console.log('page.household',activeStep,page)
                   <Button
                     variant="contained"
                     onClick={handleNext}
-                    // disabled={formIsValid}
+                    disabled={formIsValid}
                     className={classes.nextButton}
                   >
                     {console.log('formIsValid', formIsValid)}
