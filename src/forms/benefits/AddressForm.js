@@ -20,14 +20,12 @@ import EditIcon from "@material-ui/icons/Edit";
 import CloseIcon from "@material-ui/icons/Close";
 import WcIcon from "@material-ui/icons/Wc";
 import _ from "lodash";
-import AdultsModalInformation from './../../components/AdultsModalInformation';
-import ChildrenModalInformation from './../../components/ChildrenModalInformation';
+// import AdultsModalInformation from './../../components/AdultsModalInformation';
+// import ChildrenModalInformation from './../../components/ChildrenModalInformation';
 import HouseHoldImage from '../../views/images/household-title-icon.png';
 import MembersAdultImage from '../../views/images/members-adults-icon.png';
 import MembersChildrenImage from '../../views/images/members-childrens-icon.png';
 import AddImage from '../../views/images/cancel-icon.png';
-
-
 import AdultsModalInformation from './../../components/AdultsModalInformation'
 import ChildrenModalInformation from './../../components/ChildrenModalInformation'
 import { YES, NO } from "../../constants";

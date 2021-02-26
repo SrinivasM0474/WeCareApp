@@ -39,6 +39,21 @@ import Benefits from "../../views/DashboardComponent/Benefits";
 import AbsentParent from "../../pages/AbsentParent/AbsentParent";
 import NextImage from '../../views/images/next-icon.png';
 import BackImage from '../../views/images/back-icon.png';
+import BenefitsImage from '../../views/images/stepper/benefits-icon-o.png';
+import AbsentParentIcon from '../../views/images/stepper/absentParent-icon-g.png';
+import AgreementIcon from '../../views/images/stepper/agreement-icon-g.png';
+import AssetsIcon from '../../views/images/stepper/assets-icon-g.png';
+import AuthorizedIcon from '../../views/images/stepper/authorized-icon-g.png';
+import ChildCareIcon from '../../views/images/stepper/childcare-icon-g.png';
+import ExpensesIcon from '../../views/images/stepper/expenses-icon-g.png';
+import HeadIcon from '../../views/images/stepper/head-icon-g.png';
+import IncomeIcon from '../../views/images/stepper/income-icon-g.png';
+import MenmbersIcon from '../../views/images/stepper/Members-icon-g.png';
+import SubmitIcon from '../../views/images/stepper/submit-icon-g.png';
+import SummayIconG from '../../views/images/stepper/summary-icon-g.png';
+import SummaryIconW from '../../views/images/stepper/summary-icon-w.png';
+import UploadIcon from '../../views/images/stepper/upload-icon-g.png';
+
 
 
 const styles = {
@@ -133,12 +148,18 @@ const useColorlibStepIconStyles = makeStyles({
     backgroundColor: "#ccc",
     zIndex: 1,
     color: "white",
-    width: 35,
-    height: 35,
+    width: 40,
+    height: 40,
     display: "flex",
     borderRadius: "50%",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: '#fff',
+    border: '2px solid #cdcdcd',
+    '& img': {
+     width: '30px',
+     height: '30px'
+    }
   },
   active: {
     // backgroundImage:
@@ -184,19 +205,19 @@ function ColorlibStepIcon(props: StepIconProps) {
   const { active, completed } = props;
 
   const icons: { [index: string]: React.ReactElement } = {
-    1: <PersonIcon />,
-    2: <AccountCircleIcon />,
-    3: <PersonAddIcon />,
-    4: <AccountCircleIcon />,
-    5: <ThreeDRotation />,
-    6: <AccountCircleIcon />,
-    7: <AdjustIcon />,
-    8: <AirplayIcon />,
-    9: <AppsIcon />,
-    10: <PublishIcon />,
-    11: <AppsIcon />,
-    12: <AppsIcon />,
-    13: <NotesIcon />,
+    1: <img src={BenefitsImage} />,
+    2: <img src={HeadIcon} />,
+    3: <img src={MenmbersIcon} />,
+    4: <img src={AbsentParentIcon} />,
+    5: <img src={ChildCareIcon} />,
+    6: <img src={AuthorizedIcon} />,
+    7: <img src={IncomeIcon} />,
+    8: <img src={ExpensesIcon} />,
+    9: <img src={AssetsIcon} />,
+    10: <img src={UploadIcon} />,
+    11: <img src={SummaryIconW} />,
+    12: <img src={AgreementIcon} />,
+    13: <img src={SubmitIcon} />,
   };
 
   return (
