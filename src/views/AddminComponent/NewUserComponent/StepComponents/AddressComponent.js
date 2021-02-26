@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import PinDropSharpIcon from "@material-ui/icons/PinDropSharp";
 import HomeSharpIcon from "@material-ui/icons/HomeSharp";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import ZipImage from '../../../../views/images/zip-icon.png';
+import AddressImage from '../../../../views/images/address-icon.png';
 
 
 import '../../../style.css';
@@ -72,7 +74,8 @@ const ProfileComponent = (props) => {
                         InputProps={{
                             endAdornment: (
                                 <InputAdornment position="end">
-                                    <PinDropSharpIcon className="icon" />
+                                    {/* <PinDropSharpIcon className="icon" /> */}
+                                    <img src={AddressImage} />
                                 </InputAdornment>
                             ),
                         }}
@@ -111,7 +114,8 @@ const ProfileComponent = (props) => {
                         InputProps={{
                             endAdornment: (
                                 <InputAdornment position="end">
-                                    <HomeSharpIcon className="icon" />
+                                    {/* <HomeSharpIcon className="icon" /> */}
+                                    <img src={ZipImage} />
                                 </InputAdornment>
                             ),
                         }}

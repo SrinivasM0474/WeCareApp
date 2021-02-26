@@ -20,6 +20,8 @@ import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import BuildYourProfileIMage from './../views/images/modal-build-your-profile-icon.png';
+import ModalNexttImage from './../views/images/modal-next-arrow-icon.png';
+import ModalBackImage from './../views/images/modal-back-arrow-icon.png';
 
 function getModalStyle() {
     const top = 50;
@@ -154,9 +156,9 @@ const ProfileInformation = (props) => {
                                                 Back
 										</Button> */}
                                                     {activeStep !== 0 &&
-                                                        <ArrowBackIcon onClick={handleNext} onClick={handleBack} className='icon-back' />}
-                                                    {activeStep === 3 && <Button className='create-accnt'>Create Account</Button>}
-                                                    {activeStep !== 3 && <ArrowForwardIcon onClick={handleNext} className='icon-forward' />}
+                                                       <img src={ModalBackImage} onClick={handleBack} className='icon-back' />}
+                                                    {activeStep === 3 && <Button className='create-accnt' style={{width: '180px'}}>Create Account</Button>}
+                                                    {activeStep !== 3 && <img src={ModalNexttImage} onClick={handleNext} className='icon-forward' />}
                                                     {/* <Button variant="contained" className="step-btn-nxt" color="primary" onClick={handleNext}>
                                                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                             </Button> */}

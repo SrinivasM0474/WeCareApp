@@ -12,6 +12,7 @@ import LanguageIcon from "@material-ui/icons/Language";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import { HOME, MOBILE, WORK } from "../../../../constants";
 
+import IconLanguage from '../../../../views/images/language-icon.png';
 
 import '../../../style.css';
 
@@ -110,7 +111,8 @@ const ProfileComponent = (props) => {
                         InputProps={{
                             endAdornment: (
                                 <InputAdornment position="end">
-                                    <LanguageIcon className="icon" />
+                                    {/* <LanguageIcon className="icon" /> */}
+                                    <img src={IconLanguage} />
                                 </InputAdornment>
                             ),
                         }}
