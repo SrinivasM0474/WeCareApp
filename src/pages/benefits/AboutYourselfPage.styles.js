@@ -26,6 +26,8 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "capitalize",
     fontFamily: "Roboto-Light",
     letterSpacing: "1px",
+    padding: '6px 20px 6px 10px',
+    minWidth: '64px'
   },
   nextButton: {
     // marginRight: theme.spacing(6),
@@ -37,6 +39,8 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "capitalize",
     fontFamily: "Roboto-Light",
     letterSpacing: "1px",
+    padding: '6px 10px 6px 20px',
+    minWidth: '64px'
   },
   buttons: {
     display: "flex",

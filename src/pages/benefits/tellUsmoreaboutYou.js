@@ -30,6 +30,8 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
+import AppUser from '../../views/images/tellus-title-icon.png';
+
 const TellUsMoreAboutYou = (props) => {
   const [selectedDate, setSelectedDate] = React.useState(
     new Date("2014-08-18T21:11:54")
@@ -60,13 +62,13 @@ const TellUsMoreAboutYou = (props) => {
       {/* Tell us more about you design */}
       <Container className="container" maxWidth="md">
         <div className="about-yourself">
-          <div className="about-header d-flex">
+            <div className="about-header d-flex">
             <span>
-              {" "}
-              <PersonOutlineTwoToneIcon />
+              <img src={AppUser} alt="App usre" width='30' />
             </span>
-            <h3>Tell us more about you</h3>
+            <h3>Tell us about your contact information</h3>
           </div>
+         
           <div className="input-form-fields">
             <div className="full-width input-block">
               <FormControl className="full-width">

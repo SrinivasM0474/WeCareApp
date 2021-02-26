@@ -37,6 +37,10 @@ import TellResidentialAddress from "./tellResidentialAddress";
 import TellContactInformation from "./tellContactInformation";
 import Benefits from "../../views/DashboardComponent/Benefits";
 import AbsentParent from "../../pages/AbsentParent/AbsentParent";
+import NextImage from '../../views/images/next-icon.png';
+import BackImage from '../../views/images/back-icon.png';
+
+
 const styles = {
   width: "100%",
   height: "100%",
@@ -212,30 +216,30 @@ const AboutYourselfPage = () => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [nextButtonClicked, setNextButtonClicked] = React.useState(false);
-  const[page, setpages]=useState({benefits:0,household:0,members:0})
+  const [page, setpages] = useState({ benefits: 0, household: 0, members: 0 })
   const steps = getSteps();
 
   const handleNext = () => {
-    console.log('LLLLLLLLLL',activeStep,page.household)
-if(activeStep===0){
-  setFormIsValid(true); 
-  setActiveStep((prevActiveStep) => prevActiveStep + 1);  
-}
-if(activeStep===1 &&page.household<2 )setFormIsValid(true); 
-// if(activeStep===1 &&page.household===1 )setFormIsValid(true); 
-if(activeStep===1&&page.household<3){  
-  setpages((preVal) => {
-    return{
-      benefits:0,
-      household:(preVal.household)+1,
-      members:0
-    }    
-  });
+    console.log('LLLLLLLLLL', activeStep, page.household)
+    if (activeStep === 0) {
+      setFormIsValid(true);
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
+    if (activeStep === 1 && page.household < 2) setFormIsValid(true);
+    // if(activeStep===1 &&page.household===1 )setFormIsValid(true); 
+    if (activeStep === 1 && page.household < 3) {
+      setpages((preVal) => {
+        return {
+          benefits: 0,
+          household: (preVal.household) + 1,
+          members: 0
+        }
+      });
 
-}
-if(page.household===3){
-  setActiveStep((prevActiveStep) => prevActiveStep + 1);
-}
+    }
+    if (page.household === 3) {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
     // if (!foifrmIsValid) {
     //   setNextButtonClicked(true);
     // } else {
@@ -244,19 +248,19 @@ if(page.household===3){
   };
 
   const handleBack = () => {
-    
-    if(activeStep===1&&page.household!==0){
-     
+
+    if (activeStep === 1 && page.household !== 0) {
+
       setpages((preVal) => {
-        return{
-          benefits:0,
-          household:(preVal.household)-1,
-          members:0
-        }    
+        return {
+          benefits: 0,
+          household: (preVal.household) - 1,
+          members: 0
+        }
       });
-    }else{
-      
-       setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    } else {
+
+      setActiveStep((prevActiveStep) => prevActiveStep - 1);
     }
     // setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
@@ -264,7 +268,7 @@ if(page.household===3){
   const handleReset = () => {
     setActiveStep(0);
   };
-  
+
   const onFormControlChangeHandler = (isFormValid) => {
     setFormIsValid(isFormValid);
     setNextButtonClicked(false);
@@ -310,68 +314,69 @@ if(page.household===3){
               <Button onClick={handleReset}>Reset</Button>
             </div>
           ) : (
-            <div>
-              {/* <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography> */}
-              {/* {getStepComponent(activeStep)} */}
-              {/* {activeStep === 0 && (
+              <div>
+                {/* <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography> */}
+                {/* {getStepComponent(activeStep)} */}
+                {/* {activeStep === 0 && (
                 <AboutYourselfForm
                   onFormControlChange={onFormControlChangeHandler}
                   triggerValidation={nextButtonClicked}
                 />
               )} */}
-             
-              {activeStep === 0 && (
-                <Benefits/>
-                // <AboutYourSelfPageNew
-                //   onFormControlChange={onFormControlChangeHandler}
-                //   triggerValidation={nextButtonClicked}
-                // />
-              )}
-              {activeStep === 1 &&page.household===0&& 
-              
-              <AboutYourSelfPageNew 
-              onFormControlChange={onFormControlChangeHandler} />}
-              {activeStep === 1 && page.household===1&&
-               <TellContactInformation
-              onFormControlChange={onFormControlChangeHandler}
-              />}
-              {/* {activeStep === 2 && <AddressForm />} */}
-              {activeStep === 1 &&page.household===2&& 
-              <TellResidentialAddress
-              onFormControlChange={onFormControlChangeHandler}
-              />}
-                {activeStep === 1 &&page.household===3&& <TellUsMoreAboutYou
-              onFormControlChange={onFormControlChangeHandler}
-              />}
-              {activeStep === 2 && <AddressForm />}
-              {activeStep === 3 && <AbsentParent />}
-              
+
+                {activeStep === 0 && (
+                  <Benefits />
+                  // <AboutYourSelfPageNew
+                  //   onFormControlChange={onFormControlChangeHandler}
+                  //   triggerValidation={nextButtonClicked}
+                  // />
+                )}
+                {activeStep === 1 && page.household === 0 &&
+
+                  <AboutYourSelfPageNew
+                    onFormControlChange={onFormControlChangeHandler} />}
+                {activeStep === 1 && page.household === 1 &&
+                  <TellContactInformation
+                    onFormControlChange={onFormControlChangeHandler}
+                  />}
+                {/* {activeStep === 2 && <AddressForm />} */}
+                {activeStep === 1 && page.household === 2 &&
+                  <TellResidentialAddress
+                    onFormControlChange={onFormControlChangeHandler}
+                  />}
+                {activeStep === 1 && page.household === 3 && <TellUsMoreAboutYou
+                  onFormControlChange={onFormControlChangeHandler}
+                />}
+                {activeStep === 2 && <AddressForm />}
+                {activeStep === 3 && <AbsentParent />}
 
 
-              <div className={classes.buttons}>
-                <Button
-                  // disabled={activeStep === 0}
-                  variant="contained"
-                  onClick={handleBack}
-                  className={classes.backButton}
-                >
-                  <ArrowForwardIcon className="back-icon" /> <span>Back</span>
-                </Button>
-                <Button
-                  variant="contained"
-                  onClick={handleNext}
-                   disabled={formIsValid}
-                  className={classes.nextButton}
-                >
-                  {console.log('formIsValid',formIsValid)}
-                  <span>
-                    {activeStep === steps.length - 1 ? "Finish" : "Next"}
-                  </span>{" "}
-                  <ArrowForwardIcon className="back-icon rotate-0" />
-                </Button>
+
+                <div className={classes.buttons}>
+                  <Button
+                    // disabled={activeStep === 0}
+                    variant="contained"
+                    onClick={handleBack}
+                    className={classes.backButton}
+                  >
+                    <img src={BackImage} alt='next' style={{ width: '24px', marginRight: '14px' }} /> <span>Back</span>
+                  </Button>
+                  <Button
+                    variant="contained"
+                    onClick={handleNext}
+                    disabled={formIsValid}
+                    className={classes.nextButton}
+                  >
+                    {console.log('formIsValid', formIsValid)}
+                    <span>
+                      {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                    </span>{" "}
+                    <img src={NextImage} alt='next' style={{ width: '24px', marginLeft: '14px' }} />
+                    {/* <ArrowForwardIcon className="back-icon rotate-0" /> */}
+                  </Button>
+                </div>
               </div>
-            </div>
-          )}
+            )}
         </div>
       </div>
     </div>

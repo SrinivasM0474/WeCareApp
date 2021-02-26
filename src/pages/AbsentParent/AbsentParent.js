@@ -22,6 +22,10 @@ import WcIcon from "@material-ui/icons/Wc";
 import _ from "lodash";
 import AbsentParentModal from './../../components/AbsentParentModal'
 // import ChildrenModalInformation from './../../components/ChildrenModalInformation'
+import HouseHoldImage from '../../views/images/authorized-Rep-title-icon.png';
+import AbsentParentImage from '../../views/images/absent-parent-icon.png';
+import AddImage from '../../views/images/cancel-icon.png';
+
 class AbsentParent extends React.Component {
   constructor() {
     super();
@@ -131,7 +135,7 @@ class AbsentParent extends React.Component {
         <div className="about-yourself">
           <div className="about-header d-flex">
             <span>
-              <PersonOutlineTwoToneIcon />
+              <img src={HouseHoldImage} alt="App usre" width='30' />
             </span>
             <h3>Tell us about your children Absent Parent Information (If relavent)</h3>
           </div>
@@ -149,10 +153,10 @@ class AbsentParent extends React.Component {
               <div className="a-table">
                 <div className="adults">
                   <div>
-                    <WcIcon />
+                    <img src={AbsentParentImage} alt='parent' width='20px' />
                     <span>Absent parent (s)</span>
                   </div>
-                  <Button className="add-btn" onClick={() => this.addItems('adults')}>Add</Button>
+                  <Button className="add-btn" onClick={() => this.addItems('adults')}><img src={AddImage} alt='add' />Add</Button>
                 </div>
                 <table>
                   <thead>

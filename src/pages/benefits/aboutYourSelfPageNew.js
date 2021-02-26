@@ -31,6 +31,8 @@ import LanguageIcon from "@material-ui/icons/Language";
 import MaskedInput from 'react-text-mask';
 import { GENDER_MALE, GENDER_OTHER, GENDER_FEMALE } from "../../../src/constants";
 import IconButton from '@material-ui/core/IconButton';
+import AppUser from '../../views/images/tellus-title-icon.png';
+
 
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
@@ -115,14 +117,14 @@ const AboutYourSelfPageNew = (props) => {
     if (Object.keys(errorsData).length > 0) {
       props.onFormControlChange(true);
       return false;
-    } else {     
-      if(selectedDate===null){
+    } else {
+      if (selectedDate === null) {
         props.onFormControlChange(true);
-      }else{
-        props.onFormControlChange(false); 
+      } else {
+        props.onFormControlChange(false);
       }
-          
-     
+
+
       return true;
     }
   };
@@ -142,11 +144,11 @@ const AboutYourSelfPageNew = (props) => {
     //   if (errors !== null && Object.keys(errors).length === 0)
     //     props.onFormControlChange(false);
     // }
-    
+
   };
   const changeValids = (e) => {
     if (e.target.value.length === 11) {
-      
+
       setIsType('password')
     }
 
@@ -167,10 +169,16 @@ const AboutYourSelfPageNew = (props) => {
       <Container className="container" maxWidth="md">
         <form ref={loginForm} >
           <div className="about-yourself">
-            <div className="about-header d-flex">
+            {/* <div className="about-header d-flex">
               <span>
                 {" "}
                 <PersonIcon />
+              </span>
+              <h3>Tell us about yourself</h3>
+            </div> */}
+            <div className="about-header d-flex">
+              <span>
+                <img src={AppUser} alt="App usre" width='30' />
               </span>
               <h3>Tell us about yourself</h3>
             </div>
@@ -256,9 +264,9 @@ const AboutYourSelfPageNew = (props) => {
                     autoOk={false}
                     onChange={handleDateChange}
                     value={selectedDate}
-                    onBlur={(e)=>validate(e)}
-                   
-                   
+                    onBlur={(e) => validate(e)}
+
+
                   />
                 </MuiPickersUtilsProvider>
               </div>

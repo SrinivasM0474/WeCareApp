@@ -11,8 +11,11 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 // import HeaderLogo from '../images/new_logo.png';
 // import PageLogo from '../images/page_logo.png';
 // import LoginImg from '../images/login_img.png';
-import AppUser from '../images/application_user.png';
+// import AppUser from '../images/application_user.png';
+import AppUser from '../images/tellus-title-icon.png';
+
 // import FillApp from '../images/fill-app.png';
+import NextImage from '../images/next-icon.png';
 
 import Header from './../../components/Header';
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
@@ -21,7 +24,7 @@ import '../style.css';
 const styles = theme => ({
     root: {
         flexGrow: 1,
-      }
+    }
 })
 
 class AppBenifits extends React.Component {
@@ -40,16 +43,16 @@ class AppBenifits extends React.Component {
         this.setState({
             [e.target.name]: e.target.value
         });
-        if(this.state.email.indexOf("@") === -1) { 
+        if (this.state.email.indexOf("@") === -1) {
             this.state.emailErr = "Requires valid email";
-            this.state.Validemail = "";  
+            this.state.Validemail = "";
         } else {
             this.state.Validemail = e.target.value;
             this.state.emailErr = ""
         }
     }
-    render(){
-        return(
+    render() {
+        return (
             <div className="">
                 <Header />
 
@@ -58,15 +61,15 @@ class AppBenifits extends React.Component {
                         <Grid container spacing={3}>
                             <Grid item xs={12}>
                                 <div className="new-app-s">
-                                    <div className="heading-b">
-                                        <img src={AppUser} alt="App usre" />
-                                        <Typography variant="h5" className="pad-t-0" component="h5" gutterBottom>
-                                        Do you wish to designate an authorized representative to assist you with your application or benefits?
-                                        </Typography>
+                                    <div className="about-header d-flex">
+                                        <span>
+                                            <img src={AppUser} alt="App usre" width='30' />
+                                        </span>
+                                        <h3>  Do you wish to designate an authorized representative to assist you with your application or benefits?</h3>
                                     </div>
                                     <div className="">
                                         <Typography variant="body1" className="fs17" gutterBottom>
-                                        You can allow the authorized representative to do any or all of the following:
+                                            You can allow the authorized representative to do any or all of the following:
                                         </Typography>
                                         <ul>
                                             <li>Be an Authorized Representative on your application.</li>
@@ -75,15 +78,15 @@ class AppBenifits extends React.Component {
                                             <li>Report changes on your behalf.</li>
                                         </ul>
                                         <Typography variant="body1" className="fs17" gutterBottom>
-                                        If yes, we are required to collect their name and their respective details to submit this application.
+                                            If yes, we are required to collect their name and their respective details to submit this application.
                                         </Typography>
                                     </div>
                                     <div className="gender yes-no-block">
-                                            <ul>
-                                                <li className="">Yes</li>
-                                                <li>No</li>
-                                            </ul>
-                                        </div>
+                                        <ul>
+                                            <li className="">Yes</li>
+                                            <li>No</li>
+                                        </ul>
+                                    </div>
                                     {/* <div>
                                         <Button variant="contained" color="secondary">
                                             Next
@@ -94,9 +97,9 @@ class AppBenifits extends React.Component {
                         </Grid>
                     </div>
                 </Container>
-                <div className='text-center'>
-                        <button onClick={() => this.props.history.push("/aboutyou")} className='btn-nxt'> <span>Next</span>
-                            <ArrowForwardIcon className="back-icon rotate-0" /></button>
+                             <div className='d-flex justify-content-center'>
+                        <button onClick={() => this.props.history.push("/aboutyou")} className='btn-nxt d-flex align-items-center'> <span>Next</span>
+                            <img src={NextImage} alt='next' /></button>
                     </div>
             </div>
         );

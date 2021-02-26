@@ -23,6 +23,16 @@ import EditIcon from "@material-ui/icons/Edit";
 import CloseIcon from "@material-ui/icons/Close";
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import CheckIcon from '@material-ui/icons/Check';
+
+import NotificationImage from '../../views/images/dashboard-notifications-icon.png';
+import SubmitImage from '../../views/images/dashboard-submitted-icon.png';
+import SavedImage from '../../views/images/dashboad-saved-icon.png';
+import NewApplicationImage from '../../views/images/dashboard-new-application-icon.png';
+import UploadDocumentIMage from '../../views/images/dashboard-upload-documents-icon.png';
+
+
+
+
 const styles = (theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -227,7 +237,8 @@ class LoginComponent extends React.Component {
             <div className="about-header d-flex justify-content-between">
               <div className='d-flex'>
                 <span>
-                  <NotificationsOutlinedIcon />
+                  {/* <NotificationsOutlinedIcon /> */}
+                  <img src={NotificationImage} alt='notifications'/>
                 </span>
                 <h3>Notifications</h3>
               </div>
@@ -257,7 +268,8 @@ class LoginComponent extends React.Component {
             <div className="about-header d-flex justify-content-between">
               <div className='d-flex'>
                 <span className='saved-icon'>
-                  <BookmarkIcon />
+                  <img src={SavedImage} alt='saved-icon'/>
+                  {/* <BookmarkIcon /> */}
                 </span>
                 <h3>My Saved Applications</h3>
               </div>
@@ -304,7 +316,7 @@ class LoginComponent extends React.Component {
             <div className="about-header d-flex justify-content-between">
               <div className='d-flex'>
                 <span className='submit-icon'>
-                  <CheckIcon />
+                <img src={SubmitImage} alt='submit-icon'/>
                 </span>
                 <h3>My submitted Applications</h3>
               </div>
@@ -359,20 +371,16 @@ class LoginComponent extends React.Component {
                   >
                     <>
                       <img
-                        src={NewAppliaction}
+                        src={NewApplicationImage}
                         alt="New Appliaction"
-                        width="82"
-                        height="68"
                       />
                       <p>New Application</p>
                     </>
                   </Grid>
                   <Grid className="dash-box" item xs={12} md={6}>
                     <img
-                      src={UploadDocuments}
+                      src={UploadDocumentIMage}
                       alt="Upload Documents"
-                      width="82"
-                      height="68"
                     />
                     <p>Upload Documents</p>
                   </Grid>

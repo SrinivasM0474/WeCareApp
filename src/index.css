@@ -216,7 +216,7 @@ h3 {
 
 .about-header span {
   background: #ee5050;
-  padding: 10px 8px;
+  padding: 10px 8px 12px 8px;
   border-radius: 6px;
   color: white;
   display: inline-flex;
@@ -451,7 +451,13 @@ table tbody tr:hover {
   text-transform: capitalize !important;
   color: white;
   outline: 0;
-  padding: 0 10px;
+  padding: 0 4px;
+}
+
+
+.adults .add-btn img {
+  width: 18px;
+  margin-right: 6px;
 }
 
 .adults .add-btn .txt-border {
@@ -556,11 +562,15 @@ table tbody tr:hover {
   align-items: center;
 }
 
-.nav-user svg {
+.nav-user .user-icon {
+  width: 24px;
+  margin-right: 5px;
+}
+/* .nav-user svg {
   color: #0072bc;
   margin-right: 5px;
   font-size: 20px;
-}
+} */
 
 .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
   height: 30px !important;
@@ -665,12 +675,15 @@ table tbody tr:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 0 10px 0;
+  padding: 0px 0 4px 0;
   border-radius: 4px;
   border: 0;
   box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 5px 8px 0px rgb(0 0 0 / 14%), 0px 1px 14px 0px rgb(0 0 0 / 12%);
 }
 
+.header-modal .mh-img {
+  width: 60px;
+}
 .header-modal svg {
   color: white;
   font-size: 50px;
@@ -749,7 +762,16 @@ table tbody tr:hover {
 .icon-forward {
   float: right;
 }
-
+.nav-btns img {
+  background: #ee5050 !important;
+  padding: 8px;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
 .nav-btns svg {
   background: #ee5050 !important;
   padding: 8px;
@@ -792,7 +814,7 @@ table tbody tr:hover {
 }
 
 .create-accnt {
-  min-width: 180px!important;
+  min-width: 120px!important;
   background: #ee5050 !important;
   position: relative!important;
   left: 50%;
@@ -803,6 +825,10 @@ table tbody tr:hover {
   font-family: 'Soleil-Regular'!important;
   font-size: 16px!important;
   outline: 0 !important;
+}
+.create-accnt img {
+  position: relative;
+  left: -10px;
 }
 
 /* login page styles */
@@ -932,8 +958,14 @@ table tbody tr:hover {
 }
 
 .notifications .about-header span {
-  padding: 8px;
+  padding: 5px 2px;
 }
+
+/* .notifications .about-header span img {
+  width: 34px;
+} */
+
+
 
 .notifications .about-header h3 {
   font-family: 'Soleil-Light';
@@ -1216,11 +1248,16 @@ table thead tr th, tbody tr td {
     letter-spacing: 1px;
     text-transform: capitalize;
     background-color: #EE5050;
-    padding: 5.5px 16px;
+    padding: 6px 10px 6px 20px;
     min-width: 64px;
     border: 0;
     box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
     margin-bottom: 30px;
+}
+
+.btn-nxt img {
+  width: 24px;
+  margin-left: 14px;
 }
 
 .modal-container {

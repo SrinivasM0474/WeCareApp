@@ -19,6 +19,7 @@ import './../views/style.css';
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import BuildYourProfileIMage from './../views/images/modal-build-your-profile-icon.png';
 
 function getModalStyle() {
     const top = 50;
@@ -116,7 +117,8 @@ const ProfileInformation = (props) => {
                 <div style={modalStyle} className={classes.paper}>
                     <div className='profile-modal'>
                         <div className='header-modal'>
-                            <GroupAddOutlinedIcon />
+                            {/* <GroupAddOutlinedIcon /> */}
+                            <img src={BuildYourProfileIMage} alt="adult" className='mh-img' />
                         </div>
                         <div className='header-text text-center'>
                             <h4>Build Your Profile</h4>
@@ -152,9 +154,9 @@ const ProfileInformation = (props) => {
                                                 Back
 										</Button> */}
                                                     {activeStep !== 0 &&
-                                                        <ArrowBackIcon onClick={handleNext} onClick={handleBack} className='icon-back'/>}
+                                                        <ArrowBackIcon onClick={handleNext} onClick={handleBack} className='icon-back' />}
                                                     {activeStep === 3 && <Button className='create-accnt'>Create Account</Button>}
-                                                    {activeStep !== 3 && <ArrowForwardIcon onClick={handleNext} className='icon-forward'/>}
+                                                    {activeStep !== 3 && <ArrowForwardIcon onClick={handleNext} className='icon-forward' />}
                                                     {/* <Button variant="contained" className="step-btn-nxt" color="primary" onClick={handleNext}>
                                                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                             </Button> */}
