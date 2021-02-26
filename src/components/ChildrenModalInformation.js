@@ -31,6 +31,9 @@ import MenuItem from "@material-ui/core/MenuItem";
 import MaskedInput from 'react-text-mask';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import CloseIcon from '@material-ui/icons/Close';
+import HosueHoldAdultImage from './../views/images/modal-household-adults-icon.png';
+import CancelImage from './../views/images/cancel-icon.png';
+import SaveImage from './../views/images/modal-save-and-exit-icon.png';
 import { GENDER_MALE, GENDER_OTHER, GENDER_FEMALE,YES,NO } from "../constants";
 
 function getModalStyle() {
@@ -109,7 +112,7 @@ const ChildrenModalInformation = (props) => {
                 <div style={modalStyle} className={classes.paper}>
                     <div className='profile-modal'>
                         <div className='header-modal'>
-                            <GroupAddOutlinedIcon />
+                            <img src={HosueHoldAdultImage} alt="adult" className='mh-img' />
                         </div>
                         <div className='header-text text-center'>
                             <h4>Household Children</h4>
@@ -279,8 +282,8 @@ const ChildrenModalInformation = (props) => {
                             </form>
                         </Container>
                         <div className='children-btns'>
-                            <Button className='create-accnt' onClick={handleClose}><CloseIcon className='save-icon'/> Cancel</Button>
-                            <Button className='create-accnt'><span><BookmarkBorderIcon className='save-icon'/></span>Save</Button>
+                            <Button className='create-accnt' onClick={handleClose}><img src={CancelImage} alt='cancel' width='20px' /> Cancel</Button>
+                            <Button className='create-accnt'><img src={SaveImage}  width='20px' alt='save'/>Save</Button>
                         </div>
 
                     </div>

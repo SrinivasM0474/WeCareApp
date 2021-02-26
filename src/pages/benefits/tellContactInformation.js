@@ -36,6 +36,7 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
+import AppUser from '../../views/images/tellus-title-icon.png';
 
 
 const TellContactInformation = (props) => {
@@ -80,7 +81,7 @@ const TellContactInformation = (props) => {
   );
   const validatecontact = (key) => {
     let fields = key === 'all' ? ['phoneno', 'Launguage', 'email'] : [key];
-    let errorsData = errors ? errors : {phoneno:'',Launguage:'',email:''};
+    let errorsData = errors ? errors : { phoneno: '', Launguage: '', email: '' };
     fields.forEach(field => {
       let loginFormelements = loginForm.current;
       if (!loginFormelements[field] || loginFormelements[field].value.trim() === '') {
@@ -98,13 +99,13 @@ const TellContactInformation = (props) => {
       }
     });
     setErrors(Object.assign({}, errorsData));
-    console.log(errorsData,'errorsData')
+    console.log(errorsData, 'errorsData')
     if (Object.keys(errorsData).length > 0) {
-           props.onFormControlChange(true);
+      props.onFormControlChange(true);
       return false;
-    } 
+    }
     else {
-       props.onFormControlChange(false);
+      props.onFormControlChange(false);
 
       return true;
     }
@@ -116,8 +117,7 @@ const TellContactInformation = (props) => {
         <div className="about-yourself">
           <div className="about-header d-flex">
             <span>
-              {" "}
-              <PersonOutlineTwoToneIcon />
+              <img src={AppUser} alt="App usre" width='30' />
             </span>
             <h3>Tell us about your contact information</h3>
           </div>
@@ -160,7 +160,7 @@ const TellContactInformation = (props) => {
                   label="Phone (Required)"
                   className="input-field"
                   onBlur={() => { validatecontact('phoneno'); }}
-                    onBlur={() => { validatecontact('phoneno'); }}
+                  onBlur={() => { validatecontact('phoneno'); }}
                   helperText={errors && errors.phoneno ? "Phone no is required" : ""}
                   InputProps={{
                     endAdornment: (

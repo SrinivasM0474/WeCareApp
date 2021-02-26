@@ -20,9 +20,15 @@ import EditIcon from "@material-ui/icons/Edit";
 import CloseIcon from "@material-ui/icons/Close";
 import WcIcon from "@material-ui/icons/Wc";
 import _ from "lodash";
+// import AdultsModalInformation from './../../components/AdultsModalInformation';
+// import ChildrenModalInformation from './../../components/ChildrenModalInformation';
+import HouseHoldImage from '../../views/images/household-title-icon.png';
+import MembersAdultImage from '../../views/images/members-adults-icon.png';
+import MembersChildrenImage from '../../views/images/members-childrens-icon.png';
+import AddImage from '../../views/images/cancel-icon.png';
 import AdultsModalInformation from './../../components/AdultsModalInformation'
 import ChildrenModalInformation from './../../components/ChildrenModalInformation'
-import { YES,NO } from "../../constants";
+import { YES, NO } from "../../constants";
 class AddressForm extends React.Component {
   constructor() {
     super();
@@ -39,7 +45,7 @@ class AddressForm extends React.Component {
       }],
       totalValue: 0,
       errorMess: null,
-      isActiveChildern: false,      
+      isActiveChildern: false,
       itemChildern: [{
         firstName: '',
         middleName: '',
@@ -54,14 +60,14 @@ class AddressForm extends React.Component {
     };
   }
   handleClick = (value) => {
-    if (value === "Yes") this.setState({isActive:YES});
-    else if (value === "No") this.setState({isActive: NO});
+    if (value === "Yes") this.setState({ isActive: YES });
+    else if (value === "No") this.setState({ isActive: NO });
 
   }
   handleChildrenClick = (value) => {
-    if (value === "Yes") this.setState({isActiveChildern:YES});
-    else if (value === "No") this.setState({isActiveChildern: NO});
-    
+    if (value === "Yes") this.setState({ isActiveChildern: YES });
+    else if (value === "No") this.setState({ isActiveChildern: NO });
+
   }
   itemChange = (e, i, testvalue, name) => {
     e.preventDefault()
@@ -141,35 +147,43 @@ class AddressForm extends React.Component {
 
   }
   render() {
-    
+
     return (
       <Container maxWidth="md" className="container">
         <div className="about-yourself">
-          <div className="about-header d-flex">
+          {/* <div className="about-header d-flex">
             <span>
               <PersonOutlineTwoToneIcon />
             </span>
             <h3>Tell us about your household</h3>
+          </div> */}
+          <div className="about-header d-flex">
+            <span>
+              <img src={HouseHoldImage} alt="App usre" width='30' />
+            </span>
+            <h3>Tell us about your household</h3>
           </div>
+
           <div className="input-form-fields">
             <p className="text">Are you adding any adults to your application?</p>
 
             <div className="input-block gender-block">
               <div className="gender yes-no-block">
                 <ul>
-                <li className={this.state.isActive===NO ? "selected" : ''} onClick={() => this.handleClick("No")}  >No</li>
-                  <li className={this.state.isActive===YES ? "selected" : ''} onClick={() => this.handleClick('Yes')}>Yes</li>
-                 
+                  <li className={this.state.isActive === NO ? "selected" : ''} onClick={() => this.handleClick("No")}  >No</li>
+                  <li className={this.state.isActive === YES ? "selected" : ''} onClick={() => this.handleClick('Yes')}>Yes</li>
+
                 </ul>
               </div>
             </div>{this.state.isActive === YES &&
               <div className="a-table">
                 <div className="adults">
                   <div>
-                    <WcIcon />
+                    {/* <WcIcon /> */}
+                    <img src={MembersAdultImage} alt='adults' width='20px' />
                     <span>Adult(s)</span>
                   </div>
-                  <Button className="add-btn" onClick={() => this.addItems('adults')}>Add</Button>
+                  <Button className="add-btn" onClick={() => this.addItems('adults')}><img src={AddImage} alt='add' />Add</Button>
                 </div>
                 <table>
                   <thead>
@@ -259,9 +273,9 @@ class AddressForm extends React.Component {
             <div className="input-block gender-block">
               <div className="gender yes-no-block">
                 <ul>
-                <li className={this.state.isActiveChildern===NO ? "selected" : ''} onClick={() => this.handleChildrenClick("No")}>No</li>
-                  <li className={this.state.isActiveChildern===YES ? "selected" : ''} onClick={() => this.handleChildrenClick("Yes")}>Yes</li>
-                 
+                  <li className={this.state.isActiveChildern === NO ? "selected" : ''} onClick={() => this.handleChildrenClick("No")}>No</li>
+                  <li className={this.state.isActiveChildern === YES ? "selected" : ''} onClick={() => this.handleChildrenClick("Yes")}>Yes</li>
+
                 </ul>
               </div>
             </div>
@@ -269,10 +283,12 @@ class AddressForm extends React.Component {
               <div className="a-table">
                 <div className="adults">
                   <div>
-                    <WcIcon />
+                    {/* <WcIcon /> */}
+                    <img src={MembersChildrenImage} alt='children' width='20px' />
+
                     <span>Children</span>
                   </div>
-                  <Button className="add-btn" onClick={() => this.addItems('children')}>Add</Button>
+                  <Button className="add-btn" onClick={() => this.addItems('children')}><img src={AddImage} alt='add' />Add</Button>
                 </div>
                 <table>
                   <thead>
@@ -351,9 +367,9 @@ class AddressForm extends React.Component {
               </div>}
           </div>
         </div>
-        {this.state.isOpenAdultsModal && <AdultsModalInformation closeModal={() => { this.isOpenProfileModel(false) }} />}
-        {this.state.isOpenChildrenModal && <ChildrenModalInformation closeModal={() => { this.isOpenChildrenModel(false) }} />}
-      </Container>
+        { this.state.isOpenAdultsModal && <AdultsModalInformation closeModal={() => { this.isOpenProfileModel(false) }} />}
+        { this.state.isOpenChildrenModal && <ChildrenModalInformation closeModal={() => { this.isOpenChildrenModel(false) }} />}
+      </Container >
     );
   }
 

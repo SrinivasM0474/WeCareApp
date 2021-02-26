@@ -11,14 +11,14 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 // import HeaderLogo from '../images/new_logo.png';
 // import PageLogo from '../images/page_logo.png';
 // import LoginImg from '../images/login_img.png';
-import AppUser from '../images/application_user.png';
+import AppUser from '../images/tellus-title-icon.png';
 import FillApp from '../images/fill-app.png';
 import SubmitProof from '../images/submit-proof.png';
 import SubmitApp from '../images/submit-app.png';
 import InterviewApp from '../images/interview-app.png';
 import Header from './../../components/Header';
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-
+import NextImage from '../images/next-icon.png';
 import '../style.css';
 
 const styles = theme => ({
@@ -61,11 +61,11 @@ class AppProcess extends React.Component {
                         <Grid container spacing={3}>
                             <Grid item xs={12}>
                                 <div className="new-app-s">
-                                    <div className="heading-b">
-                                        <img src={AppUser} alt="App usre" />
-                                        <Typography variant="h5" className="" component="h5" gutterBottom>
-                                            Here’s how Application process works.
-                                        </Typography>
+                                    <div className="about-header d-flex">
+                                        <span>
+                                            <img src={AppUser} alt="App usre" width='30' />
+                                        </span>
+                                        <h3>Here’s how Application process works.</h3>
                                     </div>
                                     <Typography variant="body1" className="" gutterBottom>
                                         Please click on all of the benefits that one or more people in your household would like to apply for. If needed, we will ask you to tell us which person or people would like to apply for that benefit.
@@ -115,9 +115,9 @@ class AppProcess extends React.Component {
                             </Grid>
                         </Grid>
                     </div>
-                    <div className='text-center'>
-                        <button onClick={() => this.props.history.push("/app-benifits")} className='btn-nxt'> <span>Next</span>
-                            <ArrowForwardIcon className="back-icon rotate-0" /></button>
+                    <div className='d-flex justify-content-center'>
+                        <button onClick={() => this.props.history.push("/app-benifits")} className='btn-nxt d-flex align-items-center'> <span>Next</span>
+                            <img src={NextImage} alt='next' /></button>
                     </div>
                 </Container>
             </div>

@@ -16,6 +16,13 @@ import PersonalInformation from './../views/AdultsModal/PersonalInformation';
 import ContactInformation from './../views/AdultsModal/ContactInformation';
 import AdditionalInformation from './../views/AdultsModal/AdditionalInformation';
 
+import HosueHoldAdultImage from './../views/images/modal-household-adults-icon.png';
+import ModalNexttImage from './../views/images/modal-next-arrow-icon.png';
+import ModalBackImage from './../views/images/modal-back-arrow-icon.png';
+import SaveImage from './../views/images/save-icon.png';
+
+
+
 function getModalStyle() {
     const top = 50;
     const left = 50;
@@ -110,7 +117,7 @@ const AdultsModalInformation = (props) => {
                 <div style={modalStyle} className={classes.paper}>
                     <div className='profile-modal'>
                         <div className='header-modal'>
-                            <GroupAddOutlinedIcon />
+                            <img src={HosueHoldAdultImage} alt="adult" className='mh-img' />
                         </div>
                         <div className='header-text text-center'>
                             <h4>Household Adult's</h4>
@@ -145,11 +152,14 @@ const AdultsModalInformation = (props) => {
                                             >
                                                 Back
 										</Button> */}
-                                                    {activeStep !== 0 &&
-                                                        <ArrowBackIcon onClick={handleNext} onClick={handleBack} className='icon-back' />}
+                                                    {/* {activeStep !== 0 &&
+                                                        <ArrowBackIcon onClick={handleNext} onClick={handleBack} className='icon-back' />} */}
+                                                    {activeStep !== 0 && <img src={ModalBackImage} onClick={handleBack} className='icon-back' />}
+
                                                     {/* {activeStep !== 2 && <Button className='create-accnt'>Cancel</Button>} */}
-                                                    {activeStep === 2 && <Button className='create-accnt'>Save</Button>}
-                                                    {activeStep !== 2 && <ArrowForwardIcon onClick={handleNext} className='icon-forward' />}
+                                                    {activeStep === 2 && <Button className='create-accnt'><img src={SaveImage} />Save</Button>}
+                                                    {/* {activeStep !== 2 && <ArrowForwardIcon onClick={handleNext} className='icon-forward' />} */}
+                                                    {activeStep !== 2 && <img src={ModalNexttImage} onClick={handleNext} className='icon-forward' />}
                                                     {/* <Button variant="contained" className="step-btn-nxt" color="primary" onClick={handleNext}>
                                                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                             </Button> */}
