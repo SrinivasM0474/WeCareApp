@@ -48,7 +48,7 @@ import ChildCareIcon from '../../views/images/stepper/childcare-icon-g.png';
 import ExpensesIcon from '../../views/images/stepper/expenses-icon-g.png';
 import HeadIcon from '../../views/images/stepper/head-icon-g.png';
 import IncomeIcon from '../../views/images/stepper/income-icon-g.png';
-import MenmbersIcon from '../../views/images/stepper/Members-icon-g.png';
+import MenmbersIconG from '../../views/images/stepper/Members-icon-g.png';
 import SubmitIcon from '../../views/images/stepper/submit-icon-g.png';
 import SummayIconG from '../../views/images/stepper/summary-icon-g.png';
 import SummaryIconW from '../../views/images/stepper/summary-icon-w.png';
@@ -57,7 +57,9 @@ import benifitsIconW from '../../views/images/stepper/benefits-icon-w.png';
 import headIconO from '../../views/images/stepper/head-icon-o.png';
 import headIconW from '../../views/images/stepper/head-icon-w.png';
 import MembersIconO from '../../views/images/stepper/Members-icon-o.png';
-import MembersIconG from '../../views/images/stepper/Members-icon-g.png';
+import MembersIconW from '../../views/images/stepper/Members-icon-w.png';
+import AbsentparentIconO from '../../views/images/stepper/absentparent-icon-o.png';
+
 
 
 
@@ -216,7 +218,7 @@ const AboutYourselfPage = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const [nextButtonClicked, setNextButtonClicked] = React.useState(false);
   const [imgIcon, setImgIcon] = React.useState({ benifitsImage: false, headImg: false, membersImg: false });
-  const [page, setpages] = useState({ benefits: 0, household: 0, members: 0, steperImg: 0 })
+  const [page, setpages] = useState({ benefits: 0, household: 0, members: 0, steperImg: 0 ,absentParent:0})
   const steps = getSteps();
   const ColorlibStepIcon = (props: StepIconProps) => {
     const classes = useColorlibStepIconStyles();
@@ -225,8 +227,8 @@ const AboutYourselfPage = () => {
     const icons: { [index: string]: React.ReactElement } = {
       1: <img src={page.benefits === 0 ? BenefitsImage : benifitsIconW} />,
       2: <img src={page.steperImg === 1 ? headIconO : page.household === 3 ? headIconW : HeadIcon} />,
-      3: <img src={page.members === 0 ? MenmbersIcon : page.members === 1 ? MembersIconG : MembersIconO} />,
-      4: <img src={AbsentParentIcon} />,
+      3: <img src={page.members === 1? MembersIconO :page.members === 2 ? MembersIconW : MenmbersIconG} />,
+      4: <img src={page.absentParent===0?AbsentParentIcon:AbsentparentIconO} />,
       5: <img src={ChildCareIcon} />,
       6: <img src={AuthorizedIcon} />,
       7: <img src={IncomeIcon} />,
@@ -254,7 +256,7 @@ const AboutYourselfPage = () => {
     console.log('page.household', activeStep, page)
     if (activeStep === 0) {
       setFormIsValid(true);
-      setpages(() => { return { benefits: 1, household: 0, members: 0, steperImg: 1 } })
+      setpages(() => { return { benefits: 1, household: 0, members: 0, steperImg: 1,absentParent:0 } })
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
 
@@ -266,7 +268,8 @@ const AboutYourselfPage = () => {
           benefits: 1,
           steperImg: 1,
           household: (preVal.household) + 1,
-          members: 0
+          members: 0,
+          absentParent:0,
         }
       });
 
@@ -277,9 +280,20 @@ const AboutYourselfPage = () => {
           benefits: 1,
           steperImg: 0,
           household: 3,
-          members: 1
+          members: 1,
+          absentParent:0,
         }
       });
+      if(activeStep===2){
+        setpages((preVal) => {
+          return {
+            benefits: 1,
+            household: 3,
+           absentParent:1,
+            members: 2
+          }
+        });
+      }
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
     // if (!foifrmIsValid) {
@@ -408,7 +422,7 @@ const AboutYourselfPage = () => {
                   <Button
                     variant="contained"
                     onClick={handleNext}
-                    disabled={formIsValid}
+                    // disabled={formIsValid}
                     className={classes.nextButton}
                   >
                     {console.log('formIsValid', formIsValid)}
