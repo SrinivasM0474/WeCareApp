@@ -25,7 +25,7 @@ import _ from "lodash";
 import HouseHoldImage from '../../views/images/household-title-icon.png';
 import MembersAdultImage from '../../views/images/members-adults-icon.png';
 import MembersChildrenImage from '../../views/images/members-childrens-icon.png';
-import AddImage from '../../views/images/cancel-icon.png';
+import AddImage from '../../views/images/add-icon.png';
 import AdultsModalInformation from './../../components/AdultsModalInformation'
 import ChildrenModalInformation from './../../components/ChildrenModalInformation'
 import { YES, NO } from "../../constants";

@@ -32,7 +32,8 @@ import {
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 import AppUser from '../../views/images/tellus-title-icon.png';
-
+import ZipImage from '../../views/images/zip-icon.png';
+import AddressImage from '../../views/images/address-icon.png';
 const TellResidentialAddress = (props) => {
   const [isAnotherAddress, setIsAnotherAddress] = React.useState(false);
 
@@ -128,7 +129,8 @@ const TellResidentialAddress = (props) => {
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <PinDropSharpIcon className="icon" />
+                        {/* <PinDropSharpIcon className="icon" /> */}
+                        <img src={AddressImage} />
                       </InputAdornment>
                     ),
                   }}
@@ -189,7 +191,9 @@ const TellResidentialAddress = (props) => {
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <HomeSharpIcon className="icon" />
+                        {/* <HomeSharpIcon className="icon" /> */}
+                        <img src={ZipImage} />
+
                       </InputAdornment>
                     ),
                   }}
@@ -229,7 +233,8 @@ const TellResidentialAddress = (props) => {
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
-                            <PinDropSharpIcon className="icon" />
+                            {/* <PinDropSharpIcon className="icon" /> */}
+                            <img src={AddressImage} />
                           </InputAdornment>
                         ),
                       }}
@@ -288,7 +293,8 @@ const TellResidentialAddress = (props) => {
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
-                            <HomeSharpIcon className="icon" />
+                            {/* <HomeSharpIcon className="icon" /> */}
+                            <img src={ZipImage} />
                           </InputAdornment>
                         ),
                       }}

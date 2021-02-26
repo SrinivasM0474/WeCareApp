@@ -30,6 +30,8 @@ import {
     KeyboardDatePicker,
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
+import ZipImage from '../../views/images/zip-icon.png';
+import AddressImage from '../../views/images/address-icon.png';
 
 const ProviderAddress = (props) => {
     const [isAnotherAddress, setIsAnotherAddress] = React.useState(false);
@@ -109,7 +111,8 @@ const ProviderAddress = (props) => {
                                 InputProps={{
                                     endAdornment: (
                                         <InputAdornment position="end">
-                                            <PinDropSharpIcon className="icon" />
+                                            {/* <PinDropSharpIcon className="icon" /> */}
+                                            <img src={AddressImage} />
                                         </InputAdornment>
                                     ),
                                 }}
@@ -153,7 +156,8 @@ const ProviderAddress = (props) => {
                                 InputProps={{
                                     endAdornment: (
                                         <InputAdornment position="end">
-                                            <HomeSharpIcon className="icon" />
+                                            {/* <HomeSharpIcon className="icon" /> */}
+                                            <img src={ZipImage} />
                                         </InputAdornment>
                                     ),
                                 }}
