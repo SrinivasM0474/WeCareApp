@@ -67,7 +67,7 @@ const TellUsMoreAboutYou = (props) => {
             <span>
               <img src={AppUser} alt="App usre" width='30' />
             </span>
-            <h3>Tell us about your contact information</h3>
+            <h3>Tell us more about you</h3>
           </div>
          
           <div className="input-form-fields">
@@ -163,7 +163,7 @@ const TellUsMoreAboutYou = (props) => {
               <KeyboardDatePicker
                 margin="normal"
                 id="dob"
-                label="Date of Birth"
+                label="What is her due date?"
                 format="MM/dd/yyyy"
                 value={selectedDate}
                 onChange={handleDateChange}

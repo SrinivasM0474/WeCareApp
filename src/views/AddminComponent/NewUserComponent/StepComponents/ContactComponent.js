@@ -106,7 +106,7 @@ const ProfileComponent = (props) => {
                 <div className="input-block">
                     <TextField
                         id="standard-basic"
-                        label="Preferred Launguage (Required)"
+                        label="Preferred Language (Required)"
                         className="input-field"
                         InputProps={{
                             endAdornment: (

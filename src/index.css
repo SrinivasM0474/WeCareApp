@@ -598,7 +598,7 @@ table tbody tr:hover {
 .input-block .MuiSelect-select.MuiSelect-select {
   background-image: url("./views/images/select-dropdown.png");
   background-repeat: no-repeat;
-  background-position: right top 16px;
+  background-position: right 5px top 16px;
 }
 
 .back-icon {
@@ -643,6 +643,13 @@ table tbody tr:hover {
   outline: 0;
   right: -15px;
   position: relative;
+}
+
+.about-date label {
+  color: black;
+  width: 180px;
+  font-size: 14px !important;
+  font-family: "Roboto-Regular" !important;
 }
 
 /* .about-date .MuiFormControl-marginNormal {
@@ -1268,6 +1275,7 @@ table thead tr th, tbody tr td {
 }
 .about-date .MuiFormControl-marginNormal {
   width: 160px !important;
+  /* margin: 0; */
 }
 
 .date-pick {
@@ -1281,4 +1289,7 @@ table thead tr th, tbody tr td {
   color: black !important;
   font-family: "Roboto-Regular";
   margin-bottom: 0;
+ }
+ .adult-children {
+   margin-top: -20px;
  }

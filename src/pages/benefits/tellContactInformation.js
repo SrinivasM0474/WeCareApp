@@ -230,11 +230,11 @@ const TellContactInformation = (props) => {
               <div className="input-block">
                 <TextField
                   type='text'
-                  name='Launguage'
-                  error={errors && errors.Launguage}
+                  name='language'
+                  error={errors && errors.language}
                   autoComplete='off'
                   id="standard-basic"
-                  label="Preferred Launguage (Required)"
+                  label="Preferred Language (Required)"
                   className="input-field"
                   helperText={errors && errors.Launguage ? "Launguage is required" : ""}
                   onBlur={() => { validatecontact('Launguage'); }}

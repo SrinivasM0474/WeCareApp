@@ -108,7 +108,7 @@ const TellResidentialAddress = (props) => {
             <span>
               <img src={AppUser} alt="App usre" width='30' />
             </span>
-            <h3>Tell us about your contact information</h3>
+            <h3>Tell us about your Residential Address</h3>
           </div>
 
           <div className="input-form-fields">

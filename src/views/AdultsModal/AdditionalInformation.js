@@ -77,7 +77,9 @@ const AdditionalInformation = (props) => {
               </FormControl>
             </div>
             <div className="about-origin">
-              <p className="text">Are you Pregnant?</p>
+              <InputLabel className="input-label label-width">
+              Is she pregnant ?
+              </InputLabel>
               <div className="input-block gender-block">
                 <div className="gender yes-no-block">
                   <ul>
@@ -91,10 +93,10 @@ const AdditionalInformation = (props) => {
               <div className="full-width input-block about-date">
                 <MuiPickersUtilsProvider
                   utils={DateFnsUtils}
-                  className="full-width date"
+                  className="full-width date m-0"
                 >
                   <KeyboardDatePicker
-                    margin="normal"
+                    margin="0"
                     id="dob"
                     label="What is her due date?"
                     format="MM/dd/yyyy"

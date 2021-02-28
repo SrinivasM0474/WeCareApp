@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const getSteps = () => {
-    return ['provider information', 'contact information', 'address', 'additional information'];
+    return ['profile information', 'contact information', 'address', 'additional information'];
 }
 
 const getStepContent = (stepIndex) => {
@@ -125,7 +125,7 @@ const AbsentParentModal = (props) => {
                             <img src={AbsentModalImage} alt="adult" className='mh-img' />
                         </div>
                         <div className='header-text text-center'>
-                            <h4 className='mb-10'>Absent Parent</h4>
+                            <h4>Absent Parent</h4>
                         </div>
 
                         <div className='modal-nav'>

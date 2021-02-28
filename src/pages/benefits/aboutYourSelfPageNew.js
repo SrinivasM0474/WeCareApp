@@ -201,7 +201,7 @@ const AboutYourSelfPageNew = (props) => {
                   error={errors && errors.lastName}
                   id="standard-basic"
                   name='lastName'
-                  label="Last Name(Required)"
+                  label="Last Name (Required)"
                   className="input-field"
                   onFocus={() => { validate('lastName'); }}
                   onChange={() => { validate('lastName'); }}
