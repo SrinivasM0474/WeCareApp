@@ -124,8 +124,7 @@ const TellContactInformation = (props) => {
       return errors !== null ? props.onFormControlChange(false) : props.onFormControlChange(true);
     }
     else {
-      setErrors()
-      setPoneNO(null)
+      setPoneNO('')
       props.onFormControlChange(true)
     }
 
@@ -171,7 +170,7 @@ const TellContactInformation = (props) => {
             </div>
             <form ref={loginForm} >
               <div className="input-block">
-                <div className={phoneNo === null ? "floating_labels phone-bg phone-error" : 'floating_labels phone-bg'}>
+                <div className={phoneNo === '' ? "floating_labels phone-bg phone-error" : 'floating_labels phone-bg'}>
                   <MaskedInput
                     mask={[/[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
                     className='floating-input'
@@ -184,7 +183,7 @@ const TellContactInformation = (props) => {
                     required
                   />
                   <label>Phone (Required)</label>
-                  <span>{phoneNo === null ? "Phone number is required" : ''}</span>
+                  <span>{phoneNo === '' ? "Phone number is required" : ''}</span>
                 </div>
                 {/* <TextField
                   type='text'
