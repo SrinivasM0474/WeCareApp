@@ -122,8 +122,6 @@ const AboutYourSelfPageNew = (props) => {
       } else {
         props.onFormControlChange(false);
       }
-
-
       return true;
     }
   };
@@ -136,25 +134,15 @@ const AboutYourSelfPageNew = (props) => {
   const handleDateChange = (date) => {
     setSelectedDate(date);
     props.onFormControlChange(false);
-    // if (date&&date.toDateString() === 'Invalid Date') {
-    //   props.onFormControlChange(true);
-    // }
-    // else {
-    //   if (errors !== null && Object.keys(errors).length === 0)
-    //     props.onFormControlChange(false);
-    // }
-
+   
   };
   const changeValids = (e) => {
     if (e.target.value.length === 11) {
-
       setIsType('password')
     }
-
     else {
       setIsType('text')
     }
-
   }
 
   const handleGenderChange = (value) => {
@@ -225,10 +213,7 @@ const AboutYourSelfPageNew = (props) => {
                         <RecordVoiceOverIcon className="icon" />
                       </InputAdornment>
                     ),
-                  }}
-                // onChange={(e) => {
-                //   handleNameChange(e);
-                // }}
+                  }}                
                 />
               </div>
 
@@ -258,8 +243,6 @@ const AboutYourSelfPageNew = (props) => {
                     onChange={handleDateChange}
                     value={selectedDate}
                     onBlur={(e) => validate(e)}
-
-
                   />
                 </MuiPickersUtilsProvider>
               </div>
