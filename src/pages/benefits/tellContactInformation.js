@@ -80,8 +80,8 @@ const TellContactInformation = (props) => {
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   );
   const validatecontact = (key) => {
-    let fields = key === 'all' ? ['phoneno', 'Launguage', 'email'] : [key];
-    let errorsData = errors ? errors : { phoneno: '', Launguage: '', email: '' };
+    let fields = key === 'all' ? ['phoneno', 'language', 'email'] : [key];
+    let errorsData = errors ? errors : { phoneno: '', language: '', email: '' };
     fields.forEach(field => {
       let loginFormelements = loginForm.current;
       if (!loginFormelements[field] || loginFormelements[field].value.trim() === '') {
@@ -196,14 +196,14 @@ const TellContactInformation = (props) => {
               <div className="input-block">
                 <TextField
                   type='text'
-                  name='Launguage'
-                  error={errors && errors.Launguage}
+                  name='language'
+                  error={errors && errors.language}
                   autoComplete='off'
                   id="standard-basic"
-                  label="Preferred Launguage (Required)"
+                  label="Preferred Language (Required)"
                   className="input-field"
-                  helperText={errors && errors.Launguage ? "Launguage is required" : ""}
-                  onBlur={() => { validatecontact('Launguage'); }}
+                  helperText={errors && errors.language ? "Language is required" : ""}
+                  onBlur={() => { validatecontact('language'); }}
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">

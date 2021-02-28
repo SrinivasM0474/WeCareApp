@@ -155,7 +155,7 @@ const PersonalInformation = (props) => {
             <div className="input-form-fields">
               <div className="full-width input-block">
                 <FormControl className="full-width">
-                  <InputLabel className="input-label">What is ypur relationship to the adult you are about to provide data? (Required) </InputLabel>
+                  <InputLabel className="input-label">What is your relationship to the adult you are about to provide data? (Required) </InputLabel>
                   <Select className="text-left">
                     {formdata.suffix['options'].map((val) => {
                       return (
@@ -203,7 +203,7 @@ const PersonalInformation = (props) => {
                   error={errors && errors.lastName}
                   id="standard-basic"
                   name='lastName'
-                  label="Last Name(Required)"
+                  label="Last Name (Required)"
                   className="input-field"
                   onBlur={() => { validate('lastName'); }}
                   autoComplete='off'

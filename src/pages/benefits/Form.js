@@ -122,7 +122,7 @@ class FormData extends Component {
             <div className="input-block">
               <TextField
                 id="standard-basic"
-                label="Preferred Launguage (Required)"
+                label="Preferred Language (Required)"
                 className="input-field"
                 onChange={this.handleChange}
               />

@@ -173,36 +173,38 @@ const ContactInformation = (props) => {
                             </div>
 
                             <div className="about-origin">
-                                <p className="text">
+                                <InputLabel className="input-label label-width">
                                     Is the phone number provided:
-              </p>
+              </InputLabel>
                                 <div className="input-block gender-block">
-                                    <div className="gender yes-no-block">
+                                    <div className="gender">
                                         <ul>
+
                                             <li>Mobile</li>
-                                            <li >Home</li>
-                                            <li>work</li>
+                                            <li>Home</li>
+                                            <li>Work</li>
                                         </ul>
                                     </div>
                                 </div>
 
                             </div>
-                            <div className="input-block">
-                                        <TextField
-                                            name='fName'
-                                            id="standard-basic"
-                                            label="Email"
-                                            className="input-field"
-                                            InputProps={{
-                                                endAdornment: (
-                                                  <InputAdornment position="end">
-                                                    <MailIcon className="icon" />
-                                                  </InputAdornment>
-                                                ),
-                                              }} 
-                                        />
 
-                                    </div>
+                            <div className="input-block">
+                                <TextField
+                                    name='fName'
+                                    id="standard-basic"
+                                    label="Email"
+                                    className="input-field"
+                                    InputProps={{
+                                        endAdornment: (
+                                            <InputAdornment position="end">
+                                                <MailIcon className="icon" />
+                                            </InputAdornment>
+                                        ),
+                                    }}
+                                />
+
+                            </div>
                         </div>
                     </div>
                 </form>
