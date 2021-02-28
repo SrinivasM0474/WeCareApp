@@ -171,7 +171,7 @@ const TellContactInformation = (props) => {
             </div>
             <form ref={loginForm} >
               <div className="input-block">
-                <div className={phoneNo === null ? "floating_labels phone-error" : 'floating_labels'}>
+                <div className={phoneNo === null ? "floating_labels phone-bg phone-error" : 'floating_labels phone-bg'}>
                   <MaskedInput
                     mask={[/[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
                     className='floating-input'
