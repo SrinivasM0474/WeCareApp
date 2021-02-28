@@ -454,7 +454,6 @@ table tbody tr:hover {
   padding: 0 4px;
 }
 
-
 .adults .add-btn img {
   width: 20px;
   margin-right: 6px;
@@ -566,6 +565,7 @@ table tbody tr:hover {
   width: 24px;
   margin-right: 5px;
 }
+
 /* .nav-user svg {
   color: #0072bc;
   margin-right: 5px;
@@ -691,6 +691,7 @@ table tbody tr:hover {
 .header-modal .mh-img {
   width: 60px;
 }
+
 .header-modal svg {
   color: white;
   font-size: 50px;
@@ -769,6 +770,7 @@ table tbody tr:hover {
 .icon-forward {
   float: right;
 }
+
 .nav-btns img {
   background: #ee5050 !important;
   padding: 8px;
@@ -779,6 +781,7 @@ table tbody tr:hover {
   font-weight: bold;
   cursor: pointer;
 }
+
 .nav-btns svg {
   background: #ee5050 !important;
   padding: 8px;
@@ -833,6 +836,7 @@ table tbody tr:hover {
   font-size: 16px!important;
   outline: 0 !important;
 }
+
 .create-accnt img {
   position: relative;
   left: -10px;
@@ -971,8 +975,6 @@ table tbody tr:hover {
 /* .notifications .about-header span img {
   width: 34px;
 } */
-
-
 
 .notifications .about-header h3 {
   font-family: 'Soleil-Light';
@@ -1243,18 +1245,18 @@ table thead tr th, tbody tr td {
 
 .btn-nxt {
   color: white;
-    outline: none !important;
-    font-family: "Roboto-Light";
-    font-weight: bold;
-    border-radius: 4px;
-    letter-spacing: 1px;
-    text-transform: capitalize;
-    background-color: #EE5050;
-    padding: 6px 10px 6px 20px;
-    min-width: 64px;
-    border: 0;
-    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
-    margin-bottom: 30px;
+  outline: none !important;
+  font-family: "Roboto-Light";
+  font-weight: bold;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  background-color: #EE5050;
+  padding: 6px 10px 6px 20px;
+  min-width: 64px;
+  border: 0;
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  margin-bottom: 30px;
 }
 
 .btn-nxt img {
@@ -1273,6 +1275,7 @@ table thead tr th, tbody tr td {
 .m-0 {
   margin: 0 !important;
 }
+
 .about-date .MuiFormControl-marginNormal {
   width: 160px !important;
   /* margin: 0; */
@@ -1282,14 +1285,26 @@ table thead tr th, tbody tr td {
   flex-direction: column !important;
   align-items: flex-start !important;
   height: 50px;
-    position: relative;
+  position: relative;
 }
-.date-pick label{
+
+.date-pick label {
   font-size: 12px !important;
   color: black !important;
   font-family: "Roboto-Regular";
   margin-bottom: 0;
- }
- .adult-children {
-   margin-top: -20px;
- }
+}
+
+.adult-children {
+  margin-top: -20px;
+}
+
+.phone-error .floating-input{
+  border-bottom: 2px solid #f44336;
+}
+
+.phone-error span {
+  color: #f44336;
+  font-size: 12px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}

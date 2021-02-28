@@ -45,7 +45,7 @@ const TellContactInformation = (props) => {
   const [isInterpreter, setIsInterpreter] = useState(false);
   const [isCommunicate, setIsCommunicate] = useState(false);
   const [isAccommodations, setIsAccommodations] = useState(false);
-  const [phoneNo,setPoneNO]=useState(null)
+  const [phoneNo, setPoneNO] = useState(null)
 
   const handlePhoneNoChange = (value) => {
     if (value === MOBILE) setIsPhoneNO(MOBILE);
@@ -82,12 +82,12 @@ const TellContactInformation = (props) => {
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   );
   const validatecontact = (key) => {
-    let fields = key === 'all' ? ['Launguage', 'email'] : [key];
-    let errorsData = errors ? errors : { Launguage: '', email: '' };
+    let fields = key === 'all' ? ['language', 'email'] : [key];
+    let errorsData = errors ? errors : { language: '', email: '' };
     fields.forEach(field => {
-   
+
       let loginFormelements = loginForm.current;
-     
+
       if (!loginFormelements[field] || loginFormelements[field].value.trim() === '') {
 
         errorsData[field] = (field) + 'is required';
@@ -109,25 +109,26 @@ const TellContactInformation = (props) => {
       return false;
     }
     else {
-      if(phoneNo){
+      if (phoneNo) {
         props.onFormControlChange(false);
       }
-      else{
+      else {
         props.onFormControlChange(true);
       }
       return true;
     }
   };
-  const changeValids=(e)=>{
-    if(e.target.value.length===12){
+  const changeValids = (e) => {
+    if (e.target.value.length === 12) {
       setPoneNO(e.target.value)
-      return errors!==null ?props.onFormControlChange(false):props.onFormControlChange(true);
-    }    
+      return errors !== null ? props.onFormControlChange(false) : props.onFormControlChange(true);
+    }
     else {
-      setPoneNO(null) 
+      setErrors()
+      setPoneNO(null)
       props.onFormControlChange(true)
     }
-      
+
   }
 
   return (
@@ -170,10 +171,10 @@ const TellContactInformation = (props) => {
             </div>
             <form ref={loginForm} >
               <div className="input-block">
-              <div className='floating_labels'>
+                <div className={phoneNo === null ? "floating_labels phone-error" : 'floating_labels'}>
                   <MaskedInput
                     mask={[/[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
-                    className="floating-input"
+                    className='floating-input'
                     autoComplete='off'
                     guide={false}
                     id="my-input-id"
@@ -182,7 +183,8 @@ const TellContactInformation = (props) => {
                     onChange={(e) => { changeValids(e) }}
                     required
                   />
-                  <label>Phone No</label>
+                  <label>Phone (Required)</label>
+                  <span>{phoneNo === null ? "Phone number is required" : ''}</span>
                 </div>
                 {/* <TextField
                   type='text'
@@ -236,9 +238,9 @@ const TellContactInformation = (props) => {
                   id="standard-basic"
                   label="Preferred Language (Required)"
                   className="input-field"
-                  helperText={errors && errors.Launguage ? "Launguage is required" : ""}
-                  onBlur={() => { validatecontact('Launguage'); }}
-                  onChange={() => { validatecontact('Launguage'); }}
+                  helperText={errors && errors.language ? "Language is required" : ""}
+                  onBlur={() => { validatecontact('language'); }}
+                  onChange={() => { validatecontact('language'); }}
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
