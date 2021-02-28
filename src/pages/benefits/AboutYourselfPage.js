@@ -217,18 +217,17 @@ const AboutYourselfPage = () => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [nextButtonClicked, setNextButtonClicked] = React.useState(false);
-  const [imgIcon, setImgIcon] = React.useState({ benifitsImage: false, headImg: false, membersImg: false });
-  const [page, setpages] = useState({ benefits: 0, household: 0, members: 0, steperImg: 0 ,absentParent:0})
+  const [imgIcon, setImgIcon] = React.useState({ benifitsImg: 0, headImg: 0, membersImg: 0, absentParentImg: 0 });
+  const [page, setpages] = useState({ benefits: 0, household: 0, members: 0, absentParent: 0 })
   const steps = getSteps();
   const ColorlibStepIcon = (props: StepIconProps) => {
     const classes = useColorlibStepIconStyles();
     const { active, completed } = props;
-    console.log(active, '>>>>>>>>>>>')
     const icons: { [index: string]: React.ReactElement } = {
-      1: <img src={page.benefits === 0 ? BenefitsImage : benifitsIconW} />,
-      2: <img src={page.steperImg === 1 ? headIconO : page.household === 3 ? headIconW : HeadIcon} />,
-      3: <img src={page.members === 1? MembersIconO :page.members === 2 ? MembersIconW : MenmbersIconG} />,
-      4: <img src={page.absentParent===0?AbsentParentIcon:AbsentparentIconO} />,
+      1: <img src={imgIcon.benifitsImg === 0 ? BenefitsImage : benifitsIconW} />,
+      2: <img src={imgIcon.headImg === 0 ?HeadIcon  : imgIcon.headImg === 2 ? headIconW : headIconO} />,
+      3: <img src={imgIcon.membersImg === 0 ?MenmbersIconG  : imgIcon.membersImg === 1 ? MembersIconO :MembersIconW } />,
+      4: <img src={imgIcon.absentParentImg === 0 ? AbsentParentIcon : AbsentparentIconO} />,
       5: <img src={ChildCareIcon} />,
       6: <img src={AuthorizedIcon} />,
       7: <img src={IncomeIcon} />,
@@ -253,72 +252,93 @@ const AboutYourselfPage = () => {
   }
 
   const handleNext = () => {
-    console.log('page.household', activeStep, page)
+      
     if (activeStep === 0) {
       setFormIsValid(true);
-      setpages(() => { return { benefits: 1, household: 0, members: 0, steperImg: 1,absentParent:0 } })
+      setImgIcon({benifitsImg:1,
+        headImg: 1, 
+        membersImg: 0, 
+        absentParentImg: 0})
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
-
+    if(activeStep===1 && page.household===3){
+      setImgIcon({
+        benifitsImg:1,
+        headImg: 2, 
+        membersImg: 1, 
+        absentParentImg: 0})
+    }
+    if(activeStep===2){
+      setImgIcon({
+        benifitsImg:1,
+        headImg: 2, 
+        membersImg: 2, 
+        absentParentImg: 1})
+    }
+    if(activeStep===3){
+      setImgIcon({
+        benifitsImg:1,
+        headImg: 2, 
+        membersImg: 2, 
+        absentParentImg: 1})
+    }
     if (activeStep === 1 && page.household < 2) setFormIsValid(true);
-    // if(activeStep===1 &&page.household===1 )setFormIsValid(true); 
     if (activeStep === 1 && page.household < 3) {
       setpages((preVal) => {
         return {
-          benefits: 1,
-          steperImg: 1,
+          benefits: 0,
           household: (preVal.household) + 1,
-          members: 0,
-          absentParent:0,
+          members: 0
         }
       });
 
     }
     if (page.household === 3) {
-      setpages((preVal) => {
-        return {
-          benefits: 1,
-          steperImg: 0,
-          household: 3,
-          members: 1,
-          absentParent:0,
-        }
-      });
-      if(activeStep===2){
-        setpages((preVal) => {
-          return {
-            benefits: 1,
-            household: 3,
-           absentParent:1,
-            members: 2
-          }
-        });
-      }
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
-    // if (!foifrmIsValid) {
-    //   setNextButtonClicked(true);
-    // } else {
-    // setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    // }
+
   };
 
   const handleBack = () => {
-    setFormIsValid(false)
-    if (activeStep === 1 && page.household !== 0) {
-
+    console.log('>>>>>>>>.back setp',page,activeStep, imgIcon)
+    if(imgIcon.benifitsImg){
+      setFormIsValid(false)
+    }
+  
+    if(activeStep===1&&page.household===0){
+      setImgIcon({benifitsImg:0,
+        headImg: 0, 
+        membersImg: 0, 
+        absentParentImg: 0})
+        
+    }
+   
+    if(activeStep===2 && page.household==3){
+      setImgIcon({benifitsImg:1,
+        headImg: 1, 
+        membersImg: 0, 
+        absentParentImg: 0})
+    }
+    if(activeStep===3){
+      setImgIcon({benifitsImg:1,
+        headImg: 2, 
+        membersImg: 1, 
+        absentParentImg: 0})
+    }
+    if (activeStep === 1 && page.household !== 0) {   
+      setFormIsValid(true)  
       setpages((preVal) => {
         return {
-          benefits: 0,
           household: (preVal.household) - 1,
-          members: 0
         }
       });
-    } else {
 
+    } else {
+      // setFormIsValid(true)
       setActiveStep((prevActiveStep) => prevActiveStep - 1);
     }
-    // setActiveStep((prevActiveStep) => prevActiveStep - 1);
+   
+
   };
 
   const handleReset = () => {
@@ -352,7 +372,7 @@ const AboutYourselfPage = () => {
             className={classes.stepper}
             connector={<ColorlibConnector />}
           >
-            {console.log('setImgIcon.benefits', imgIcon)}
+           
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel StepIconComponent={ColorlibStepIcon}>
@@ -363,7 +383,7 @@ const AboutYourselfPage = () => {
           </Stepper>
         </div>
         <div>
-          {console.log('activestep', activeStep, page)}
+        
           {activeStep === steps.length ? (
             <div>
               <Typography className={classes.instructions}>
@@ -422,10 +442,9 @@ const AboutYourselfPage = () => {
                   <Button
                     variant="contained"
                     onClick={handleNext}
-                    // disabled={formIsValid}
+                    disabled={formIsValid}
                     className={classes.nextButton}
                   >
-                    {console.log('formIsValid', formIsValid)}
                     <span>
                       {activeStep === steps.length - 1 ? "Finish" : "Next"}
                     </span>{" "}
