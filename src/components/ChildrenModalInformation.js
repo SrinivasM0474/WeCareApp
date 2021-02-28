@@ -119,11 +119,11 @@ const ChildrenModalInformation = (props) => {
                         </div>
                         <Container className="modal-container" maxWidth="md">
                             <form >
-                                <div className="about-yourself adult-household profile-content">
+                                <div className="about-yourself adult-household profile-content adult-children">
                                     <div className="input-form-fields">
                                         <div className="full-width input-block">
                                             <FormControl className="full-width">
-                                                <InputLabel className="input-label">What is ypur relationship to the adult you are about to provide data? (Required) </InputLabel>
+                                                <InputLabel className="input-label">What is your relationship to the adult you are about to provide data? (Required) </InputLabel>
                                                 <Select className="text-left">
                                                     <MenuItem>One</MenuItem>
                                                     <MenuItem>One</MenuItem>
@@ -164,7 +164,7 @@ const ChildrenModalInformation = (props) => {
                                                 name='lastName'
                                                 id="standard-basic"
                                                 name='lastName'
-                                                label="Last Name(Required)"
+                                                label="Last Name (Required)"
                                                 className="input-field"
                                                 autoComplete='off'
                                                 InputProps={{

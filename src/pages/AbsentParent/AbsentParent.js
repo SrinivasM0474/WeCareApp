@@ -25,7 +25,7 @@ import { YES,NO } from "../../constants";
 // import ChildrenModalInformation from './../../components/ChildrenModalInformation'
 import HouseHoldImage from '../../views/images/authorized-Rep-title-icon.png';
 import AbsentParentImage from '../../views/images/absent-parent-icon.png';
-import AddImage from '../../views/images/cancel-icon.png';
+import AddImage from '../../views/images/add-icon.png';
 
 class AbsentParent extends React.Component {
   constructor() {
@@ -128,7 +128,7 @@ class AbsentParent extends React.Component {
             <span>
               <img src={HouseHoldImage} alt="App usre" width='30' />
             </span>
-            <h3>Tell us about your children Absent Parent Information (If relavent)</h3>
+            <h3>Tell us about your children Absent Parent Information (If relevent)</h3>
           </div>
           <div className="input-form-fields">
             <p className="text">Are you adding any absent parent to your application?</p>

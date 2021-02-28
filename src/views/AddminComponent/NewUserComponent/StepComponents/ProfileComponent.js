@@ -84,7 +84,7 @@ const ProfileComponent = (props) => {
                     <TextField
                         name='fName'
                         id="standard-basic"
-                        label="First Name(Required)"
+                        label="First Name (Required)"
                         className="input-field"
                         InputProps={{
                             endAdornment: (
@@ -107,7 +107,7 @@ const ProfileComponent = (props) => {
                     <TextField
                         name='lName'
                         id="standard-basic"
-                        label="Last Name(Required)"
+                        label="Last Name (Required)"
                         className="input-field"
                         InputProps={{
                             endAdornment: (
@@ -155,7 +155,7 @@ const ProfileComponent = (props) => {
                         <KeyboardDatePicker
                             margin="normal"
                             id="dob"
-                            label="Date of Birth"
+                            label="Date of Birth (Required)"
                             format="MM/dd/yyyy"
                             value={selectedDate}
                             onChange={handleDateChange}

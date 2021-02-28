@@ -27,7 +27,8 @@ import MailIcon from "@material-ui/icons/Mail";
 import LanguageIcon from "@material-ui/icons/Language";
 // import FormData from "./Form";
 import {
-  HOME, MOBILE, WORK} from "../../../src/constants";
+  HOME, MOBILE, WORK
+} from "../../../src/constants";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
@@ -37,7 +38,7 @@ import DateFnsUtils from "@date-io/date-fns";
 
 const ContactInformation = (props) => {
   const [isPhoneNo, setIsPhoneNO] = useState(false);
-  
+
   const handlePhoneNoChange = (value) => {
     if (value === MOBILE) setIsPhoneNO(MOBILE);
     else if (value === HOME) setIsPhoneNO(HOME);
@@ -46,7 +47,7 @@ const ContactInformation = (props) => {
 
   };
 
- 
+
   const loginForm = React.useRef(null);
   const classes = useStyles();
   const [errors, setErrors] = React.useState(null);
@@ -55,7 +56,7 @@ const ContactInformation = (props) => {
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
   );
   const validatecontact = (key) => {
-    let fields = key === 'all' ? ['phoneno', 'Launguage', 'email'] : [key];
+    let fields = key === 'all' ? ['phoneno', 'Language', 'email'] : [key];
     let errorsData = errors ? errors : {};
     fields.forEach(field => {
       let loginFormelements = loginForm.current;
@@ -90,7 +91,7 @@ const ContactInformation = (props) => {
       <Container className="modal-container" maxWidth="md">
         <div className="about-yourself adult-household">
           <div className="input-form-fields">
-         
+
             <form ref={loginForm} >
               <div className="input-block">
                 <TextField
@@ -113,33 +114,38 @@ const ContactInformation = (props) => {
                 />
               </div>
 
-              <div className="input-block gender-block p-t-16">
-              <InputLabel className="input-label label-width">
-                Choose your Primary Phone Number
-              </InputLabel>
-              <div className="gender">
-                <ul>
 
-                  <li className="selected"
-                    onClick={() => {
-                      handlePhoneNoChange("Mobile");
-                    }}
-                    className={isPhoneNo === MOBILE ? "selected" : ""}>Mobile</li>
-                  <li
-                    className={isPhoneNo === HOME ? "selected" : ""}
-                    onClick={() => {
-                      handlePhoneNoChange("Home");
-                    }}
-                  >Home</li>
-                  <li
-                    className={isPhoneNo === WORK ? "selected" : ""}
-                    onClick={() => {
-                      handlePhoneNoChange("Work");
-                    }}
-                  >Work</li>
-                </ul>
+              <div className="about-origin">
+                <InputLabel className="input-label label-width">
+                  Is the phone number provided:
+              </InputLabel>
+                <div className="input-block gender-block">
+                  <div className="gender">
+                    <ul>
+
+                      <li className="selected"
+                        onClick={() => {
+                          handlePhoneNoChange("Mobile");
+                        }}
+                        className={isPhoneNo === MOBILE ? "selected" : ""}>Mobile</li>
+                      <li
+                        className={isPhoneNo === HOME ? "selected" : ""}
+                        onClick={() => {
+                          handlePhoneNoChange("Home");
+                        }}
+                      >Home</li>
+                      <li
+                        className={isPhoneNo === WORK ? "selected" : ""}
+                        onClick={() => {
+                          handlePhoneNoChange("Work");
+                        }}
+                      >Work</li>
+                    </ul>
+                  </div>
+                </div>
+
               </div>
-            </div>
+
 
               <div className="input-block">
                 <TextField

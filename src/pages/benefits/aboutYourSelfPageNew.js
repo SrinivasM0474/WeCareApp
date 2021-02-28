@@ -213,7 +213,7 @@ const AboutYourSelfPageNew = (props) => {
                   error={errors && errors.lastName}
                   id="standard-basic"
                   name='lastName'
-                  label="Last Name(Required)"
+                  label="Last Name (Required)"
                   className="input-field"
                   onFocus={() => { validate('lastName'); }}
                   onChange={() => { validate('lastName'); }}
@@ -252,7 +252,7 @@ const AboutYourSelfPageNew = (props) => {
                   className="full-width"
                 >
                   <KeyboardDatePicker
-                    placeholder="MM/DD/yyyy"
+                    placeholder="MM/DD/YYYY"
                     format={"MM/dd/yyyy"}
                     autoOk={false}
                     onChange={handleDateChange}

@@ -120,7 +120,7 @@ const AdultsModalInformation = (props) => {
                             <img src={HosueHoldAdultImage} alt="adult" className='mh-img' />
                         </div>
                         <div className='header-text text-center'>
-                            <h4>Household Adult's</h4>
+                            <h4>Household Adults</h4>
                             <Typography>This information will let us know more about you.</Typography>
                         </div>
 

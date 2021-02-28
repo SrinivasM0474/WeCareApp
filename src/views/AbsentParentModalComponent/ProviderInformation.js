@@ -197,7 +197,7 @@ const ProviderInformation = (props) => {
                                     name='lastName'
                                     id="standard-basic"
                                     name='lastName'
-                                    label="Last Name(Required)"
+                                    label="Last Name (Required)"
                                     className="input-field"
                                     InputProps={{
                                         endAdornment: (
