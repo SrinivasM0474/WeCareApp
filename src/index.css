@@ -1308,3 +1308,9 @@ table thead tr th, tbody tr td {
   font-size: 12px;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
+
+.phone-bg  input{
+  background-image: url('./views/images/phone-icon.png');
+  background-repeat: no-repeat;
+  background-position: right top 16px;
+}
