@@ -252,6 +252,10 @@ h3 {
   width: 100%;
 }
 
+.input-block form {
+  width: 100%;
+}
+
 /* .input-block .input-field svg {
   color: red;
 } */

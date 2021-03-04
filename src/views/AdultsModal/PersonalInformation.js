@@ -100,6 +100,7 @@ const PersonalInformation = (props) => {
   */
   const validate = (key) => {
     let fields = key === 'all' ? ['firstName', 'lastName'] : [key];
+    console.log( fields);
     let errorsData = errors ? errors : {};
     fields.forEach(field => {
       let loginFormelements = loginForm.current;
