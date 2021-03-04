@@ -1,19 +1,33 @@
-const validate = (key, loginForm) => {
-    console.log(key, 'keyValue');
 
-    let fields = key === 'all' ? [key.name] : [key];
-    let errors = {};
-    let errorsData = errors ? errors : {};
-    fields.forEach(field => {
-        let loginFormelements = loginForm.current;
-        if (!loginFormelements[field] || loginFormelements[field].value.trim() === '') {
-            errorsData[field] = (field) + 'is required';
-        } else {
-            delete errorsData[field];
-        }
-    });
-    // setErrors(Object.assign({}, errorsData));
-    return errorsData;
-};
 
-export default validate
+const FormData = {
+    options: [
+        {
+            value: 0,
+            displayValue: "None",
+        },
+        {
+            value: 10,
+            displayValue: "Jr.",
+        },
+        {
+            value: 20,
+            displayValue: "Sr.",
+        },
+        {
+            value: 30,
+            displayValue: "II",
+        },
+        {
+            value: 40,
+            displayValue: "III",
+        },
+        {
+            value: 50,
+            displayValue: "IV",
+        },
+    ],
+    gender: ['Female', 'Male', 'Other']
+}
+
+export default FormData

@@ -20,7 +20,7 @@ import '../../style.css';
 import Grid from '@material-ui/core/Grid';
 import MailIcon from "@material-ui/icons/Mail";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
-import FirstName from './../../../components/FormComponents/FirstNameComponent';
+import FirstName from './../../../components/FormComponents/FirstName';
 import LastName from '../../../components/FormComponents/LastNameComponent';
 import MiddleName from '../../../components/FormComponents/MiddleNameComponent';
 
@@ -180,7 +180,7 @@ class LoginComponent extends React.Component {
                                         <LastName placeHolderText={'Last Name (Required)'} autoComplete={'off'} />
                                     </div>
                                     <div className="input-block">
-                                        <MiddleName placeHolderText={'Last Name'} autoComplete={'off'}  />
+                                        <MiddleName placeHolderText={'Last Name'} autoComplete={'off'} />
                                     </div>
                                 </div>
                                 <div className='d-flex links'>

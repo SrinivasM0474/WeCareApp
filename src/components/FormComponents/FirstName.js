@@ -37,23 +37,26 @@ const FirstName = (props) => {
 
     return (
         <form ref={loginForm} >
-            <TextField
-                name='firstName'
-                id="standard-basic"
-                label={props.placeHolderText}
-                className="input-field"
-                autoComplete={props.autoComplete}
-                error={errors && errors.firstName}
-                onBlur={() => { validate('firstName'); }}
-                helperText={errors && errors.firstName ? "First Name is required" : ""}
-                InputProps={{
-                    endAdornment: (
-                        <InputAdornment position="end">
-                            <MailIcon className="icon" />
-                        </InputAdornment>
-                    ),
-                }}
-            />
+            <div className="input-block">
+                <TextField
+                    name='firstName'
+                    id="standard-basic"
+                    label={props.placeHolderText}
+                    className="input-field"
+                    autoComplete={props.autoComplete}
+                    error={errors && errors.firstName}
+                    onBlur={() => { validate('firstName'); }}
+                    helperText={errors && errors.firstName ? "First Name is required" : ""}
+                    InputProps={{
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                {props.icon}
+                            </InputAdornment>
+                        ),
+                    }}
+                />
+            </div>
+
         </form>
     )
 }
