@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
-import MailIcon from "@material-ui/icons/Mail";
 
 
 const FirstName = (props) => {
@@ -50,7 +49,7 @@ const FirstName = (props) => {
                     InputProps={{
                         endAdornment: (
                             <InputAdornment position="end">
-                                {props.icon}
+                                { props.icon && <img src={props.icon} alt='image' />}
                             </InputAdornment>
                         ),
                     }}

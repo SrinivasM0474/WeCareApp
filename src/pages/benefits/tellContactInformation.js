@@ -39,6 +39,8 @@ import DateFnsUtils from "@date-io/date-fns";
 import MaskedInput from 'react-text-mask';
 import AppUser from '../../views/images/tellus-title-icon.png';
 import IconLanguage from '../../views/images/language-icon.png';
+import AboutContactInformationForm from './../../forms/benefits/AboutContactInformationForm';
+
 
 const TellContactInformation = (props) => {
   const [isPhoneNo, setIsPhoneNO] = useState(null);
@@ -132,7 +134,7 @@ const TellContactInformation = (props) => {
 
   return (
     <div>
-      <Container className="container" maxWidth="md">
+      {/* <Container className="container" maxWidth="md">
         <div className="about-yourself">
           <div className="about-header d-flex">
             <span>
@@ -177,33 +179,12 @@ const TellContactInformation = (props) => {
                     autoComplete='off'
                     guide={false}
                     id="my-input-id"
-                    // onBlur={() => { }}
-                    // onChange={(e) => { changeValids(e) }}
                     onChange={(e) => { changeValids(e) }}
                     required
                   />
                   <label>Phone (Required)</label>
                   <span>{phoneNo === '' ? "Phone number is required" : ''}</span>
                 </div>
-                {/* <TextField
-                  type='text'
-                  name='phoneno'
-                  error={errors && errors.phoneno}
-                  autoComplete='off'
-                  id="standard-basic"
-                  label="Phone (Required)"
-                  className="input-field"
-                  onBlur={() => { validatecontact('phoneno'); }}
-                  onBlur={() => { validatecontact('phoneno'); }}
-                  helperText={errors && errors.phoneno ? "Phone no is required" : ""}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <PhoneInTalkSharpIcon className="icon" />
-                      </InputAdornment>
-                    ),
-                  }}
-                /> */}
               </div>
 
               <div className="input-block">
@@ -243,7 +224,6 @@ const TellContactInformation = (props) => {
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        {/* <LanguageIcon className="icon" /> */}
                         <img src={IconLanguage} />
                       </InputAdornment>
                     ),
@@ -325,7 +305,8 @@ const TellContactInformation = (props) => {
             </div>}
           </div>
         </div>
-      </Container>
+      </Container> */}
+      <AboutContactInformationForm />
     </div>
   );
 };

@@ -27,7 +27,66 @@ const FormData = {
             displayValue: "IV",
         },
     ],
-    gender: ['Female', 'Male', 'Other']
+    gender: ['Female', 'Male', 'Other'],
+    primaryPhoneNumber: ['Mobile', 'Home', 'Work'],
+    yesNoOptions: ['Yes', 'No'],
+    emailPhoneMailOptions: ['Email', 'Phone', 'Mail'],
+    maritalStatus: [
+        {
+            value: 1,
+            displayValue: 'Single'
+        },
+        {
+            value: 2,
+            displayValue: 'Divorced'
+        },
+        {
+            value: 3,
+            displayValue: 'Married'
+        }
+    ],
+    citizenshipStatus: [
+        {
+            value: 1,
+            displayValue: 'India'
+        },
+        {
+            value: 2,
+            displayValue: 'America'
+        },
+        {
+            value: 3,
+            displayValue: 'Australia'
+        }
+    ],
+    highestLevelEducation: [
+        {
+            value: 1,
+            displayValue: 'One'
+        },
+        {
+            value: 2,
+            displayValue: 'Two'
+        },
+        {
+            value: 3,
+            displayValue: 'Three'
+        }
+    ],
+    whatIsYourRace: [
+        {
+            value: 1,
+            displayValue: 'One'
+        },
+        {
+            value: 2,
+            displayValue: 'Two'
+        },
+        {
+            value: 3,
+            displayValue: 'Three'
+        }
+    ]
 }
 
 export default FormData

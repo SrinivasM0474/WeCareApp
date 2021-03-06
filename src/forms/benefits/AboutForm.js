@@ -12,12 +12,13 @@ import {
   ABOUT_YOURSELF_TITLE, FIRST_NAME, MIDDLE_NAME, LAST_NAME,
   SUFFIX_TITLE, DATE_TITLE, GENDER_TITLE, SSN_TITLE
 } from "../../constants";
-import FormData from "../../utils"
-import FaceRoundedIcon from "@material-ui/icons/FaceRounded";
-import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOver";
+import FormData from "../../utils";
+// import FaceRoundedIcon from "@material-ui/icons/FaceRounded";
+// import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOver";
+import FirstNameIcon from './../../views/images/first-name-icon.png';
+import LastNameIcon from './../../views/images/last-name-icon.png';
 
-
-const FormAbout = (props) => {
+const AboutForm = (props) => {
 
   return (
     <div>
@@ -30,7 +31,7 @@ const FormAbout = (props) => {
             <FirstName
               placeHolderText={FIRST_NAME}
               autoComplete={'off'}
-              icon={<FaceRoundedIcon className="icon" />}
+              icon={FirstNameIcon}
             />
             <FirstName
               placeHolderText={MIDDLE_NAME}
@@ -38,7 +39,7 @@ const FormAbout = (props) => {
             <FirstName
               placeHolderText={LAST_NAME}
               autoComplete={'off'}
-              icon={<RecordVoiceOverIcon className="icon" />}
+              icon={LastNameIcon}
             />
             <Suffix data={FormData.options} title={SUFFIX_TITLE} />
             <FormDate title={DATE_TITLE} />
@@ -52,4 +53,4 @@ const FormAbout = (props) => {
   );
 };
 
-export default FormAbout;
+export default AboutForm;
