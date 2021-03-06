@@ -173,15 +173,6 @@ class LoginComponent extends React.Component {
                                             }}
                                         />
                                     </div>
-                                    <div className="input-block">
-                                        <FirstName placeHolderText={'First Name (Required)'} autoComplete={'off'} />
-                                    </div>
-                                    <div className="input-block">
-                                        <LastName placeHolderText={'Last Name (Required)'} autoComplete={'off'} />
-                                    </div>
-                                    <div className="input-block">
-                                        <MiddleName placeHolderText={'Last Name'} autoComplete={'off'} />
-                                    </div>
                                 </div>
                                 <div className='d-flex links'>
                                     <Link to={"/user-dashboard"} className='b-l'>
