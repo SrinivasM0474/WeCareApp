@@ -7,7 +7,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Input from "@material-ui/core/Input";
 import Help from "@material-ui/icons/Help";
-import useStyles from "../../forms/benefits/AddressForm.styles";
+
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import Container from "@material-ui/core/Container";
@@ -100,7 +100,7 @@ const PersonalInformation = (props) => {
   */
   const validate = (key) => {
     let fields = key === 'all' ? ['firstName', 'lastName'] : [key];
-    console.log( fields);
+    console.log(fields);
     let errorsData = errors ? errors : {};
     fields.forEach(field => {
       let loginFormelements = loginForm.current;

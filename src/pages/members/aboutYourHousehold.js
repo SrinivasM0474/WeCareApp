@@ -6,7 +6,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Input from "@material-ui/core/Input";
 import Help from "@material-ui/icons/Help";
-import useStyles from "./AddressForm.styles";
+import useStyles from "./aboutYourHousehold.styles";
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import Container from "@material-ui/core/Container";
@@ -26,10 +26,10 @@ import HouseHoldImage from '../../views/images/household-title-icon.png';
 import MembersAdultImage from '../../views/images/members-adults-icon.png';
 import MembersChildrenImage from '../../views/images/members-childrens-icon.png';
 import AddImage from '../../views/images/add-icon.png';
-import AdultsModalInformation from './../../components/AdultsModalInformation'
-import ChildrenModalInformation from './../../components/ChildrenModalInformation'
+import AdultsModalInformation from '../../components/AdultsModalInformation'
+import ChildrenModalInformation from '../../components/ChildrenModalInformation'
 import { YES, NO } from "../../constants";
-class AddressForm extends React.Component {
+class AboutYourHousehold extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -377,4 +377,4 @@ class AddressForm extends React.Component {
 
 
 
-export default AddressForm;
+export default AboutYourHousehold;

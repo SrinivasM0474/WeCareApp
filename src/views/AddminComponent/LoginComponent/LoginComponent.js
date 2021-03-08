@@ -4,25 +4,13 @@ import { Container, Button } from '@material-ui/core/';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from "@material-ui/core/styles";
 import InputAdornment from '@material-ui/core/InputAdornment';
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import HelpOutlineOutlinedIcon from '@material-ui/icons/HelpOutlineOutlined';
-import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
-import InputLabelProps from '@material-ui/core'
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import { Navbar, Nav, Image } from 'react-bootstrap';
-import AdminLogo from '../../images/footer_logo.png';
-import Checkbox from '@material-ui/core/Checkbox';
 import CommunityConnectImage from "../../../views/images/community_Connect_Logo.png";
 import LoginImage from "../../../views/images/Login_image.png";
 import AdminHeader from '../AdminHeader/AdminHeader';
 import ProfileInformation from '../../../components/profileInformation';
 import '../../style.css';
-import Grid from '@material-ui/core/Grid';
 import MailIcon from "@material-ui/icons/Mail";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
-import FirstName from './../../../components/FormComponents/FirstName';
-import LastName from '../../../components/FormComponents/LastNameComponent';
-import MiddleName from '../../../components/FormComponents/MiddleNameComponent';
 
 const styles = theme => ({
     root: {

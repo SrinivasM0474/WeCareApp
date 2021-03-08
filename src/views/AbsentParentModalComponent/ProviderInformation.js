@@ -7,7 +7,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Input from "@material-ui/core/Input";
 import Help from "@material-ui/icons/Help";
-import useStyles from "../../forms/benefits/AddressForm.styles";
+
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import Container from "@material-ui/core/Container";
@@ -153,7 +153,7 @@ const ProviderInformation = (props) => {
                 <form ref={loginForm} >
                     <div className="about-yourself adult-household profile-content">
                         <div className="input-form-fields">
-                        <div className="full-width input-block">
+                            <div className="full-width input-block">
                                 <FormControl className="full-width">
                                     <InputLabel className="input-label">Absent Parent of Child (Required)</InputLabel>
                                     <Select className="text-left">

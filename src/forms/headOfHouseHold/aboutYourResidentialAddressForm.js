@@ -2,26 +2,15 @@
 import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import AppUser from '../../views/images/tellus-title-icon.png';
-import FirstName from "../../components/FormComponents/FirstName";
-import FormHeader from "../../components/FormComponents/FormHeader";
-import Suffix from "../../components/FormComponents/Suffix";
+import FirstName from "../../components/FormComponents/firstName";
+import FormHeader from "../../components/FormComponents/formHeader";
 import FormOptions from "../../components/FormComponents/formOption";
-import FormDate from "../../components/FormComponents/FormDate";
-import Ssn from "../../components/FormComponents/Ssn";
-import {
-    ABOUT_YOURSELF_TITLE, FIRST_NAME, MIDDLE_NAME, LAST_NAME,
-    SUFFIX_TITLE, DATE_TITLE, GENDER_TITLE, SSN_TITLE
-} from "../../constants";
 import FormData from "../../utils";
-// import FaceRoundedIcon from "@material-ui/icons/FaceRounded";
-// import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOver";
-import FirstNameIcon from './../../views/images/first-name-icon.png';
-import LastNameIcon from './../../views/images/last-name-icon.png';
 import * as NAMES from '../../constants';
 import AddressImage from '../../views/images/address-icon.png';
 import ZipImage from '../../views/images/zip-icon.png';
 
-const AboutResidentialAddressForm = (props) => {
+const AboutYourResidentialAddressForm = (props) => {
 
     return (
         <Container className="container" maxWidth="md">
@@ -254,4 +243,4 @@ const AboutResidentialAddressForm = (props) => {
     );
 };
 
-export default AboutResidentialAddressForm;
+export default AboutYourResidentialAddressForm;

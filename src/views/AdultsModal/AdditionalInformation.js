@@ -6,7 +6,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Input from "@material-ui/core/Input";
 import Help from "@material-ui/icons/Help";
-import useStyles from "../../forms/benefits/AddressForm.styles";
+
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import Container from "@material-ui/core/Container";
@@ -30,7 +30,7 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
-import { YES,NO } from "../../constants";
+import { YES, NO } from "../../constants";
 const AdditionalInformation = (props) => {
   const [selectedDate, setSelectedDate] = React.useState(
     new Date("2014-08-18T21:11:54")
@@ -39,7 +39,7 @@ const AdditionalInformation = (props) => {
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
-  
+
   const handleIspregnent = (value) => {
     if (value === "Yes") setIsPregnent(YES);
     else if (value === "No") setIsPregnent(NO);
@@ -78,18 +78,18 @@ const AdditionalInformation = (props) => {
             </div>
             <div className="about-origin">
               <InputLabel className="input-label label-width">
-              Is she pregnant ?
+                Is she pregnant ?
               </InputLabel>
               <div className="input-block gender-block">
                 <div className="gender yes-no-block">
                   <ul>
-                    <li onClick={() => { handleIspregnent("No") }} className={isPregnent===NO ? "selected" : ""}>No</li>
-                    <li onClick={() => { handleIspregnent("Yes") }} className={isPregnent ===YES? "selected" : ""}>Yes</li>
+                    <li onClick={() => { handleIspregnent("No") }} className={isPregnent === NO ? "selected" : ""}>No</li>
+                    <li onClick={() => { handleIspregnent("Yes") }} className={isPregnent === YES ? "selected" : ""}>Yes</li>
                   </ul>
                 </div>
               </div>
             </div>
-            {isPregnent===YES &&
+            {isPregnent === YES &&
               <div className="full-width input-block about-date">
                 <MuiPickersUtilsProvider
                   utils={DateFnsUtils}

@@ -46,3 +46,4 @@ export const WHAT_IS_YOUR_RACE = 'What is your Race?';
 export const HISPANIC_TEXT = 'Are you Hispanic or Latino origin?';
 export const PREGNANT_TEXT = 'Are you Pregnant?';
 export const WHAT_IS_YOUR_DUE_DATE = 'What is your due date?';
+export const BENEFITS = 'Benefits';
