@@ -15,10 +15,10 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 // import ProviderInformation from '../views/ChildCareModal/ProviderInformation';
 // import ProviderAddress from '../views/ChildCareModal/Address';
 // import ProviderAdditionalInformation from '../views/ChildCareModal/AdditionalInformation';
-import ContactInformation from '../views/AbsentParentModalComponent/ContactInformation';
-import ProviderInformation from '../views/AbsentParentModalComponent/ProviderInformation';
-import ProviderAddress from '../views/AbsentParentModalComponent/Address';
-import ProviderAdditionalInformation from '../views/AbsentParentModalComponent/AdditionalInformation';
+import ContactInformation from '../views/AbsentParentModalComponent/contactInformation';
+import ProviderInformation from '../views/AbsentParentModalComponent/providerInformation';
+import ProviderAddress from '../views/AbsentParentModalComponent/address';
+import ProviderAdditionalInformation from '../views/AbsentParentModalComponent/additionalInformation';
 import AbsentModalImage from '../views/images/modal-absent-parent-icon.png';
 
 import ModalNexttImage from './../views/images/modal-next-arrow-icon.png';
@@ -145,10 +145,10 @@ const AbsentParentModal = (props) => {
                                             <Button onClick={handleReset}>Reset</Button>
                                         </div>
                                     ) : (
-                                            <div>
-                                                <div className={classes.instructions}>{getStepContent(activeStep)}</div>
-                                                <div className='nav-btns'>
-                                                    {/* <Button
+                                        <div>
+                                            <div className={classes.instructions}>{getStepContent(activeStep)}</div>
+                                            <div className='nav-btns'>
+                                                {/* <Button
                                                 disabled={activeStep === 0}
                                                 onClick={handleBack}
                                                 variant="contained"
@@ -156,17 +156,17 @@ const AbsentParentModal = (props) => {
                                             >
                                                 Back
 										</Button> */}
-                                                    {activeStep !== 0 &&
-                                                        <img src={ModalBackImage} onClick={handleBack} className='icon-back' />}
-                                                    {/* {activeStep !== 2 && <Button className='create-accnt'>Cancel</Button>} */}
-                                                    {activeStep === 3 && <Button className='create-accnt'><img src={SaveImage} />Save</Button>}
-                                                    {activeStep !== 3 && <img src={ModalNexttImage} onClick={handleNext} className='icon-forward' />}
-                                                    {/* <Button variant="contained" className="step-btn-nxt" color="primary" onClick={handleNext}>
+                                                {activeStep !== 0 &&
+                                                    <img src={ModalBackImage} onClick={handleBack} className='icon-back' />}
+                                                {/* {activeStep !== 2 && <Button className='create-accnt'>Cancel</Button>} */}
+                                                {activeStep === 3 && <Button className='create-accnt'><img src={SaveImage} />Save</Button>}
+                                                {activeStep !== 3 && <img src={ModalNexttImage} onClick={handleNext} className='icon-forward' />}
+                                                {/* <Button variant="contained" className="step-btn-nxt" color="primary" onClick={handleNext}>
                                                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                             </Button> */}
-                                                </div>
                                             </div>
-                                        )}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

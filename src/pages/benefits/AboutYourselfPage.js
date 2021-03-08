@@ -12,7 +12,7 @@ import StepLabel from "@material-ui/core/StepLabel";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import useStyles from "./AboutYourselfPage.styles";
-import Header from "../../components/Header";
+import Header from "../../components/header";
 import AboutYourHousehold from "../members/aboutYourHousehold";
 import SettingsIcon from "@material-ui/icons/Settings";
 import GroupAddIcon from "@material-ui/icons/GroupAdd";

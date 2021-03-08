@@ -12,9 +12,9 @@ import GroupAddOutlinedIcon from '@material-ui/icons/GroupAddOutlined';
 import './../views/style.css';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import ProviderInformation from '../views/ChildCareModal/ProviderInformation';
-import ProviderAddress from '../views/ChildCareModal/Address';
-import ProviderAdditionalInformation from '../views/ChildCareModal/AdditionalInformation';
+import ProviderInformation from '../views/ChildCareModal/providerInformation';
+import ProviderAddress from '../views/ChildCareModal/address';
+import ProviderAdditionalInformation from '../views/ChildCareModal/additionalInformation';
 
 function getModalStyle() {
     const top = 50;
@@ -133,10 +133,10 @@ const ChildCareProviderModal = (props) => {
                                             <Button onClick={handleReset}>Reset</Button>
                                         </div>
                                     ) : (
-                                            <div>
-                                                <div className={classes.instructions}>{getStepContent(activeStep)}</div>
-                                                <div className='nav-btns'>
-                                                    {/* <Button
+                                        <div>
+                                            <div className={classes.instructions}>{getStepContent(activeStep)}</div>
+                                            <div className='nav-btns'>
+                                                {/* <Button
                                                 disabled={activeStep === 0}
                                                 onClick={handleBack}
                                                 variant="contained"
@@ -144,17 +144,17 @@ const ChildCareProviderModal = (props) => {
                                             >
                                                 Back
 										</Button> */}
-                                                    {activeStep !== 0 &&
-                                                        <ArrowBackIcon onClick={handleNext} onClick={handleBack} className='icon-back' />}
-                                                    {/* {activeStep !== 2 && <Button className='create-accnt'>Cancel</Button>} */}
-                                                    {activeStep === 2 && <Button className='create-accnt'>Save</Button>}
-                                                    {activeStep !== 2 && <ArrowForwardIcon onClick={handleNext} className='icon-forward' />}
-                                                    {/* <Button variant="contained" className="step-btn-nxt" color="primary" onClick={handleNext}>
+                                                {activeStep !== 0 &&
+                                                    <ArrowBackIcon onClick={handleNext} onClick={handleBack} className='icon-back' />}
+                                                {/* {activeStep !== 2 && <Button className='create-accnt'>Cancel</Button>} */}
+                                                {activeStep === 2 && <Button className='create-accnt'>Save</Button>}
+                                                {activeStep !== 2 && <ArrowForwardIcon onClick={handleNext} className='icon-forward' />}
+                                                {/* <Button variant="contained" className="step-btn-nxt" color="primary" onClick={handleNext}>
                                                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                             </Button> */}
-                                                </div>
                                             </div>
-                                        )}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

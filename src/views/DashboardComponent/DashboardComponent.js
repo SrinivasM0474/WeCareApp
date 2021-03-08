@@ -15,7 +15,7 @@ import NewAppliaction from "../images/newappliaction.png";
 
 import AdminHeader from "../AddminComponent/AdminHeader/AdminHeader";
 import TableComponent from "../DashboardComponent/TableComponent";
-import NavigationFlow from "../../components/NavigationFlow";
+import NavigationFlow from "../../components/navigationFlow";
 import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
 import InfoIcon from '@material-ui/icons/Info';
 import "../style.css";
@@ -245,7 +245,7 @@ class LoginComponent extends React.Component {
               </div>
               <div>
                 {/* <InfoIcon className='info-icon'/> */}
-                <img src={InfoImage} width={20}/>
+                <img src={InfoImage} width={20} />
               </div>
             </div>
             <div>
@@ -277,7 +277,7 @@ class LoginComponent extends React.Component {
               </div>
               <div>
                 {/* <InfoIcon className='info-icon'/> */}
-                <img src={InfoImage}  width={20}/>
+                <img src={InfoImage} width={20} />
 
               </div>
             </div>
@@ -326,7 +326,7 @@ class LoginComponent extends React.Component {
               </div>
               <div>
                 {/* <InfoIcon className='info-icon'/> */}
-                <img src={InfoImage}  width={20}/>
+                <img src={InfoImage} width={20} />
 
               </div>
             </div>

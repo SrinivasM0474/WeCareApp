@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import AdminHeader from "../views/AddminComponent/AdminHeader/AdminHeader";
-import NavigationFlow from "./NavigationFlow";
+import NavigationFlow from "./navigationFlow";
 
 const Header = (props) => {
   return (

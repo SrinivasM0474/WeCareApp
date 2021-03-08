@@ -28,7 +28,7 @@ import LanguageIcon from "@material-ui/icons/Language";
 // import FormData from "./Form";
 import {
   HOME, MOBILE, WORK
-} from "../../../src/constants";
+} from "../../constants";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
@@ -49,7 +49,7 @@ const ContactInformation = (props) => {
 
 
   const loginForm = React.useRef(null);
-  const classes = useStyles();
+  // const classes = useStyles();
   const [errors, setErrors] = React.useState(null);
 
   const emailRegex = RegExp(

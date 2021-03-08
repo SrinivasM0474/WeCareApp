@@ -12,9 +12,9 @@ import GroupAddOutlinedIcon from '@material-ui/icons/GroupAddOutlined';
 import './../views/style.css';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import PersonalInformation from './../views/AdultsModal/PersonalInformation';
-import ContactInformation from './../views/AdultsModal/ContactInformation';
-import AdditionalInformation from './../views/AdultsModal/AdditionalInformation';
+import PersonalInformation from '../views/AdultsModal/personalInformation';
+import ContactInformation from '../views/AdultsModal/contactInformation';
+import AdditionalInformation from '../views/AdultsModal/additionalInformation';
 
 import HosueHoldAdultImage from './../views/images/modal-household-adults-icon.png';
 import ModalNexttImage from './../views/images/modal-next-arrow-icon.png';
@@ -141,10 +141,10 @@ const AdultsModalInformation = (props) => {
                                             <Button onClick={handleReset}>Reset</Button>
                                         </div>
                                     ) : (
-                                            <div>
-                                                <div className={classes.instructions}>{getStepContent(activeStep)}</div>
-                                                <div className='nav-btns'>
-                                                    {/* <Button
+                                        <div>
+                                            <div className={classes.instructions}>{getStepContent(activeStep)}</div>
+                                            <div className='nav-btns'>
+                                                {/* <Button
                                                 disabled={activeStep === 0}
                                                 onClick={handleBack}
                                                 variant="contained"
@@ -152,20 +152,20 @@ const AdultsModalInformation = (props) => {
                                             >
                                                 Back
 										</Button> */}
-                                                    {/* {activeStep !== 0 &&
+                                                {/* {activeStep !== 0 &&
                                                         <ArrowBackIcon onClick={handleNext} onClick={handleBack} className='icon-back' />} */}
-                                                    {activeStep !== 0 && <img src={ModalBackImage} onClick={handleBack} className='icon-back' />}
+                                                {activeStep !== 0 && <img src={ModalBackImage} onClick={handleBack} className='icon-back' />}
 
-                                                    {/* {activeStep !== 2 && <Button className='create-accnt'>Cancel</Button>} */}
-                                                    {activeStep === 2 && <Button className='create-accnt'><img src={SaveImage} />Save</Button>}
-                                                    {/* {activeStep !== 2 && <ArrowForwardIcon onClick={handleNext} className='icon-forward' />} */}
-                                                    {activeStep !== 2 && <img src={ModalNexttImage} onClick={handleNext} className='icon-forward' />}
-                                                    {/* <Button variant="contained" className="step-btn-nxt" color="primary" onClick={handleNext}>
+                                                {/* {activeStep !== 2 && <Button className='create-accnt'>Cancel</Button>} */}
+                                                {activeStep === 2 && <Button className='create-accnt'><img src={SaveImage} />Save</Button>}
+                                                {/* {activeStep !== 2 && <ArrowForwardIcon onClick={handleNext} className='icon-forward' />} */}
+                                                {activeStep !== 2 && <img src={ModalNexttImage} onClick={handleNext} className='icon-forward' />}
+                                                {/* <Button variant="contained" className="step-btn-nxt" color="primary" onClick={handleNext}>
                                                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                                             </Button> */}
-                                                </div>
                                             </div>
-                                        )}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

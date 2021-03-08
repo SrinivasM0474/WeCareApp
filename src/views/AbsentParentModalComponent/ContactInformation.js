@@ -40,7 +40,7 @@ import {
 } from "@material-ui/pickers";
 
 const ContactInformation = (props) => {
-    const classes = useStyles();
+    // const classes = useStyles();
     const [isActive, setIsActive] = useState(false);
     const [isGender, setIsGender] = useState(false);
 

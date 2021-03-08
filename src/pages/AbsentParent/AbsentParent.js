@@ -20,7 +20,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import CloseIcon from "@material-ui/icons/Close";
 import WcIcon from "@material-ui/icons/Wc";
 import _ from "lodash";
-import AbsentParentModal from './../../components/AbsentParentModal'
+import AbsentParentModal from './../../components/absentParentModal'
 import { YES, NO } from "../../constants";
 // import ChildrenModalInformation from './../../components/ChildrenModalInformation'
 import HouseHoldImage from '../../views/images/authorized-Rep-title-icon.png';
