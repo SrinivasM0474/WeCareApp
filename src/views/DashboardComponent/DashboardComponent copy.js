@@ -13,7 +13,7 @@ import RenewBenifits from '../images/renewbenifits.png';
 import NewAppliaction from '../images/newappliaction.png';
 
 import AdminHeader from '../AddminComponent/AdminHeader/AdminHeader';
-import TableComponent from "../DashboardComponent/TableComponent";
+import TableComponent from "./tableComponent";
 
 import '../style.css';
 
@@ -27,25 +27,25 @@ const styles = theme => ({
     },
 })
 const rowsData = [
-    {type: "Working Self Assistance", created: "10/14/2020", lastupdated: "12/20/2020", status: "Saved"},
-    {type: "Working for Self Assistance", created: "08/11/2020", lastupdated: "12/10/2020", status: "Saved"},
-    {type: "Working Parent Assistance", created: "10/05/2020", lastupdated: "11/28/2020", status: "Saved"}
-  ];
+    { type: "Working Self Assistance", created: "10/14/2020", lastupdated: "12/20/2020", status: "Saved" },
+    { type: "Working for Self Assistance", created: "08/11/2020", lastupdated: "12/10/2020", status: "Saved" },
+    { type: "Working Parent Assistance", created: "10/05/2020", lastupdated: "11/28/2020", status: "Saved" }
+];
 const tableHeaders = [
-    {name: "Type"}, 
-    {name: "Created"}, 
-    {name: "Last Updated"}, 
-    {name: "Status"}
+    { name: "Type" },
+    { name: "Created" },
+    { name: "Last Updated" },
+    { name: "Status" }
 ]
 const myBData = [
-    {"type": "Working Self Assistance", "benefitIssuedDate": "10/14/2020", "currentlyReceivingBenefit": "12/20/2020"},
-    {"type": "Working for Self Assistance", "benefitIssuedDate": "08/11/2020", "currentlyReceivingBenefit": "12/10/2020"},
-    {"type": "Working Parent Assistance", "benefitIssuedDate": "10/05/2020", "currentlyReceivingBenefit": "11/28/2020"}
-  ];
+    { "type": "Working Self Assistance", "benefitIssuedDate": "10/14/2020", "currentlyReceivingBenefit": "12/20/2020" },
+    { "type": "Working for Self Assistance", "benefitIssuedDate": "08/11/2020", "currentlyReceivingBenefit": "12/10/2020" },
+    { "type": "Working Parent Assistance", "benefitIssuedDate": "10/05/2020", "currentlyReceivingBenefit": "11/28/2020" }
+];
 const myBHeaders = [
-    {name: "Type"}, 
-    {name: "Benefit Issued Date"}, 
-    {name: "Currently Receiving Benefit"}
+    { name: "Type" },
+    { name: "Benefit Issued Date" },
+    { name: "Currently Receiving Benefit" }
 ]
 class LoginComponent extends React.Component {
     constructor(props) {
@@ -57,10 +57,10 @@ class LoginComponent extends React.Component {
         }
     }
     handleChange = (event) => {
-        this.setState({lang: event.target.value});
+        this.setState({ lang: event.target.value });
     };
-    render(){
-        return(
+    render() {
+        return (
             <div className="dashboard-bg user-dashboard">
                 <Container>
                     <div className="specerdashboard"></div>
