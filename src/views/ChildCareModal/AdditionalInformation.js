@@ -29,7 +29,7 @@ import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
 import MailIcon from "@material-ui/icons/Mail";
 import LanguageIcon from "@material-ui/icons/Language";
 import MaskedInput from 'react-text-mask'
-import { GENDER_MALE, GENDER_OTHER, GENDER_FEMALE } from "./../../../src/constants";
+import { GENDER_MALE, GENDER_OTHER, GENDER_FEMALE } from "../../constants";
 import IconButton from '@material-ui/core/IconButton';
 
 import "date-fns";

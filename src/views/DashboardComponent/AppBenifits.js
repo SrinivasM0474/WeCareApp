@@ -17,7 +17,7 @@ import AppUser from '../images/tellus-title-icon.png';
 // import FillApp from '../images/fill-app.png';
 import NextImage from '../images/next-icon.png';
 
-import Header from './../../components/Header';
+import Header from './../../components/header';
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import '../style.css';
 
@@ -97,10 +97,10 @@ class AppBenifits extends React.Component {
                         </Grid>
                     </div>
                 </Container>
-                             <div className='d-flex justify-content-center'>
-                        <button onClick={() => this.props.history.push("/aboutyou")} className='btn-nxt d-flex align-items-center'> <span>Next</span>
-                            <img src={NextImage} alt='next' /></button>
-                    </div>
+                <div className='d-flex justify-content-center'>
+                    <button onClick={() => this.props.history.push("/aboutyou")} className='btn-nxt d-flex align-items-center'> <span>Next</span>
+                        <img src={NextImage} alt='next' /></button>
+                </div>
             </div>
         );
     }

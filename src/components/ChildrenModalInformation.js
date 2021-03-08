@@ -12,9 +12,9 @@ import GroupAddOutlinedIcon from '@material-ui/icons/GroupAddOutlined';
 import './../views/style.css';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import PersonalInformation from './../views/AdultsModal/PersonalInformation';
-import ContactInformation from './../views/AdultsModal/ContactInformation';
-import AdditionalInformation from './../views/AdultsModal/AdditionalInformation';
+import PersonalInformation from '../views/AdultsModal/personalInformation';
+import ContactInformation from '../views/AdultsModal/contactInformation';
+import AdditionalInformation from '../views/AdultsModal/additionalInformation';
 import FaceRoundedIcon from "@material-ui/icons/FaceRounded";
 import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOver";
 import "date-fns";
@@ -34,7 +34,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import HosueHoldAdultImage from './../views/images/modal-household-adults-icon.png';
 import CancelImage from './../views/images/cancel-icon.png';
 import SaveImage from './../views/images/modal-save-and-exit-icon.png';
-import { GENDER_MALE, GENDER_OTHER, GENDER_FEMALE,YES,NO } from "../constants";
+import { GENDER_MALE, GENDER_OTHER, GENDER_FEMALE, YES, NO } from "../constants";
 
 function getModalStyle() {
     const top = 50;
@@ -80,8 +80,8 @@ const ChildrenModalInformation = (props) => {
     const classes = useStyles();
     const [isActive, setIsActive] = React.useState(0);
     const [modalStyle] = React.useState(getModalStyle);
-    const [isGender, setIsGender] =React.useState(false);
-    const [isBenefits, setIsBenefits] =React.useState(false);
+    const [isGender, setIsGender] = React.useState(false);
+    const [isBenefits, setIsBenefits] = React.useState(false);
     const [open, setOpen] = React.useState(false);
     const handleClose = () => {
         props.closeModal(false);
@@ -92,15 +92,15 @@ const ChildrenModalInformation = (props) => {
         if (value === GENDER_FEMALE) setIsGender(GENDER_FEMALE);
         else if (value === GENDER_MALE) setIsGender(GENDER_MALE);
         else setIsGender(GENDER_OTHER);
-      };
-      const handleYesNo = (value) => {
+    };
+    const handleYesNo = (value) => {
         if (value === "Yes") setIsActive(YES);
         else if (value === "No") setIsActive(NO);
-      }
-      const handleBenefits = (value) => {
+    }
+    const handleBenefits = (value) => {
         if (value === "Yes") setIsBenefits(YES);
         else if (value === "No") setIsBenefits(NO);
-      }
+    }
     return (
         <div>
             <Modal
@@ -206,32 +206,32 @@ const ChildrenModalInformation = (props) => {
                                         <div className="input-block gender-block p-t-16">
                                             <InputLabel className="input-label">Gender</InputLabel>
                                             <div className="gender">
-                                            <ul>
-                    <li
-                      onClick={() => {
-                        handleGenderChange("Female");
-                      }}
-                      className={isGender === GENDER_FEMALE ? "selected" : ""}
-                    >
-                      Female
+                                                <ul>
+                                                    <li
+                                                        onClick={() => {
+                                                            handleGenderChange("Female");
+                                                        }}
+                                                        className={isGender === GENDER_FEMALE ? "selected" : ""}
+                                                    >
+                                                        Female
                   </li>
-                    <li
-                      onClick={() => {
-                        handleGenderChange("Male");
-                      }}
-                      className={isGender === GENDER_MALE ? "selected" : ""}
-                    >
-                      Male
+                                                    <li
+                                                        onClick={() => {
+                                                            handleGenderChange("Male");
+                                                        }}
+                                                        className={isGender === GENDER_MALE ? "selected" : ""}
+                                                    >
+                                                        Male
                   </li>
-                    <li
-                      onClick={() => {
-                        handleGenderChange("Other");
-                      }}
-                      className={isGender === GENDER_OTHER ? "selected" : ""}
-                    >
-                      Other
+                                                    <li
+                                                        onClick={() => {
+                                                            handleGenderChange("Other");
+                                                        }}
+                                                        className={isGender === GENDER_OTHER ? "selected" : ""}
+                                                    >
+                                                        Other
                   </li>
-                  </ul>
+                                                </ul>
                                             </div>
                                         </div>
                                         <div className="input-block">
@@ -256,9 +256,9 @@ const ChildrenModalInformation = (props) => {
                                             <div className="input-block gender-block">
                                                 <div className="gender yes-no-block">
                                                     <ul>
-                                                    <li onClick={() => { handleYesNo("No") }} className={isActive===NO ? "selected" : ""} >No</li>
-                                                    <li  onClick={() => { handleYesNo("Yes") }} className={isActive===YES ? "selected" : ""}  >Yes</li>
-                                                        
+                                                        <li onClick={() => { handleYesNo("No") }} className={isActive === NO ? "selected" : ""} >No</li>
+                                                        <li onClick={() => { handleYesNo("Yes") }} className={isActive === YES ? "selected" : ""}  >Yes</li>
+
                                                     </ul>
                                                 </div>
                                             </div>
@@ -269,9 +269,9 @@ const ChildrenModalInformation = (props) => {
                                             <div className="input-block gender-block">
                                                 <div className="gender yes-no-block">
                                                     <ul>
-                                                    <li onClick={() => { handleBenefits("No") }} className={isBenefits===NO ? "selected" : ""} >No</li>
-                                                    <li onClick={() => { handleBenefits("Yes") }} className={isBenefits ===YES ? "selected" : ""} >Yes</li>
-                                                       
+                                                        <li onClick={() => { handleBenefits("No") }} className={isBenefits === NO ? "selected" : ""} >No</li>
+                                                        <li onClick={() => { handleBenefits("Yes") }} className={isBenefits === YES ? "selected" : ""} >Yes</li>
+
                                                     </ul>
                                                 </div>
                                             </div>
@@ -283,7 +283,7 @@ const ChildrenModalInformation = (props) => {
                         </Container>
                         <div className='children-btns'>
                             <Button className='create-accnt' onClick={handleClose}><img src={CancelImage} alt='cancel' width='20px' /> Cancel</Button>
-                            <Button className='create-accnt'><img src={SaveImage}  width='20px' alt='save'/>Save</Button>
+                            <Button className='create-accnt'><img src={SaveImage} width='20px' alt='save' />Save</Button>
                         </div>
 
                     </div>

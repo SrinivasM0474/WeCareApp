@@ -16,7 +16,7 @@ import FillApp from '../images/fill-app.png';
 import SubmitProof from '../images/submit-proof.png';
 import SubmitApp from '../images/submit-app.png';
 import InterviewApp from '../images/interview-app.png';
-import Header from './../../components/Header';
+import Header from './../../components/header';
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import NextImage from '../images/next-icon.png';
 import '../style.css';
