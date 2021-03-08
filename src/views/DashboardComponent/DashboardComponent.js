@@ -14,7 +14,7 @@ import RenewBenifits from "../images/renewbenifits.png";
 import NewAppliaction from "../images/newappliaction.png";
 
 import AdminHeader from "../AddminComponent/AdminHeader/AdminHeader";
-import TableComponent from "../DashboardComponent/TableComponent";
+import TableComponent from "./tableComponent";
 import NavigationFlow from "../../components/navigationFlow";
 import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
 import InfoIcon from '@material-ui/icons/Info';

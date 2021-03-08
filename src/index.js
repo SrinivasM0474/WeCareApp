@@ -9,10 +9,10 @@ import reportWebVitals from "./reportWebVitals";
 import HomeComponent from "./views/HomeComponent/HomeComponent";
 import LoginComponent from "./views/AddminComponent/LoginComponent/LoginComponent";
 import NewUserComponent from "./views/AddminComponent/NewUserComponent/NewUserComponent";
-import DashboardComponent from "./views/DashboardComponent/DashboardComponent";
+import DashboardComponent from "./views/DashboardComponent/dashboardComponent";
 import AboutYourselfPage from "./pages/benefits/AboutYourselfPage";
-import AppProcess from "../src/views/DashboardComponent/AppProcess";
-import AppBenifits from "../src/views/DashboardComponent/AppBenifits";
+import AppProcess from "../src/views/DashboardComponent/appProcess";
+import AppBenifits from "../src/views/DashboardComponent/appBenifits";
 
 var hist = new createBrowserHistory();
 
