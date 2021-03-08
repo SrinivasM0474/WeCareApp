@@ -13,8 +13,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import useStyles from "./AboutYourselfPage.styles";
 import Header from "../../components/Header";
-import AboutYourselfForm from "../../forms/benefits/AboutYourselfForm";
-import AddressForm from "../../forms/benefits/AddressForm";
+import AboutYourHousehold from "../members/aboutYourHousehold";
 import SettingsIcon from "@material-ui/icons/Settings";
 import GroupAddIcon from "@material-ui/icons/GroupAdd";
 import VideoLabelIcon from "@material-ui/icons/VideoLabel";
@@ -26,16 +25,16 @@ import AirplayIcon from "@material-ui/icons/Airplay";
 import AppsIcon from "@material-ui/icons/Apps";
 import { StepIconProps } from "@material-ui/core/StepIcon";
 import StepConnector from "@material-ui/core/StepConnector";
-import AboutYourSelfPageNew from "./aboutYourSelfPageNew";
+import AboutYourSelf from "../headOfHousehold/aboutYourSelf";
 import PersonIcon from "@material-ui/icons/Person";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import PublishIcon from "@material-ui/icons/Publish";
 import NotesIcon from "@material-ui/icons/Notes";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import TellUsMoreAboutYou from "./tellUsmoreaboutYou";
-import TellResidentialAddress from "./tellResidentialAddress";
-import TellContactInformation from "./tellContactInformation";
-import Benefits from "../../views/DashboardComponent/Benefits";
+import MoreAboutYou from "../headOfHousehold/moreAboutYou";
+import AboutYourResidentialAddress from "../headOfHousehold/aboutYourResidentialAddress";
+import AboutyourContactInformation from "../headOfHousehold/aboutYourContactInformation";
+import Benefits from "../../pages/benefits/benefits";
 import AbsentParent from "../../pages/AbsentParent/AbsentParent";
 import NextImage from '../../views/images/next-icon.png';
 import BackImage from '../../views/images/back-icon.png';
@@ -422,21 +421,21 @@ const AboutYourselfPage = () => {
               )}
               {activeStep === 1 && page.household === 0 &&
 
-                <AboutYourSelfPageNew
+                <AboutYourSelf
                   onFormControlChange={onFormControlChangeHandler} />}
               {activeStep === 1 && page.household === 1 &&
-                <TellContactInformation
+                <AboutyourContactInformation
                   onFormControlChange={onFormControlChangeHandler}
                 />}
               {/* {activeStep === 2 && <AddressForm />} */}
               {activeStep === 1 && page.household === 2 &&
-                <TellResidentialAddress
+                <AboutYourResidentialAddress
                   onFormControlChange={onFormControlChangeHandler}
                 />}
-              {activeStep === 1 && page.household === 3 && <TellUsMoreAboutYou
+              {activeStep === 1 && page.household === 3 && <MoreAboutYou
                 onFormControlChange={onFormControlChangeHandler}
               />}
-              {activeStep === 2 && <AddressForm />}
+              {activeStep === 2 && <AboutYourHousehold />}
               {activeStep === 3 && <AbsentParent />}
 
 

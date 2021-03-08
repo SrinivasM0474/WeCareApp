@@ -6,7 +6,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Input from "@material-ui/core/Input";
 import Help from "@material-ui/icons/Help";
-import useStyles from "../../forms/benefits/AddressForm.styles";
+
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import Container from "@material-ui/core/Container";
@@ -25,12 +25,12 @@ import HomeSharpIcon from "@material-ui/icons/HomeSharp";
 import PhoneInTalkSharpIcon from "@material-ui/icons/PhoneInTalkSharp";
 import MailIcon from "@material-ui/icons/Mail";
 import LanguageIcon from "@material-ui/icons/Language";
-import FormData from "./Form";
+// import FormData from "./Form";
 import {
   HOME, MOBILE, WORK, INTERPRETERNO, INTERPRETERYES,
   COMMUNICATE_EMAIL, COMMUNICATE_PHONE, COMMUNICATE_MAIL,
   ACCOMMODATIONS_NO, ACCOMMODATIONS_YES, INTERPRETER_NO, INTERPRETER_YES
-} from "../../../src/constants";
+} from "../../constants";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
@@ -39,10 +39,10 @@ import DateFnsUtils from "@date-io/date-fns";
 import MaskedInput from 'react-text-mask';
 import AppUser from '../../views/images/tellus-title-icon.png';
 import IconLanguage from '../../views/images/language-icon.png';
-import AboutContactInformationForm from './../../forms/benefits/AboutContactInformationForm';
+import AboutYourContactInformationForm from '../../forms/headOfHouseHold/aboutYourContactInformationForm';
 
 
-const TellContactInformation = (props) => {
+const AboutyourContactInformation = (props) => {
   const [isPhoneNo, setIsPhoneNO] = useState(null);
   const [isInterpreter, setIsInterpreter] = useState(false);
   const [isCommunicate, setIsCommunicate] = useState(false);
@@ -77,7 +77,7 @@ const TellContactInformation = (props) => {
 
   };
   const loginForm = React.useRef(null);
-  const classes = useStyles();
+  // const classes = useStyles();
   const [errors, setErrors] = React.useState(null);
 
   const emailRegex = RegExp(
@@ -306,9 +306,9 @@ const TellContactInformation = (props) => {
           </div>
         </div>
       </Container> */}
-      <AboutContactInformationForm />
+      <AboutYourContactInformationForm />
     </div>
   );
 };
 
-export default TellContactInformation;
+export default AboutyourContactInformation;

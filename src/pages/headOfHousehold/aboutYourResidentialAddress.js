@@ -6,7 +6,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Input from "@material-ui/core/Input";
 import Help from "@material-ui/icons/Help";
-import useStyles from "../../forms/benefits/AddressForm.styles";
+
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import Container from "@material-ui/core/Container";
@@ -35,9 +35,9 @@ import AppUser from '../../views/images/tellus-title-icon.png';
 import ZipImage from '../../views/images/zip-icon.png';
 import AddressImage from '../../views/images/address-icon.png';
 
-import AboutResidentialAddressForm from '../../forms/benefits/AboutResidentialAddressForm';
+import AboutYourResidentialAddressForm from '../../forms/headOfHouseHold/aboutYourResidentialAddressForm';
 
-const TellResidentialAddress = (props) => {
+const AboutYourResidentialAddress = (props) => {
   const [isAnotherAddress, setIsAnotherAddress] = React.useState(false);
 
   const handleAnotherAddress = (value) => {
@@ -105,9 +105,9 @@ const TellResidentialAddress = (props) => {
   };
   return (
     <div>
-      <AboutResidentialAddressForm />
+      <AboutYourResidentialAddressForm />
     </div>
   );
 };
 
-export default TellResidentialAddress;
+export default AboutYourResidentialAddress;

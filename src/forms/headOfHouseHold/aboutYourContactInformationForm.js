@@ -2,23 +2,17 @@
 import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import AppUser from '../../views/images/tellus-title-icon.png';
-import FirstName from "../../components/FormComponents/FirstName";
-import FormHeader from "../../components/FormComponents/FormHeader";
-import Suffix from "../../components/FormComponents/Suffix";
+import FirstName from "../../components/FormComponents/firstName";
+import FormHeader from "../../components/FormComponents/formHeader";
 import FormOptions from "../../components/FormComponents/formOption";
-import FormDate from "../../components/FormComponents/FormDate";
-import Ssn from "../../components/FormComponents/Ssn";
 import * as NAMES from '../../constants';
-// import FormData from "../../utils";
-import InputLabel from "@material-ui/core/InputLabel";
-// import MaskedInput from 'react-text-mask';
 import FormData from "../../utils";
-import PhoneNumber from '../../components/FormComponents/PhoneNumber';
-import EmailForm from '../../components/FormComponents/EmailForm';
+import PhoneNumber from '../../components/FormComponents/phoneNumber';
+import EmailForm from '../../components/FormComponents/emailForm';
 import LanguageIcon from './../../views/images/language-icon.png';
 
 
-const AboutContactInformationForm = (props) => {
+const AboutYourContactInformationForm = (props) => {
 
     return (
         <div>
@@ -185,4 +179,4 @@ const AboutContactInformationForm = (props) => {
     );
 };
 
-export default AboutContactInformationForm;
+export default AboutYourContactInformationForm;

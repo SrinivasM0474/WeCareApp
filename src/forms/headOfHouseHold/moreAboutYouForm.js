@@ -2,21 +2,12 @@
 import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import AppUser from '../../views/images/tellus-title-icon.png';
-import FirstName from "../../components/FormComponents/FirstName";
-import FormHeader from "../../components/FormComponents/FormHeader";
-import Suffix from "../../components/FormComponents/Suffix";
+import FirstName from "../../components/FormComponents/firstName";
+import FormHeader from "../../components/FormComponents/formHeader";
+import Suffix from "../../components/FormComponents/suffix";
 import FormOptions from "../../components/FormComponents/formOption";
-import FormDate from "../../components/FormComponents/FormDate";
-import Ssn from "../../components/FormComponents/Ssn";
-import {
-    ABOUT_YOURSELF_TITLE, FIRST_NAME, MIDDLE_NAME, LAST_NAME,
-    SUFFIX_TITLE, DATE_TITLE, GENDER_TITLE, SSN_TITLE
-} from "../../constants";
+import FormDate from "../../components/FormComponents/formDate";
 import FormData from "../../utils";
-// import FaceRoundedIcon from "@material-ui/icons/FaceRounded";
-// import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOver";
-import FirstNameIcon from './../../views/images/first-name-icon.png';
-import LastNameIcon from './../../views/images/last-name-icon.png';
 import * as NAMES from '../../constants';
 
 const MoreAboutYouForm = (props) => {
