@@ -10,8 +10,7 @@ import FormData from "../../utils";
 import PhoneNumber from '../../components/FormComponents/phoneNumber';
 import EmailForm from '../../components/FormComponents/emailForm';
 import LanguageIcon from './../../views/images/language-icon.png';
-import PreferredLanguage from '../../components/FormComponents/preferredLanguage';
-import AccommadationNeed from '../../components/FormComponents/accommadationNeed';
+
 
 const AboutYourContactInformationForm = (props) => {
 
@@ -26,16 +25,18 @@ const AboutYourContactInformationForm = (props) => {
                         <FormOptions data={FormData.primaryPhoneNumber} title={NAMES.PRIMARY_PHONE_TEXT} labelClass={true} />
                         <PhoneNumber autoComplete={'off'} />
                         <EmailForm placeHolderText={NAMES.EMAIL_TEXT} autoComplete={'off'} addClass={true} />
-                        <PreferredLanguage
+                        <FirstName
                             placeHolderText={NAMES.PREFERRED_LANGUAGE}
                             autoComplete={'off'}
+                            icon={LanguageIcon}
                         />
                         <FormOptions data={FormData.yesNoOptions} title={NAMES.INTERPRETER_TEXT} labelClass={true} />
                         <FormOptions data={FormData.emailPhoneMailOptions} title={NAMES.COMMUNICATE_TEXT} labelClass={true} />
                         <FormOptions data={FormData.yesNoOptions} title={NAMES.ACCOMMODATION_TEXT} labelClass={true} />
-                        <AccommadationNeed
+                        <FirstName
                             placeHolderText={NAMES.KINDOF_ACCOMMODATION_TEXT}
                             autoComplete={'off'}
+                            icon={''}
                         />
                     </div>
                     {/*     <form ref={loginForm} >

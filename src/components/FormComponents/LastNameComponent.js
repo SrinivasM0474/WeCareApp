@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
-import LastImageIcon from './../../views/images/last-name-icon.png'
+import RecordVoiceOverIcon from "@material-ui/icons/RecordVoiceOver";
+
 
 const LastName = (props) => {
 
@@ -25,6 +26,7 @@ const LastName = (props) => {
         });
         setErrors(Object.assign({}, errorsData));
         if (Object.keys(errorsData).length > 0) {
+            console.log('onchange')
             //   props.onFormControlChange(true);
             return false;
         } else {
@@ -35,26 +37,23 @@ const LastName = (props) => {
 
     return (
         <form ref={loginForm} >
-            <div className="input-block">
-
-                <TextField
-                    name='lastName'
-                    id="standard-basic"
-                    label={props.placeHolderText}
-                    className="input-field"
-                    autoComplete={props.autoComplete}
-                    error={errors && errors.lastName}
-                    onBlur={() => { validate('lastName'); }}
-                    helperText={errors && errors.lastName ? "Last Name is required" : ""}
-                    InputProps={{
-                        endAdornment: (
-                            <InputAdornment position="end">
-                                <img src={LastImageIcon} alt='image' />
-                            </InputAdornment>
-                        ),
-                    }}
-                />
-            </div>
+            <TextField
+                name='lastName'
+                id="standard-basic"
+                label={props.placeHolderText}
+                className="input-field"
+                autoComplete={props.autoComplete}
+                error={errors && errors.lastName}
+                onBlur={() => { validate('lastName'); }}
+                helperText={errors && errors.lastName ? "Last Name is required" : ""}
+                InputProps={{
+                    endAdornment: (
+                        <InputAdornment position="end">
+                           <RecordVoiceOverIcon className="icon" />
+                        </InputAdornment>
+                    ),
+                }}
+            />
         </form>
     )
 }

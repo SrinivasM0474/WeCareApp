@@ -9,11 +9,6 @@ import FormData from "../../utils";
 import * as NAMES from '../../constants';
 import AddressImage from '../../views/images/address-icon.png';
 import ZipImage from '../../views/images/zip-icon.png';
-import AddressLineOne from '../../components/FormComponents/addressLineOne';
-import AddressLineTwo from '../../components/FormComponents/addressLineTwo';
-import City from '../../components/FormComponents/city';
-import State from '../../components/FormComponents/state';
-import ZipCode from '../../components/FormComponents/zipCode';
 
 const AboutYourResidentialAddressForm = (props) => {
 
@@ -25,49 +20,58 @@ const AboutYourResidentialAddressForm = (props) => {
                     alt={'image'} />
 
                 <div className="input-form-fields">
-                    <AddressLineOne
+                    <FirstName
                         placeHolderText={NAMES.ADDRESSLINE1}
                         autoComplete={'off'}
+                        icon={AddressImage}
                     />
-                    <AddressLineTwo
+                    <FirstName
                         placeHolderText={NAMES.ADDRESSLINE2}
                         autoComplete={'off'}
                         icon={''}
                     />
-                    <City
+                    <FirstName
                         placeHolderText={NAMES.CITY}
                         autoComplete={'off'}
+                        icon={''}
                     />
-                    <State
+                    <FirstName
                         placeHolderText={NAMES.STATE}
                         autoComplete={'off'}
+                        icon={''}
                     />
-                    <ZipCode
+                    <FirstName
                         placeHolderText={NAMES.ZIPCODE}
                         autoComplete={'off'}
+                        icon={ZipImage}
                     />
                     <FormOptions data={FormData.yesNoOptions} title={NAMES.IS_THERE_ANY_ADDRESS_TEXT} addClass={true} />
-                    <AddressLineOne
+                    <FirstName
                         placeHolderText={NAMES.ADDRESSLINE1}
                         autoComplete={'off'}
+                        icon={AddressImage}
                     />
-                    <AddressLineTwo
+                    <FirstName
                         placeHolderText={NAMES.ADDRESSLINE2}
                         autoComplete={'off'}
                         icon={''}
                     />
-                    <City
+                    <FirstName
                         placeHolderText={NAMES.CITY}
                         autoComplete={'off'}
+                        icon={''}
                     />
-                    <State
+                    <FirstName
                         placeHolderText={NAMES.STATE}
                         autoComplete={'off'}
+                        icon={''}
                     />
-                    <ZipCode
+                    <FirstName
                         placeHolderText={NAMES.ZIPCODE}
                         autoComplete={'off'}
+                        icon={ZipImage}
                     />
+
                 </div>
 
                 {/* <div className="input-block">
