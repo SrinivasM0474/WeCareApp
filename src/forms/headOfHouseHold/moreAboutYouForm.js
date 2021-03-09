@@ -9,6 +9,7 @@ import FormOptions from "../../components/FormComponents/formOption";
 import FormDate from "../../components/FormComponents/formDate";
 import FormData from "../../utils";
 import * as NAMES from '../../constants';
+import MilitaryVeteranStatus from '../../components/FormComponents/militaryVeteranStatus';
 
 const MoreAboutYouForm = (props) => {
 
@@ -22,7 +23,7 @@ const MoreAboutYouForm = (props) => {
                 <div className="input-form-fields">
                     <Suffix data={FormData.maritalStatus} title={NAMES.WHAT_IS_YOUR_MARITAL_STATUS} />
                     <Suffix data={FormData.citizenshipStatus} title={NAMES.WHAT_IS_YOUR_CITIZENSHIP_STATUS} />
-                    <FirstName placeHolderText={NAMES.UNITED_STATES_MILITARY_VETERAN_STATUS} autoComplete={'off'} icon={''} />
+                    <MilitaryVeteranStatus placeHolderText={NAMES.UNITED_STATES_MILITARY_VETERAN_STATUS} autoComplete={'off'} />
                     <Suffix data={FormData.highestLevelEducation} title={NAMES.HIGHEST_LEVEL_EDUCATION} />
                     <Suffix data={FormData.whatIsYourRace} title={NAMES.WHAT_IS_YOUR_RACE} />
                     <FormOptions data={FormData.yesNoOptions} title={NAMES.HISPANIC_TEXT} addClass={true} />

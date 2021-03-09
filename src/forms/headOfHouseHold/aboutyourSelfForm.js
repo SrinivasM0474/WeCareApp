@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import AppUser from '../../views/images/tellus-title-icon.png';
 import FirstName from "../../components/FormComponents/firstName";
+import LastName from "../../components/FormComponents/lastName";
+import MiddleName from "../../components/FormComponents/middleName";
 import FormHeader from "../../components/FormComponents/formHeader";
 import Suffix from "../../components/FormComponents/suffix";
 import FormOptions from "../../components/FormComponents/formOption";
@@ -28,13 +30,12 @@ const AboutYourSelfForm = (props) => {
               autoComplete={'off'}
               icon={FirstNameIcon}
             />
-            <FirstName
+            <MiddleName
               placeHolderText={NAMES.MIDDLE_NAME}
               autoComplete={'off'} />
-            <FirstName
+            <LastName
               placeHolderText={NAMES.LAST_NAME}
               autoComplete={'off'}
-              icon={LastNameIcon}
             />
             <Suffix data={FormData.options} title={NAMES.SUFFIX_TITLE} />
             <FormDate title={NAMES.DATE_TITLE} />

@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
 
-
-const MiddleName = (props) => {
+const MilitaryVeteranStatus = (props) => {
 
     return (
-        <form >
+        <div className="input-block">
             <TextField
                 name='lastName'
                 id="standard-basic"
@@ -14,7 +12,7 @@ const MiddleName = (props) => {
                 className="input-field"
                 autoComplete={props.autoComplete}
             />
-        </form>
+        </div>
     )
 }
-export default MiddleName;
+export default MilitaryVeteranStatus;
