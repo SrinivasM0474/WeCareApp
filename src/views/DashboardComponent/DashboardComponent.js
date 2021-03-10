@@ -15,7 +15,7 @@ import NewAppliaction from "../images/newappliaction.png";
 
 import AdminHeader from "../AddminComponent/AdminHeader/AdminHeader";
 import TableComponent from "./TableComponent";
-import NavigationFlow from "../../components/navigationFlow";
+import NavigationFlow from "../../components/NavigationFlow";
 import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
 import InfoIcon from '@material-ui/icons/Info';
 import "../style.css";

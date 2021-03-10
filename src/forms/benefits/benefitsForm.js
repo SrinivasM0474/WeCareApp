@@ -5,7 +5,7 @@ import BenefitsImage from './../../views/images/benefits-title-icon.png';
 import WorkingParent from './../../views/images/workingparent.png';
 import Typography from '@material-ui/core/Typography';
 import * as NAMES from '../../constants';
-import FormHeader from "../../components/FormComponents/formHeader";
+import FormHeader from "../../components/FormComponents/FormHeader";
 
 const BenefitsForm = (props) => {
 

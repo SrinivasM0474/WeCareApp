@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
 import LastImageIcon from './../../views/images/last-name-icon.png'
+import validate from '../../validations/formValidations'
 
 const LastName = (props) => {
 
@@ -12,24 +13,12 @@ const LastName = (props) => {
     const [errors, setErrors] = React.useState(null);
 
 
-    const validate = (key) => {
-        let fields = key === 'all' ? ['lastName'] : [key];
-        let errorsData = errors ? errors : {};
-        fields.forEach(field => {
-            let loginFormelements = loginForm.current;
-            if (!loginFormelements[field] || loginFormelements[field].value.trim() === '') {
-                errorsData[field] = (field) + 'is required';
-            } else {
-                delete errorsData[field];
-            }
-        });
+    const validateForm = (key, loginForm) => {
+        let errorsData = validate(key, loginForm)
         setErrors(Object.assign({}, errorsData));
-        if (Object.keys(errorsData).length > 0) {
-            //   props.onFormControlChange(true);
-            return false;
-        } else {
-            return true;
-        }
+        errorsData = errorsData && errorsData.lastName ? { lastName: '' } : { lastName: 'lastName' }
+        props.formValidation(errorsData)
+
     };
 
 
@@ -44,7 +33,8 @@ const LastName = (props) => {
                     className="input-field"
                     autoComplete={props.autoComplete}
                     error={errors && errors.lastName}
-                    onBlur={() => { validate('lastName'); }}
+                    onBlur={() => { validateForm('lastName', loginForm); }}
+                    onChange={() => { validateForm('lastName', loginForm); }}
                     helperText={errors && errors.lastName ? "Last Name is required" : ""}
                     InputProps={{
                         endAdornment: (

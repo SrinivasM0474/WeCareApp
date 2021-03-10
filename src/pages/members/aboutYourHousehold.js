@@ -26,8 +26,8 @@ import HouseHoldImage from '../../views/images/household-title-icon.png';
 import MembersAdultImage from '../../views/images/members-adults-icon.png';
 import MembersChildrenImage from '../../views/images/members-childrens-icon.png';
 import AddImage from '../../views/images/add-icon.png';
-import AdultsModalInformation from '../../components/adultsModalInformation';
-import ChildrenModalInformation from '../../components/childrenModalInformation';
+import AdultsModalInformation from '../../components/AdultsModalInformation';
+import ChildrenModalInformation from '../../components/ChildrenModalInformation';
 import { YES, NO } from "../../constants";
 class AboutYourHousehold extends React.Component {
   constructor() {

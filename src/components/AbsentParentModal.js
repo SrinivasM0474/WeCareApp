@@ -15,10 +15,10 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 // import ProviderInformation from '../views/ChildCareModal/ProviderInformation';
 // import ProviderAddress from '../views/ChildCareModal/Address';
 // import ProviderAdditionalInformation from '../views/ChildCareModal/AdditionalInformation';
-import ContactInformation from '../views/AbsentParentModalComponent/contactInformation';
-import ProviderInformation from '../views/AbsentParentModalComponent/providerInformation';
-import ProviderAddress from '../views/AbsentParentModalComponent/address';
-import ProviderAdditionalInformation from '../views/AbsentParentModalComponent/additionalInformation';
+import ContactInformation from '../views/AbsentParentModalComponent/ContactInformation';
+import ProviderInformation from '../views/AbsentParentModalComponent/ProviderInformation';
+import ProviderAddress from '../views/AbsentParentModalComponent/Address';
+import ProviderAdditionalInformation from '../views/AbsentParentModalComponent/AdditionalInformation';
 import AbsentModalImage from '../views/images/modal-absent-parent-icon.png';
 
 import ModalNexttImage from './../views/images/modal-next-arrow-icon.png';

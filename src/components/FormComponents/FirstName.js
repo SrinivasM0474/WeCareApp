@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
+import validate from '../../validations/formValidations'
 
 
 const FirstName = (props) => {
@@ -12,25 +13,11 @@ const FirstName = (props) => {
     const [errors, setErrors] = React.useState(null);
 
 
-    const validate = (key) => {
-        let fields = key === 'all' ? ['firstName'] : [key];
-        let errorsData = errors ? errors : {};
-        fields.forEach(field => {
-            let loginFormelements = loginForm.current;
-            if (!loginFormelements[field] || loginFormelements[field].value.trim() === '') {
-                errorsData[field] = (field) + 'is required';
-            } else {
-                delete errorsData[field];
-            }
-        });
+    const validateForm = (key, loginForm) => {
+        let errorsData = validate(key, loginForm)
         setErrors(Object.assign({}, errorsData));
-        if (Object.keys(errorsData).length > 0) {
-            console.log('onchange')
-            //   props.onFormControlChange(true);
-            return false;
-        } else {
-            return true;
-        }
+        errorsData = errorsData && errorsData.firstName ? { firstName: '' } : { firstName: 'firstName' }
+        props.formValidation(errorsData)
     };
 
 
@@ -38,14 +25,15 @@ const FirstName = (props) => {
         <form ref={loginForm} >
             <div className="input-block">
                 <TextField
-                    name='firstName'
+                    name={'firstName'}
                     id="standard-basic"
                     label={props.placeHolderText}
                     className="input-field"
                     autoComplete={props.autoComplete}
                     error={errors && errors.firstName}
-                    onBlur={() => { validate('firstName'); }}
-                    helperText={errors && errors.firstName ? "First Name is required" : ""}
+                    onBlur={() => { validateForm('firstName', loginForm); }}
+                    onChange={() => { validateForm('firstName', loginForm); }}
+                    helperText={errors && errors.firstName ? "First name is required" : ""}
                     InputProps={{
                         endAdornment: (
                             <InputAdornment position="end">

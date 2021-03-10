@@ -2,13 +2,12 @@
 import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import AppUser from '../../views/images/tellus-title-icon.png';
-import FirstName from "../../components/FormComponents/firstName";
-import FormHeader from "../../components/FormComponents/formHeader";
+import FormHeader from "../../components/FormComponents/FormHeader";
 import FormOptions from "../../components/FormComponents/formOption";
 import * as NAMES from '../../constants';
 import FormData from "../../utils";
 import PhoneNumber from '../../components/FormComponents/phoneNumber';
-import EmailForm from '../../components/FormComponents/emailForm';
+import EmailForm from '../../components/FormComponents/EmailForm';
 import LanguageIcon from './../../views/images/language-icon.png';
 import PreferredLanguage from '../../components/FormComponents/preferredLanguage';
 import AccommadationNeed from '../../components/FormComponents/accommadationNeed';

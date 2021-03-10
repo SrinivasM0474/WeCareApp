@@ -12,9 +12,9 @@ import GroupAddOutlinedIcon from '@material-ui/icons/GroupAddOutlined';
 import './../views/style.css';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import PersonalInformation from '../views/AdultsModal/personalInformation';
-import ContactInformation from '../views/AdultsModal/contactInformation';
-import AdditionalInformation from '../views/AdultsModal/additionalInformation';
+import PersonalInformation from '../views/AdultsModal/PersonalInformation';
+import ContactInformation from '../views/AdultsModal/ContactInformation';
+import AdditionalInformation from '../views/AdultsModal/AdditionalInformation';
 
 import HosueHoldAdultImage from './../views/images/modal-household-adults-icon.png';
 import ModalNexttImage from './../views/images/modal-next-arrow-icon.png';

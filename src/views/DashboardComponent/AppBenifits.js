@@ -17,7 +17,7 @@ import AppUser from '../images/tellus-title-icon.png';
 // import FillApp from '../images/fill-app.png';
 import NextImage from '../images/next-icon.png';
 
-import Header from '../../components/header';
+import Header from '../../components/Header';
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import '../style.css';
 

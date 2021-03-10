@@ -12,7 +12,7 @@ import StepLabel from "@material-ui/core/StepLabel";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import useStyles from "./AboutYourselfPage.styles";
-import Header from "../../components/header";
+import Header from "../../components/Header";
 import AboutYourHousehold from "../members/aboutYourHousehold";
 import SettingsIcon from "@material-ui/icons/Settings";
 import GroupAddIcon from "@material-ui/icons/GroupAdd";
@@ -88,67 +88,7 @@ function getSteps() {
   ];
 }
 
-function getStepContent(stepIndex: number) {
-  switch (stepIndex) {
-    case 0:
-      return "Benefits";
-    case 1:
-      return "Head of Household";
-    case 2:
-      return "Members";
-    case 3:
-      return "Absent Parent";
-    case 4:
-      return "Child Care Provider";
-    case 5:
-      return "Authorized Representative";
-    case 6:
-      return "Income";
-    case 7:
-      return "Expenses";
-    case 8:
-      return "Assets";
-    case 9:
-      return "Upload";
-    case 10:
-      return "Summary";
-    case 11:
-      return "Agreement";
-    case 12:
-      return "Submit";
-    default:
-      return "";
-  }
-}
-// const onFormControlChangeHandler = (isFormValid)=>{
-//   console.log(isFormValid);
-//   isFormValid = isFormValid;
-// }
 
-// function getStepComponent(stepIndex: number) {
-//   switch (stepIndex) {
-//     case 0:
-//       return <AboutYourselfForm onFormControlChange={onFormControlChangeHandler}/>;
-//     case 1:
-//       return "Head of Household";
-//     case 2:
-//       return "Members";
-//     case 3:
-//       return "Authorized Representatives";
-//     case 4:
-//       return "Income";
-//     case 5:
-//       return "Expenses";
-//     case 6:
-//       return "Assets";
-//     case 7:
-//       return "File Upload";
-//     case 8:
-//       return "Review & Sumbit";
-//     default:
-//       return "";
-//   }
-// }
 const useColorlibStepIconStyles = makeStyles({
   root: {
     backgroundColor: "#ccc",
@@ -362,19 +302,9 @@ const AboutYourselfPage = () => {
   return (
     <div style={styles}>
       <Header />
-      {/* <div
-        style={{
-          marginTop: "70px",
-          position: "relative",
-          width: "30px",
-          color: "red",
-        }}
-      >
-        <div style={{ paddingTop: "50px" }}>Hello</div>
-      </div> */}
-      {/* <AboutYourselfForm className={classes.root} /> */}
+
       <div>
-        {/* <div className={classes.greyBar}></div> */}
+
         <div className={classes.stepperBox}>
           <Stepper
             activeStep={activeStep}

@@ -86,6 +86,21 @@ const FormData = {
             value: 3,
             displayValue: 'Three'
         }
+    ],
+    stepperNames: [
+        "Benefits",
+        "Head of Household",
+        "Members",
+        "Absent Parent",
+        "Child Care Provider",
+        "Authorized Representative",
+        "Income",
+        "Expenses",
+        "Assets",
+        "Upload",
+        "Summary",
+        "Agreement",
+        "Submit",
     ]
 }
 

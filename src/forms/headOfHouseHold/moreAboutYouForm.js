@@ -2,11 +2,10 @@
 import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import AppUser from '../../views/images/tellus-title-icon.png';
-import FirstName from "../../components/FormComponents/firstName";
-import FormHeader from "../../components/FormComponents/formHeader";
-import Suffix from "../../components/FormComponents/suffix";
+import FormHeader from "../../components/FormComponents/FormHeader";
+import Suffix from "../../components/FormComponents/Suffix";
 import FormOptions from "../../components/FormComponents/formOption";
-import FormDate from "../../components/FormComponents/formDate";
+import FormDate from "../../components/FormComponents/FormDate";
 import FormData from "../../utils";
 import * as NAMES from '../../constants';
 import MilitaryVeteranStatus from '../../components/FormComponents/militaryVeteranStatus';
